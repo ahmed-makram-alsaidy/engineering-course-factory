@@ -1,0 +1,34 @@
+# INVALID fixture: two scenes share the same scene_id
+schema_version: "1.1"
+course_id: C01
+lesson_id: C01-L007
+title: "Duplicate scene id"
+language: en
+subject: "Programming"
+grade_level: "grade-10"
+duration: 120
+learning_objectives:
+  - "Trigger the duplicate scene id error"
+prerequisites: []
+keywords: []
+metadata:
+  synthetic_fixture: true
+scenes:
+  - scene_id: C01-L007-S001
+    type: intro
+    title: "First scene"
+    duration: 60
+    narration:
+      text: "First scene with this id."
+    visual:
+      kind: none
+      description: "No visual content in this fixture"
+  - scene_id: C01-L007-S001
+    type: summary
+    title: "Second scene, same id"
+    duration: 60
+    narration:
+      text: "Second scene reusing the same id."
+    visual:
+      kind: none
+      description: "No visual content in this fixture"

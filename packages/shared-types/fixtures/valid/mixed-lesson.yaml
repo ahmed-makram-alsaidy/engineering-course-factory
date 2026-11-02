@@ -1,0 +1,73 @@
+# Valid fixture: mixed Arabic-English lesson (synthetic P2 sample, NOT real content)
+# In mixed lessons, EVERY narration and on-screen text element MUST declare
+# its own language (ar or en) - enforced by the schema.
+schema_version: "1.1"
+course_id: C01
+lesson_id: C01-L003
+title: "ما هي الخوارزمية؟ / What is an Algorithm?"
+language: mixed
+subject: "Computer Science"
+grade_level: "grade-9"
+duration: 480
+learning_objectives:
+  - "تعريف الخوارزمية بلغة بسيطة"
+  - "Describe an algorithm as a sequence of steps"
+prerequisites: []
+keywords:
+  - "خوارزمية"
+  - "algorithm"
+  - "steps"
+metadata:
+  synthetic_fixture: true
+scenes:
+  - scene_id: C01-L003-S001
+    type: intro
+    title: "Algorithm, in two languages"
+    duration: 120
+    narration:
+      text: "في هذا الدرس سنجيب عن سؤال مهم: ما هي الخوارزمية؟"
+      language: ar
+    on_screen_text:
+      - role: title
+        text: "ما هي الخوارزمية؟"
+        language: ar
+        emphasis: strong
+      - role: caption
+        text: "What is an Algorithm?"
+        language: en
+    visual:
+      kind: instructor_closeup
+      description: "Instructor asking the title question; bilingual title card"
+    alt_text: "Instructor and a bilingual title: What is an Algorithm?"
+  - scene_id: C01-L003-S002
+    type: explanation
+    title: "A recipe is an algorithm"
+    duration: 240
+    narration:
+      text: "An algorithm is just a list of clear steps, like a recipe."
+      language: en
+    on_screen_text:
+      - role: highlight
+        text: "خطوة ١، خطوة ٢، خطوة ٣ / step 1, step 2, step 3"
+        language: ar
+    visual:
+      kind: diagram
+      description: "Three-step flow: input, steps, output"
+      subject: "algorithm as steps"
+    assets:
+      - asset_id: "assets/diagrams/algorithm-flow.svg"
+        type: image
+  - scene_id: C01-L003-S003
+    type: example
+    title: "مثال: خوارزمية إعداد شاي"
+    duration: 120
+    narration:
+      text: "لنكتب خطوات إعداد كوب شاي كخوارزمية واضحة."
+      language: ar
+    on_screen_text:
+      - role: note
+        text: "Steps in plain language / خطوات بلغة بسيطة"
+        language: en
+    visual:
+      kind: fullscreen_text
+      description: "Numbered list of tea-making steps appearing one by one"

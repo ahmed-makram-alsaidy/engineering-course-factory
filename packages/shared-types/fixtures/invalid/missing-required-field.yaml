@@ -1,0 +1,24 @@
+# INVALID fixture: required top-level field 'title' is missing
+schema_version: "1.1"
+course_id: C01
+lesson_id: C01-L006
+language: en
+subject: "Programming"
+grade_level: "grade-10"
+duration: 60
+learning_objectives:
+  - "Trigger the required field error"
+prerequisites: []
+keywords: []
+metadata:
+  synthetic_fixture: true
+scenes:
+  - scene_id: C01-L006-S001
+    type: intro
+    title: "Intro"
+    duration: 60
+    narration:
+      text: "This fixture is missing the required lesson title."
+    visual:
+      kind: none
+      description: "No visual content in this fixture"

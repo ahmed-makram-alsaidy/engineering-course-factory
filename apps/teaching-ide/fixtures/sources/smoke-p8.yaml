@@ -1,0 +1,140 @@
+# P8.9 real Electron visual-proof synthetic source (never production curriculum).
+# Compiled through the canonical P3 compiler into
+# fixtures/compiled-lessons/smoke-p8.json (see scripts/build-fixtures.mjs).
+# Exercises the canonical Phase P8 reference lesson (P8-DESIGN-SPEC Section 31.1):
+#   (1) narration intro: "Welcome to the Course Factory full-stack demo."
+#   (2) file_create: "src/app.js"
+#   (3) type_code: HTTP server in "src/app.js"
+#   (4) file_save: commit "src/app.js" to disk
+#   (5) terminal_run foreground: "node --check src/app.js"
+#   (6) terminal_run background: "node src/app.js" (process_id: "demo_server")
+#   (7) wait: until port 3000
+#   (8) browser_open: "http://localhost:3000"
+#   (9) browser_fill: username-input -> "student"
+#   (10) browser_click: Submit button
+#   (11) browser_assert: greeting text -> "Welcome student"
+#   (12) terminal_stop: "demo_server"
+#   (13) pause: 2 seconds
+#   (14) narration: "The full-stack demo completed successfully."
+schema_version: "1.1"
+course_id: "C01"
+lesson_id: "C01-L001"
+title: "P8 Reference Full-Stack Multi-Engine Demo"
+language: "en"
+subject: "Full-Stack Development"
+grade_level: "grade-12"
+duration: 300
+learning_objectives:
+  - "Build and test an end-to-end full-stack app across all engines"
+prerequisites: []
+keywords: ["editor", "terminal", "browser", "multi-engine"]
+metadata:
+  synthetic_fixture: true
+  phase: "P8.9"
+scenes:
+  - scene_id: "C01-L001-S001"
+    type: "code_demo"
+    title: "Full-Stack End-to-End Rehearsal"
+    duration: 300
+    visual:
+      kind: "code_editor"
+      description: "Full-stack code demo with editor, terminal, and browser"
+    beats:
+      - beat_id: "C01-L001-S001-B001"
+        kind: "narration"
+        narration:
+          text: "Welcome to the Course Factory full-stack demo."
+      - beat_id: "C01-L001-S001-B002"
+        kind: "action"
+        action:
+          type: "file_create"
+          path: "src/app.js"
+      - beat_id: "C01-L001-S001-B003"
+        kind: "action"
+        action:
+          type: "type_code"
+          path: "src/app.js"
+          content: |
+            const http = require("http");
+            const server = http.createServer((req, res) => {
+              res.writeHead(200, { "Content-Type": "text/html" });
+              res.end(`<!DOCTYPE html>
+            <html>
+            <body>
+              <form id="user-form">
+                <input data-testid="username-input" id="username" />
+                <button role="button" name="Submit" type="button" onclick="document.getElementById('greeting').innerText='Welcome ' + document.getElementById('username').value">Submit</button>
+              </form>
+              <div data-testid="greeting" id="greeting"></div>
+            </body>
+            </html>`);
+            });
+            server.listen(3000);
+      - beat_id: "C01-L001-S001-B004"
+        kind: "action"
+        action:
+          type: "file_save"
+          path: "src/app.js"
+      - beat_id: "C01-L001-S001-B005"
+        kind: "action"
+        action:
+          type: "terminal_run"
+          command: "node --check src/app.js"
+          mode: "foreground"
+          expected_exit_code: 0
+          timeout_seconds: 15
+      - beat_id: "C01-L001-S001-B006"
+        kind: "action"
+        action:
+          type: "terminal_run"
+          command: "node src/app.js"
+          mode: "background"
+          process_id: "demo_server"
+      - beat_id: "C01-L001-S001-B007"
+        kind: "action"
+        action:
+          type: "wait"
+          until: "port"
+          port: 3000
+          timeout_seconds: 10
+      - beat_id: "C01-L001-S001-B008"
+        kind: "action"
+        action:
+          type: "browser_open"
+          url: "http://localhost:3000"
+      - beat_id: "C01-L001-S001-B009"
+        kind: "action"
+        action:
+          type: "browser_fill"
+          selector:
+            strategy: "test_id"
+            value: "username-input"
+          value: "student"
+      - beat_id: "C01-L001-S001-B010"
+        kind: "action"
+        action:
+          type: "browser_click"
+          selector:
+            strategy: "role"
+            value: "button"
+            name: "Submit"
+      - beat_id: "C01-L001-S001-B011"
+        kind: "action"
+        action:
+          type: "browser_assert"
+          selector:
+            strategy: "test_id"
+            value: "greeting"
+          text_visible: "Welcome student"
+      - beat_id: "C01-L001-S001-B012"
+        kind: "action"
+        action:
+          type: "terminal_stop"
+          process_id: "demo_server"
+      - beat_id: "C01-L001-S001-B013"
+        kind: "pause"
+        seconds: 2
+      - beat_id: "C01-L001-S001-B014"
+        kind: "narration"
+        narration:
+          text: "The full-stack demo completed successfully."

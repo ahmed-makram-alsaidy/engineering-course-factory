@@ -1,0 +1,40 @@
+/* Course Factory Teaching IDE — design tokens.
+   Centralized, recording-friendly dark neutral palette. No gradients, no
+   decorative effects; subtle borders and strong editor focus. */
+
+:root {
+  /* surfaces (deep → raised) */
+  --bg-0: #10151b;        /* app background / status bar */
+  --bg-1: #151b23;        /* panels */
+  --bg-2: #1a212b;        /* raised elements (tabs, headers) */
+  --bg-3: #212a36;        /* hover / active rows */
+
+  /* borders */
+  --border-1: #232c37;
+  --border-2: #2e3947;
+
+  /* text */
+  --text-1: #d9e0e7;
+  --text-2: #97a3b0;
+  --text-3: #67717d;
+
+  /* accent + semantics */
+  --accent: #3fb59a;
+  --accent-dim: #2c5c52;
+  --warning: #d7a94c;
+  --danger: #e06c6c;
+  --success: #58b56b;
+
+  /* typography */
+  --font-ui: "Segoe UI", system-ui, -apple-system, sans-serif;
+  --font-mono: "Cascadia Mono", "Cascadia Code", Consolas, "Courier New", monospace;
+  --font-size-ui: 13px;
+  --font-size-editor: 16px; /* recording-oriented default; configurable at runtime */
+
+  /* metrics */
+  --statusbar-height: 40px;
+  --sidebar-width: 268px;
+  --inspector-width: 336px;
+  --bottom-height: 236px;
+  --radius: 3px;
+}

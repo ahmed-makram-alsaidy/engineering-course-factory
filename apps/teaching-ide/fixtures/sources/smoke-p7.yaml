@@ -1,0 +1,83 @@
+# P7.9 real Electron visual-proof synthetic source (never production curriculum).
+# Compiled through the canonical P3 compiler into
+# fixtures/compiled-lessons/smoke-p7.json (see scripts/build-fixtures.mjs).
+# Deterministic fixture exercising the canonical P7 browser actions:
+#   (1) browser_open to the deterministic local fixture server (/form),
+#   (2) browser_fill of username input,
+#   (3) browser_press of Tab key,
+#   (4) browser_click of counter button ("Clicked 0" -> "Clicked 1"),
+#   (5) browser_wait for updated counter button text,
+#   (6) browser_assert on button state,
+#   (7) browser_refresh reloading the page,
+#   (8) browser_assert proving reset to initial state.
+schema_version: "1.1"
+course_id: "C01"
+lesson_id: "C01-L709"
+title: "P7.9 visual proof lesson (synthetic)"
+language: "en"
+subject: "Web Automation"
+grade_level: "grade-11"
+duration: 300
+learning_objectives:
+  - "Prove trusted browser automation and visual streaming render in the Teaching IDE"
+prerequisites: []
+keywords: ["browser", "synthetic", "p79", "smoke"]
+metadata:
+  synthetic_fixture: true
+  phase: "P7.9"
+scenes:
+  - scene_id: "C01-L709-S001"
+    type: "code_demo"
+    title: "Visual proof browser automation"
+    duration: 180
+    visual:
+      kind: "browser"
+      description: "synthetic browser smoke"
+    beats:
+      - beat_id: "C01-L709-S001-B001"
+        kind: "action"
+        action:
+          type: "browser_open"
+          url: "http://127.0.0.1:39077/form"
+      - beat_id: "C01-L709-S001-B002"
+        kind: "action"
+        action:
+          type: "browser_fill"
+          selector:
+            strategy: "test_id"
+            value: "username-input"
+          value: "student_alice"
+      - beat_id: "C01-L709-S001-B003"
+        kind: "action"
+        action:
+          type: "browser_press"
+          key: "Tab"
+      - beat_id: "C01-L709-S001-B004"
+        kind: "action"
+        action:
+          type: "browser_click"
+          selector:
+            strategy: "test_id"
+            value: "counter-btn"
+      - beat_id: "C01-L709-S001-B005"
+        kind: "action"
+        action:
+          type: "browser_wait"
+          selector:
+            strategy: "text"
+            value: "Clicked 1"
+          timeout_seconds: 5
+      - beat_id: "C01-L709-S001-B006"
+        kind: "action"
+        action:
+          type: "browser_assert"
+          text_visible: "Clicked 1"
+      - beat_id: "C01-L709-S001-B007"
+        kind: "action"
+        action:
+          type: "browser_refresh"
+      - beat_id: "C01-L709-S001-B008"
+        kind: "action"
+        action:
+          type: "browser_assert"
+          text_visible: "Clicked 0"

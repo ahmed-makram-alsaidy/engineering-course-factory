@@ -1,0 +1,80 @@
+# P6.15 visual-proof synthetic source (never production curriculum).
+# Compiled through the canonical P3 compiler into
+# fixtures/compiled-lessons/smoke-p615.json (see scripts/build-fixtures.mjs).
+# Tiny deterministic fixture for the SIX canonical §20 proofs only:
+#   (1) seeded file_open of app.js,
+#   (2) incremental type_code (B002, saved) — the visual typing subject,
+#   (3) exact final Monaco buffer (B1 = seed + B002),
+#   (4) verified file_save with exact readback,
+#   (5) real terminal_run of the SAVED bytes (node app.js, exit 0),
+#   (6) reset reseed after a second UNSAVED type_code (B005, pending edits cleared).
+# No replace_code / cancel beats: §20 does not require them visually, and the
+# P6.15 principle forbids operations added merely for spectacle (their
+# semantics stay proven by the P6.9/P6.11 suites + P6.14 gate).
+schema_version: "1.1"
+course_id: "C01"
+lesson_id: "C01-L615"
+title: "P6.15 visual proof lesson (synthetic)"
+language: "en"
+subject: "Programming"
+grade_level: "grade-10"
+duration: 300
+learning_objectives:
+  - "Prove trusted editor playback renders in the Teaching IDE"
+prerequisites: []
+keywords: ["editor", "synthetic", "p615", "smoke"]
+metadata:
+  synthetic_fixture: true
+  phase: "P6.15"
+scenes:
+  - scene_id: "C01-L615-S001"
+    type: "code_demo"
+    title: "Visual proof typing"
+    duration: 180
+    on_screen_text:
+      - role: "title"
+        text: "app.js"
+    visual:
+      kind: "code_editor"
+      description: "synthetic smoke"
+    beats:
+      - beat_id: "C01-L615-S001-B001"
+        kind: "action"
+        action:
+          type: "file_open"
+          path: "app.js"
+      - beat_id: "C01-L615-S001-B002"
+        kind: "narration"
+        narration:
+          text: "Watch the editor type one line."
+      - beat_id: "C01-L615-S001-B003"
+        kind: "action"
+        action:
+          type: "type_code"
+          path: "app.js"
+          content: |
+            console.log("P6_TYPED");
+      - beat_id: "C01-L615-S001-B004"
+        kind: "action"
+        action:
+          type: "file_save"
+          path: "app.js"
+      - beat_id: "C01-L615-S001-B005"
+        kind: "action"
+        action:
+          type: "terminal_run"
+          command: "node app.js"
+          mode: "foreground"
+          timeout_seconds: 60
+          expected_exit_code: 0
+      - beat_id: "C01-L615-S001-B006"
+        kind: "narration"
+        narration:
+          text: "Saved bytes run in the terminal. One more unsaved line follows."
+      - beat_id: "C01-L615-S001-B007"
+        kind: "action"
+        action:
+          type: "type_code"
+          path: "app.js"
+          content: |
+            console.log("P6_DIRTY");

@@ -1,0 +1,44 @@
+{
+  "name": "@course-factory/teaching-ide",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Teaching IDE desktop shell (P4): inspection/navigation UI for compiled lessons. Renders; never executes lesson actions.",
+  "main": "dist/main/main.js",
+  "scripts": {
+    "build:fixtures": "node scripts/build-fixtures.mjs",
+    "build:main": "node esbuild.config.mjs",
+    "build:renderer": "vite build",
+    "build": "npm run build:main && npm run build:renderer",
+    "typecheck": "tsc --noEmit",
+    "start": "npm run build && electron dist/main/main.js",
+    "smoke": "npm run build && electron dist/main/main.js --smoke",
+    "smoke:terminal": "npm run build && electron dist/main/main.js --smoke-terminal",
+    "smoke:p615": "npm run build && electron dist/main/main.js --smoke-p615",
+    "smoke:p7": "npm run build && electron dist/main/main.js --smoke-p7",
+    "smoke:p8": "npm run build && electron dist/main/main.js --smoke-p8",
+    "test": "node --test tests/model.test.ts tests/ir.test.ts tests/safety.test.ts tests/terminal-ipc.test.ts tests/terminal-runtime.test.ts tests/window-lifecycle.test.ts tests/editor-presentation.test.ts tests/editor-ipc.test.ts tests/browser-ipc.test.ts tests/browser-presentation.test.ts tests/runtime-ipc.test.ts tests/recording-lifecycle.test.ts tests/recording-readiness.test.ts tests/recording-corrective-c.test.ts tests/p97-recording-matrix.test.ts tests/recording-proof.test.ts"
+  },
+  "dependencies": {
+    "@course-factory/browser-engine": "*",
+    "@course-factory/lesson-compiler": "*",
+    "@course-factory/runtime-orchestrator": "*",
+    "@course-factory/terminal-engine": "*",
+    "@course-factory/workspace": "*",
+    "@xterm/addon-fit": "^0.10.0",
+    "@xterm/xterm": "^5.5.0",
+    "monaco-editor": "^0.52.2",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "zod": "^4.1.5"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "@types/react": "^19.1.0",
+    "@types/react-dom": "^19.1.0",
+    "@vitejs/plugin-react": "^4.5.0",
+    "electron": "^38.0.0",
+    "esbuild": "^0.25.5",
+    "typescript": "^5.8.3",
+    "vite": "^6.3.5"
+  }
+}

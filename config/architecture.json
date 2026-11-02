@@ -1,0 +1,46 @@
+{
+  "architectureVersion": "1.0.0",
+  "projectName": "course-factory",
+  "projectRootConvention": "Single repository root (E:\\course-factory on the P0-verified machine). Application code must never hard-code the root; resolve it via config/paths.json.",
+  "nodeMajor": 24,
+  "pythonMajorMinor": "3.12",
+  "unrealMajorMinor": "5.8",
+  "packageManager": "npm workspaces",
+  "directoryRoles": {
+    "apps": { "role": "user-facing applications", "class": "SOURCE", "canonical": true },
+    "packages": { "role": "shared code libraries", "class": "SOURCE", "canonical": true },
+    "engine": { "role": "pipeline components (compiler, validator, recorder, voice, director, renderer)", "class": "SOURCE", "canonical": true },
+    "unreal": { "role": "Unreal project (reserved: unreal/CourseStudio) + automation", "class": "SOURCE", "canonical": true, "note": "Binaries/, DerivedDataCache/, Intermediate/, Saved/ are generated and ignored" },
+    "assets": { "role": "reusable source assets (animations, audio, diagrams, graphics, studio, characters)", "class": "SOURCE", "canonical": true },
+    "courses": { "role": "canonical course source material, C01-C28 convention", "class": "SOURCE", "canonical": true },
+    "tests": { "role": "test architecture + fixtures", "class": "SOURCE", "canonical": true },
+    "tools": { "role": "repository developer tooling", "class": "SOURCE", "canonical": true },
+    "scripts": { "role": "operational scripts", "class": "SOURCE", "canonical": true },
+    "config": { "role": "architecture manifest + path configuration contract", "class": "SOURCE", "canonical": true, "note": "config/paths.json (real machine values) is git-ignored" },
+    "docs": { "role": "canonical documentation, ADRs, phase reports", "class": "SOURCE", "canonical": true },
+    "runtime": { "role": "generated runtime artifacts (cache, voice, screen, sequences, subtitles)", "class": "GENERATED", "canonical": false, "git": "ignored" },
+    "renders": { "role": "render outputs (intermediate, final)", "class": "GENERATED", "canonical": false, "git": "ignored" },
+    "logs": { "role": "evidence only", "class": "LOGS", "canonical": false, "git": "ignored" },
+    "temp": { "role": "throwaway workspace", "class": "TEMP", "canonical": false, "git": "ignored" }
+  },
+  "storageClasses": {
+    "SOURCE": { "deletable": false, "note": "canonical; never auto-delete" },
+    "GENERATED": { "deletable": true, "note": "regenerable from SOURCE; renders are regenerable but expensive" },
+    "RUNTIME": { "deletable": true, "note": "safe to delete entirely" },
+    "CACHE": { "deletable": true, "note": "always safe to delete" },
+    "TEMP": { "deletable": true, "note": "always safe to delete" },
+    "LOGS": { "deletable": false, "note": "evidence; prune deliberately, never auto-delete" }
+  },
+  "identifierConventions": {
+    "course": "C[0-9]{2} (e.g. C01)",
+    "lesson": "L[0-9]{3} (e.g. L003)",
+    "scene": "S[0-9]{3} (e.g. S014)",
+    "lessonAddress": "{course}-L{lesson} e.g. C01-L003",
+    "sceneAddress": "{course}-{lesson}-{scene} e.g. C01-L003-S014",
+    "artifactNaming": "{courseId}-{lessonId}[-{sceneId}]-{kind}.{ext} e.g. C01-L003-screen.mp4, C01-L003-timeline.json, C01-L003-subtitles.srt, C01-L003-S014.wav"
+  },
+  "stateModel": {
+    "executionStates": ["PENDING", "RUNNING", "PASS", "HOLD", "FAIL", "SKIPPED"],
+    "productionProgression": ["SOURCE", "PLANNED", "VALIDATED", "VOICE_READY", "SCREEN_READY", "SEQUENCE_READY", "RENDERED", "QA_PASS"]
+  }
+}

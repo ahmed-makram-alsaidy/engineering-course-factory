@@ -1,0 +1,101 @@
+{
+  "schema_version": "1.1",
+  "course_id": "C01",
+  "lesson_id": "C01-L052",
+  "title": "Terminal admission fixture (synthetic P5)",
+  "language": "en",
+  "subject": "Programming",
+  "grade_level": "grade-10",
+  "duration": 300,
+  "learning_objectives": ["Run and stop terminal operations inside the P5 sandbox"],
+  "prerequisites": [],
+  "keywords": ["terminal", "synthetic", "p5"],
+  "metadata": { "synthetic_fixture": true, "phase": "P5.2" },
+  "scenes": [
+    {
+      "scene_id": "C01-L052-S001",
+      "type": "code_demo",
+      "title": "Foreground command, browser and editor operations",
+      "duration": 120,
+      "visual": { "kind": "terminal", "description": "Terminal with the version command and its output" },
+      "beats": [
+        {
+          "beat_id": "C01-L052-S001-B001",
+          "kind": "narration",
+          "narration": { "text": "First a foreground terminal command, then two operations that belong to other engines." }
+        },
+        {
+          "beat_id": "C01-L052-S001-B002",
+          "kind": "action",
+          "action": {
+            "type": "terminal_run",
+            "command": "node --version",
+            "mode": "foreground",
+            "cwd": "scripts",
+            "timeout_seconds": 30,
+            "expected_exit_code": 0
+          }
+        },
+        {
+          "beat_id": "C01-L052-S001-B003",
+          "kind": "action",
+          "action": { "type": "browser_open", "url": "https://example.invalid/never-fetched" }
+        },
+        {
+          "beat_id": "C01-L052-S001-B004",
+          "kind": "action",
+          "action": { "type": "type_code", "path": "src/demo.ts", "content": "const answer = 42;\n" }
+        }
+      ]
+    },
+    {
+      "scene_id": "C01-L052-S002",
+      "type": "code_demo",
+      "title": "A background development server",
+      "duration": 90,
+      "visual": { "kind": "terminal", "description": "Background server process with readiness output" },
+      "beats": [
+        {
+          "beat_id": "C01-L052-S002-B001",
+          "kind": "action",
+          "action": {
+            "type": "terminal_run",
+            "command": "node server.js",
+            "mode": "background",
+            "process_id": "dev-server",
+            "cwd": "app"
+          }
+        },
+        {
+          "beat_id": "C01-L052-S002-B002",
+          "kind": "narration",
+          "narration": { "text": "The server keeps running while the lesson continues." }
+        }
+      ]
+    },
+    {
+      "scene_id": "C01-L052-S003",
+      "type": "code_demo",
+      "title": "Waiting for readiness and stopping the server",
+      "duration": 90,
+      "visual": { "kind": "terminal", "description": "Readiness marker then a graceful stop" },
+      "beats": [
+        {
+          "beat_id": "C01-L052-S003-B001",
+          "kind": "action",
+          "action": { "type": "wait", "until": "process_output", "process_id": "dev-server", "text": "READY", "timeout_seconds": 30 }
+        },
+        {
+          "beat_id": "C01-L052-S003-B002",
+          "kind": "action",
+          "action": { "type": "terminal_stop", "process_id": "dev-server" }
+        },
+        {
+          "beat_id": "C01-L052-S003-B003",
+          "kind": "narration",
+          "narration": { "text": "The authored stop targets the logical process defined earlier." }
+        }
+      ]
+    }
+  ]
+}

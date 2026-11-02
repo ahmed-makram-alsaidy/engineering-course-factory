@@ -1,0 +1,25 @@
+# INVALID fixture: lesson_id does not belong to course_id
+schema_version: "1.1"
+course_id: C01
+lesson_id: C02-L001
+title: "Mismatched lesson id"
+language: en
+subject: "Programming"
+grade_level: "grade-10"
+duration: 60
+learning_objectives:
+  - "Trigger the ID mismatch error"
+prerequisites: []
+keywords: []
+metadata:
+  synthetic_fixture: true
+scenes:
+  - scene_id: C02-L001-S001
+    type: intro
+    title: "Intro"
+    duration: 60
+    narration:
+      text: "This fixture is intentionally invalid."
+    visual:
+      kind: none
+      description: "No visual content in this fixture"

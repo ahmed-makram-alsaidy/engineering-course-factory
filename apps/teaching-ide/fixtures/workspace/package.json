@@ -1,0 +1,14 @@
+{
+  "name": "demo-node-app",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Synthetic Teaching IDE workspace fixture - visual sample content only. Never executed, never installed.",
+  "main": "dist/server.js",
+  "scripts": {
+    "dev": "node --experimental-strip-types src/server.ts",
+    "build": "echo synthetic"
+  },
+  "dependencies": {
+    "demo-router": "^1.0.0"
+  }
+}

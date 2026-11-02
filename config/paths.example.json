@@ -1,0 +1,17 @@
+{
+  "_comment": "EXAMPLE of the machine-specific path configuration contract. Copy this file to config/paths.json (git-ignored) and adjust for the actual machine. All application code must resolve machine paths through this file - never hard-code absolute paths in code. The values below are example values from the P0-verified machine (2026-09-06).",
+  "projectRoot": "E:\\course-factory",
+  "runtimeRoot": "E:\\course-factory\\runtime",
+  "renderRoot": "E:\\course-factory\\renders",
+  "cacheRoot": "E:\\course-factory\\runtime\\cache",
+  "tempRoot": "E:\\course-factory\\temp",
+  "logsRoot": "E:\\course-factory\\logs",
+  "courseSourceRoot": "E:\\course-factory\\courses",
+  "unrealEnginePath": "D:\\Epic Games\\UE_5.8",
+  "unrealProjectPath": "E:\\course-factory\\unreal\\CourseStudio",
+  "ffmpegPath": "ffmpeg",
+  "ffprobePath": "ffprobe",
+  "blenderPath": "E:\\Blender 5.2\\blender.exe",
+  "pythonPath": "python",
+  "nodePath": "node"
+}

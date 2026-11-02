@@ -1,0 +1,109 @@
+# P2A valid fixture: background dev server + readiness wait + browser sequence
+# Synthetic P2A sample - NOT production course content.
+schema_version: "1.1"
+course_id: C01
+lesson_id: C01-L012
+title: "Starting a dev server and visiting it"
+language: en
+subject: "Web Development"
+grade_level: "grade-11"
+duration: 600
+learning_objectives:
+  - "Start a background dev server"
+  - "Wait until the server port is ready"
+  - "Open the site in a browser and assert its state"
+prerequisites: []
+keywords:
+  - "dev server"
+  - "localhost"
+  - "browser"
+metadata:
+  synthetic_fixture: true
+  amendment: "P2A"
+scenes:
+  - scene_id: C01-L012-S001
+    type: code_demo
+    title: "npm run dev, done deterministically"
+    duration: 480
+    visual:
+      kind: browser
+      description: "Split view: terminal starting the server, browser showing the app"
+    beats:
+      - beat_id: C01-L012-S001-B001
+        kind: narration
+        narration:
+          text: "We start the dev server in the background, because it never exits on its own."
+      - beat_id: C01-L012-S001-B002
+        kind: action
+        action:
+          type: terminal_run
+          command: npm run dev
+          cwd: demo-project
+          mode: background
+          process_id: dev_server
+      - beat_id: C01-L012-S001-B003
+        kind: narration
+        narration:
+          text: "Rather than guessing, we wait until port 3000 actually accepts connections."
+      - beat_id: C01-L012-S001-B004
+        kind: action
+        action:
+          type: wait
+          until: port
+          port: 3000
+          timeout_seconds: 60
+      - beat_id: C01-L012-S001-B005
+        kind: action
+        action:
+          type: browser_open
+          url: http://localhost:3000
+      - beat_id: C01-L012-S001-B006
+        kind: action
+        action:
+          type: browser_assert
+          selector:
+            strategy: role
+            value: heading
+            name: Welcome
+      - beat_id: C01-L012-S001-B007
+        kind: pause
+        seconds: 2
+      - beat_id: C01-L012-S001-B008
+        kind: action
+        action:
+          type: browser_fill
+          selector:
+            strategy: test_id
+            value: task-input
+          value: "buy milk"
+      - beat_id: C01-L012-S001-B009
+        kind: action
+        action:
+          type: browser_press
+          key: Enter
+      - beat_id: C01-L012-S001-B010
+        kind: action
+        action:
+          type: browser_wait
+          selector:
+            strategy: text
+            value: "buy milk"
+          timeout_seconds: 10
+      - beat_id: C01-L012-S001-B011
+        kind: action
+        action:
+          type: browser_assert
+          text_visible: "buy milk"
+      - beat_id: C01-L012-S001-B012
+        kind: narration
+        narration:
+          text: "The item is on screen, which proves the full loop works."
+      - beat_id: C01-L012-S001-B013
+        kind: action
+        action:
+          type: terminal_stop
+          process_id: dev_server
+      - beat_id: C01-L012-S001-B014
+        kind: narration
+        narration:
+          text: "We stopped the server explicitly, so nothing keeps running after the lesson."

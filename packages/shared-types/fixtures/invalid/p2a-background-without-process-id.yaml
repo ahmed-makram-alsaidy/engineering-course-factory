@@ -1,0 +1,29 @@
+# INVALID P2A fixture: background terminal_run without a logical process_id
+schema_version: "1.1"
+course_id: C01
+lesson_id: C01-L024
+title: "Background without process id"
+language: en
+subject: "Programming"
+grade_level: "grade-10"
+duration: 60
+learning_objectives: ["Trigger background process id requirement"]
+prerequisites: []
+keywords: []
+metadata: { synthetic_fixture: true }
+scenes:
+  - scene_id: C01-L024-S001
+    type: example
+    title: "Server start"
+    duration: 60
+    visual: { kind: terminal, description: "Terminal" }
+    beats:
+      - beat_id: C01-L024-S001-B001
+        kind: narration
+        narration: { text: "Start the server." }
+      - beat_id: C01-L024-S001-B002
+        kind: action
+        action:
+          type: terminal_run
+          command: npm run dev
+          mode: background

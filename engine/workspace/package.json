@@ -1,0 +1,35 @@
+{
+    "name":  "@course-factory/workspace",
+    "version":  "0.1.0",
+    "private":  true,
+    "description":  "P6 shared workspace: main-owned coordination vocabulary, digest-bound reviewed access policy, the P6.4 confined Windows host file adapter (read plus staged atomic publication), the P6.6 trusted editor admission with main-owned document registry (identifier-only, no execution, no persistence bytes, no presentation), the P6.7 admitted document open/create execution (exact load and staged creation, no pre-save disk mutation), the P6.8 deterministic type planner/scheduler (admitted type_code plans and schedules only, no buffer or disk mutation, no presentation), the P6.9 deterministic exact replacement planner (admitted replace_code match guards and transactional visual plans only, no buffer or disk mutation, no presentation) and the P6.10 admitted document save with bounded canonical journal (commit boundary, byte verify, exactly-one outcome) for one lesson workspace shared by the P5 terminal engine and the P6 typing engine. No container, presentation, or UI behavior.",
+    "type":  "module",
+    "exports":  {
+                    ".":  "./src/index.ts",
+                    "./protocol":  "./src/protocol.ts",
+                    "./policy":  "./src/policy.ts",
+                    "./coordinator":  "./src/coordinator.ts",
+                    "./file-adapter":  "./src/file-adapter.ts",
+                    "./editor-admission":  "./src/editor-admission.ts",
+                    "./editor-documents":  "./src/editor-documents.ts",
+                    "./editor-open-create":  "./src/editor-open-create.ts",
+                    "./editor-replace-planner":  "./src/editor-replace-planner.ts",
+                    "./editor-type-planner":  "./src/editor-type-planner.ts",
+                    "./editor-save":  "./src/editor-save.ts",
+                    "./editor-lifecycle":  "./src/editor-lifecycle.ts",
+                    "./editor-ipc":  "./src/editor-ipc.ts",
+                    "./editor-terminal-interop":  "./src/editor-terminal-interop.ts"
+                },
+    "scripts":  {
+                    "test":  "node --test tests/workspace-protocol.test.ts tests/reviewed-policy.test.ts tests/source-safety.test.ts tests/workspace-coordinator.test.ts tests/workspace-coordinator-races.test.ts tests/file-adapter.test.ts tests/file-adapter-windows.test.ts tests/ownership-integration.test.ts tests/editor-admission.test.ts tests/editor-open-create.test.ts tests/editor-open-create-windows.test.ts tests/editor-type-planner.test.ts tests/editor-replace-planner.test.ts tests/editor-save.test.ts tests/editor-save-windows.test.ts tests/editor-lifecycle.test.ts tests/editor-lifecycle-windows.test.ts tests/editor-ipc.test.ts tests/editor-terminal-interop.test.ts tests/editor-terminal-interop-windows.test.ts",
+                    "typecheck":  "tsc --noEmit"
+                },
+    "dependencies":  {
+                         "@course-factory/lesson-compiler":  "*",
+                         "zod":  "^4.1.5"
+                     },
+    "devDependencies":  {
+                            "@types/node":  "^24.0.0",
+                            "typescript":  "^5.8.3"
+                        }
+}

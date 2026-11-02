@@ -1,0 +1,44 @@
+{
+  "schema_version": "1.1",
+  "course_id": "C01",
+  "lesson_id": "C01-L063",
+  "title": "Open/create collision fixture (synthetic P6.7)",
+  "language": "en",
+  "subject": "Programming",
+  "grade_level": "grade-10",
+  "duration": 120,
+  "learning_objectives": ["Creation colliding with an opened file fails closed"],
+  "prerequisites": [],
+  "keywords": ["editor", "synthetic", "p6"],
+  "metadata": { "synthetic_fixture": true, "phase": "P6.7" },
+  "scenes": [
+    {
+      "scene_id": "C01-L063-S001",
+      "type": "code_demo",
+      "title": "Open the seeded file",
+      "duration": 60,
+      "visual": { "kind": "code_editor", "description": "Editor opens the seeded file" },
+      "beats": [
+        {
+          "beat_id": "C01-L063-S001-B001",
+          "kind": "action",
+          "action": { "type": "file_open", "path": "src/delta.ts" }
+        }
+      ]
+    },
+    {
+      "scene_id": "C01-L063-S002",
+      "type": "code_demo",
+      "title": "Colliding creation",
+      "duration": 60,
+      "visual": { "kind": "code_editor", "description": "Editor attempts a colliding creation" },
+      "beats": [
+        {
+          "beat_id": "C01-L063-S002-B001",
+          "kind": "action",
+          "action": { "type": "file_create", "path": "src/delta.ts", "content": "// collide\n" }
+        }
+      ]
+    }
+  ]
+}

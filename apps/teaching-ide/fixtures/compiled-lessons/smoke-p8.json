@@ -1,0 +1,386 @@
+{
+  "capabilities": {
+    "browser": true,
+    "editor": true,
+    "terminal": true,
+    "voice": true
+  },
+  "compiled_ir_version": "1.0",
+  "compiler": {
+    "name": "course-factory-lesson-compiler",
+    "version": "0.1.0"
+  },
+  "lesson": {
+    "course_id": "C01",
+    "direction": "ltr",
+    "duration_seconds": 300,
+    "grade_level": "grade-12",
+    "keywords": [
+      "editor",
+      "terminal",
+      "browser",
+      "multi-engine"
+    ],
+    "language": "en",
+    "learning_objectives": [
+      "Build and test an end-to-end full-stack app across all engines"
+    ],
+    "lesson_id": "C01-L001",
+    "metadata": {
+      "phase": "P8.9",
+      "synthetic_fixture": true
+    },
+    "prerequisites": [],
+    "subject": "Full-Stack Development",
+    "title": "P8 Reference Full-Stack Multi-Engine Demo"
+  },
+  "processes": [
+    {
+      "command": "node src/app.js",
+      "output_waits": [],
+      "process_id": "demo_server",
+      "started_in": {
+        "beat_id": "C01-L001-S001-B006",
+        "scene_id": "C01-L001-S001",
+        "scene_ordinal": 1,
+        "step_ordinal": 6
+      },
+      "stopped_in": {
+        "beat_id": "C01-L001-S001-B012",
+        "scene_id": "C01-L001-S001"
+      }
+    }
+  ],
+  "resources": {
+    "assets": [],
+    "browser_origins": [
+      "http://localhost:3000"
+    ],
+    "paths": [
+      "src/app.js"
+    ]
+  },
+  "scenes": [
+    {
+      "assets": [],
+      "blocks": [],
+      "duration_seconds": 300,
+      "narration_form": "beats",
+      "on_screen_text": [],
+      "ordinal": 1,
+      "scene_id": "C01-L001-S001",
+      "steps": [
+        {
+          "derived": false,
+          "kind": "narration",
+          "narration": {
+            "direction": "ltr",
+            "language": "en",
+            "text": "Welcome to the Course Factory full-stack demo."
+          },
+          "ordinal": 1,
+          "source_ref": {
+            "beat_id": "C01-L001-S001-B001",
+            "form": "authored_beat",
+            "scene_id": "C01-L001-S001",
+            "scene_ordinal": 1
+          },
+          "step_id": "C01-L001-S001-B001"
+        },
+        {
+          "derived": false,
+          "kind": "operation",
+          "operation": {
+            "family": "file",
+            "parameters": {
+              "path": "src/app.js",
+              "type": "file_create"
+            },
+            "type": "file_create"
+          },
+          "ordinal": 2,
+          "source_ref": {
+            "beat_id": "C01-L001-S001-B002",
+            "form": "authored_beat",
+            "scene_id": "C01-L001-S001",
+            "scene_ordinal": 1
+          },
+          "step_id": "C01-L001-S001-B002"
+        },
+        {
+          "derived": false,
+          "kind": "operation",
+          "operation": {
+            "family": "editor",
+            "parameters": {
+              "content": "const http = require(\"http\");\nconst server = http.createServer((req, res) => {\n  res.writeHead(200, { \"Content-Type\": \"text/html\" });\n  res.end(`<!DOCTYPE html>\n<html>\n<body>\n  <form id=\"user-form\">\n    <input data-testid=\"username-input\" id=\"username\" />\n    <button role=\"button\" name=\"Submit\" type=\"button\" onclick=\"document.getElementById('greeting').innerText='Welcome ' + document.getElementById('username').value\">Submit</button>\n  </form>\n  <div data-testid=\"greeting\" id=\"greeting\"></div>\n</body>\n</html>`);\n});\nserver.listen(3000);\n",
+              "path": "src/app.js",
+              "type": "type_code"
+            },
+            "type": "type_code"
+          },
+          "ordinal": 3,
+          "source_ref": {
+            "beat_id": "C01-L001-S001-B003",
+            "form": "authored_beat",
+            "scene_id": "C01-L001-S001",
+            "scene_ordinal": 1
+          },
+          "step_id": "C01-L001-S001-B003"
+        },
+        {
+          "derived": false,
+          "kind": "operation",
+          "operation": {
+            "family": "editor",
+            "parameters": {
+              "path": "src/app.js",
+              "type": "file_save"
+            },
+            "type": "file_save"
+          },
+          "ordinal": 4,
+          "source_ref": {
+            "beat_id": "C01-L001-S001-B004",
+            "form": "authored_beat",
+            "scene_id": "C01-L001-S001",
+            "scene_ordinal": 1
+          },
+          "step_id": "C01-L001-S001-B004"
+        },
+        {
+          "derived": false,
+          "kind": "operation",
+          "operation": {
+            "family": "terminal",
+            "parameters": {
+              "command": "node --check src/app.js",
+              "expected_exit_code": 0,
+              "mode": "foreground",
+              "timeout_seconds": 15,
+              "type": "terminal_run"
+            },
+            "type": "terminal_run"
+          },
+          "ordinal": 5,
+          "source_ref": {
+            "beat_id": "C01-L001-S001-B005",
+            "form": "authored_beat",
+            "scene_id": "C01-L001-S001",
+            "scene_ordinal": 1
+          },
+          "step_id": "C01-L001-S001-B005"
+        },
+        {
+          "derived": false,
+          "kind": "operation",
+          "operation": {
+            "family": "terminal",
+            "parameters": {
+              "command": "node src/app.js",
+              "mode": "background",
+              "process_id": "demo_server",
+              "type": "terminal_run"
+            },
+            "type": "terminal_run"
+          },
+          "ordinal": 6,
+          "source_ref": {
+            "beat_id": "C01-L001-S001-B006",
+            "form": "authored_beat",
+            "scene_id": "C01-L001-S001",
+            "scene_ordinal": 1
+          },
+          "step_id": "C01-L001-S001-B006"
+        },
+        {
+          "derived": false,
+          "kind": "operation",
+          "operation": {
+            "family": "wait",
+            "parameters": {
+              "port": 3000,
+              "timeout_seconds": 10,
+              "type": "wait",
+              "until": "port"
+            },
+            "type": "wait"
+          },
+          "ordinal": 7,
+          "source_ref": {
+            "beat_id": "C01-L001-S001-B007",
+            "form": "authored_beat",
+            "scene_id": "C01-L001-S001",
+            "scene_ordinal": 1
+          },
+          "step_id": "C01-L001-S001-B007"
+        },
+        {
+          "derived": false,
+          "kind": "operation",
+          "operation": {
+            "family": "browser",
+            "parameters": {
+              "type": "browser_open",
+              "url": "http://localhost:3000"
+            },
+            "type": "browser_open"
+          },
+          "ordinal": 8,
+          "source_ref": {
+            "beat_id": "C01-L001-S001-B008",
+            "form": "authored_beat",
+            "scene_id": "C01-L001-S001",
+            "scene_ordinal": 1
+          },
+          "step_id": "C01-L001-S001-B008"
+        },
+        {
+          "derived": false,
+          "kind": "operation",
+          "operation": {
+            "family": "browser",
+            "parameters": {
+              "selector": {
+                "strategy": "test_id",
+                "value": "username-input"
+              },
+              "type": "browser_fill",
+              "value": "student"
+            },
+            "type": "browser_fill"
+          },
+          "ordinal": 9,
+          "source_ref": {
+            "beat_id": "C01-L001-S001-B009",
+            "form": "authored_beat",
+            "scene_id": "C01-L001-S001",
+            "scene_ordinal": 1
+          },
+          "step_id": "C01-L001-S001-B009"
+        },
+        {
+          "derived": false,
+          "kind": "operation",
+          "operation": {
+            "family": "browser",
+            "parameters": {
+              "selector": {
+                "name": "Submit",
+                "strategy": "role",
+                "value": "button"
+              },
+              "type": "browser_click"
+            },
+            "type": "browser_click"
+          },
+          "ordinal": 10,
+          "source_ref": {
+            "beat_id": "C01-L001-S001-B010",
+            "form": "authored_beat",
+            "scene_id": "C01-L001-S001",
+            "scene_ordinal": 1
+          },
+          "step_id": "C01-L001-S001-B010"
+        },
+        {
+          "derived": false,
+          "kind": "operation",
+          "operation": {
+            "family": "browser",
+            "parameters": {
+              "selector": {
+                "strategy": "test_id",
+                "value": "greeting"
+              },
+              "text_visible": "Welcome student",
+              "type": "browser_assert"
+            },
+            "type": "browser_assert"
+          },
+          "ordinal": 11,
+          "source_ref": {
+            "beat_id": "C01-L001-S001-B011",
+            "form": "authored_beat",
+            "scene_id": "C01-L001-S001",
+            "scene_ordinal": 1
+          },
+          "step_id": "C01-L001-S001-B011"
+        },
+        {
+          "derived": false,
+          "kind": "operation",
+          "operation": {
+            "family": "terminal",
+            "parameters": {
+              "process_id": "demo_server",
+              "type": "terminal_stop"
+            },
+            "references": {
+              "process": {
+                "defined_in": {
+                  "beat_id": "C01-L001-S001-B006",
+                  "scene_id": "C01-L001-S001"
+                },
+                "process_id": "demo_server"
+              }
+            },
+            "type": "terminal_stop"
+          },
+          "ordinal": 12,
+          "source_ref": {
+            "beat_id": "C01-L001-S001-B012",
+            "form": "authored_beat",
+            "scene_id": "C01-L001-S001",
+            "scene_ordinal": 1
+          },
+          "step_id": "C01-L001-S001-B012"
+        },
+        {
+          "derived": false,
+          "kind": "pause",
+          "ordinal": 13,
+          "seconds": 2,
+          "source_ref": {
+            "beat_id": "C01-L001-S001-B013",
+            "form": "authored_beat",
+            "scene_id": "C01-L001-S001",
+            "scene_ordinal": 1
+          },
+          "step_id": "C01-L001-S001-B013"
+        },
+        {
+          "derived": false,
+          "kind": "narration",
+          "narration": {
+            "direction": "ltr",
+            "language": "en",
+            "text": "The full-stack demo completed successfully."
+          },
+          "ordinal": 14,
+          "source_ref": {
+            "beat_id": "C01-L001-S001-B014",
+            "form": "authored_beat",
+            "scene_id": "C01-L001-S001",
+            "scene_ordinal": 1
+          },
+          "step_id": "C01-L001-S001-B014"
+        }
+      ],
+      "title": "Full-Stack End-to-End Rehearsal",
+      "type": "code_demo",
+      "visual": {
+        "description": "Full-stack code demo with editor, terminal, and browser",
+        "kind": "code_editor"
+      }
+    }
+  ],
+  "source": {
+    "hash": {
+      "algorithm": "sha256",
+      "canonicalization": "canonical-json-v1",
+      "value": "cd9bdb591e6b0e04ba02705deb93edbd77db0b307c93e4f1faa568be0abce370"
+    },
+    "schema_version": "1.1"
+  }
+}

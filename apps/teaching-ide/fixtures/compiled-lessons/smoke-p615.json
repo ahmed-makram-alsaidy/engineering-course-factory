@@ -1,0 +1,218 @@
+{
+  "capabilities": {
+    "browser": false,
+    "editor": true,
+    "terminal": true,
+    "voice": true
+  },
+  "compiled_ir_version": "1.0",
+  "compiler": {
+    "name": "course-factory-lesson-compiler",
+    "version": "0.1.0"
+  },
+  "lesson": {
+    "course_id": "C01",
+    "direction": "ltr",
+    "duration_seconds": 300,
+    "grade_level": "grade-10",
+    "keywords": [
+      "editor",
+      "synthetic",
+      "p615",
+      "smoke"
+    ],
+    "language": "en",
+    "learning_objectives": [
+      "Prove trusted editor playback renders in the Teaching IDE"
+    ],
+    "lesson_id": "C01-L615",
+    "metadata": {
+      "phase": "P6.15",
+      "synthetic_fixture": true
+    },
+    "prerequisites": [],
+    "subject": "Programming",
+    "title": "P6.15 visual proof lesson (synthetic)"
+  },
+  "processes": [],
+  "resources": {
+    "assets": [],
+    "browser_origins": [],
+    "paths": [
+      "app.js"
+    ]
+  },
+  "scenes": [
+    {
+      "assets": [],
+      "blocks": [],
+      "duration_seconds": 180,
+      "narration_form": "beats",
+      "on_screen_text": [
+        {
+          "direction": "ltr",
+          "language": "en",
+          "role": "title",
+          "text": "app.js"
+        }
+      ],
+      "ordinal": 1,
+      "scene_id": "C01-L615-S001",
+      "steps": [
+        {
+          "derived": false,
+          "kind": "operation",
+          "operation": {
+            "family": "editor",
+            "parameters": {
+              "path": "app.js",
+              "type": "file_open"
+            },
+            "type": "file_open"
+          },
+          "ordinal": 1,
+          "source_ref": {
+            "beat_id": "C01-L615-S001-B001",
+            "form": "authored_beat",
+            "scene_id": "C01-L615-S001",
+            "scene_ordinal": 1
+          },
+          "step_id": "C01-L615-S001-B001"
+        },
+        {
+          "derived": false,
+          "kind": "narration",
+          "narration": {
+            "direction": "ltr",
+            "language": "en",
+            "text": "Watch the editor type one line."
+          },
+          "ordinal": 2,
+          "source_ref": {
+            "beat_id": "C01-L615-S001-B002",
+            "form": "authored_beat",
+            "scene_id": "C01-L615-S001",
+            "scene_ordinal": 1
+          },
+          "step_id": "C01-L615-S001-B002"
+        },
+        {
+          "derived": false,
+          "kind": "operation",
+          "operation": {
+            "family": "editor",
+            "parameters": {
+              "content": "console.log(\"P6_TYPED\");\n",
+              "path": "app.js",
+              "type": "type_code"
+            },
+            "type": "type_code"
+          },
+          "ordinal": 3,
+          "source_ref": {
+            "beat_id": "C01-L615-S001-B003",
+            "form": "authored_beat",
+            "scene_id": "C01-L615-S001",
+            "scene_ordinal": 1
+          },
+          "step_id": "C01-L615-S001-B003"
+        },
+        {
+          "derived": false,
+          "kind": "operation",
+          "operation": {
+            "family": "editor",
+            "parameters": {
+              "path": "app.js",
+              "type": "file_save"
+            },
+            "type": "file_save"
+          },
+          "ordinal": 4,
+          "source_ref": {
+            "beat_id": "C01-L615-S001-B004",
+            "form": "authored_beat",
+            "scene_id": "C01-L615-S001",
+            "scene_ordinal": 1
+          },
+          "step_id": "C01-L615-S001-B004"
+        },
+        {
+          "derived": false,
+          "kind": "operation",
+          "operation": {
+            "family": "terminal",
+            "parameters": {
+              "command": "node app.js",
+              "expected_exit_code": 0,
+              "mode": "foreground",
+              "timeout_seconds": 60,
+              "type": "terminal_run"
+            },
+            "type": "terminal_run"
+          },
+          "ordinal": 5,
+          "source_ref": {
+            "beat_id": "C01-L615-S001-B005",
+            "form": "authored_beat",
+            "scene_id": "C01-L615-S001",
+            "scene_ordinal": 1
+          },
+          "step_id": "C01-L615-S001-B005"
+        },
+        {
+          "derived": false,
+          "kind": "narration",
+          "narration": {
+            "direction": "ltr",
+            "language": "en",
+            "text": "Saved bytes run in the terminal. One more unsaved line follows."
+          },
+          "ordinal": 6,
+          "source_ref": {
+            "beat_id": "C01-L615-S001-B006",
+            "form": "authored_beat",
+            "scene_id": "C01-L615-S001",
+            "scene_ordinal": 1
+          },
+          "step_id": "C01-L615-S001-B006"
+        },
+        {
+          "derived": false,
+          "kind": "operation",
+          "operation": {
+            "family": "editor",
+            "parameters": {
+              "content": "console.log(\"P6_DIRTY\");\n",
+              "path": "app.js",
+              "type": "type_code"
+            },
+            "type": "type_code"
+          },
+          "ordinal": 7,
+          "source_ref": {
+            "beat_id": "C01-L615-S001-B007",
+            "form": "authored_beat",
+            "scene_id": "C01-L615-S001",
+            "scene_ordinal": 1
+          },
+          "step_id": "C01-L615-S001-B007"
+        }
+      ],
+      "title": "Visual proof typing",
+      "type": "code_demo",
+      "visual": {
+        "description": "synthetic smoke",
+        "kind": "code_editor"
+      }
+    }
+  ],
+  "source": {
+    "hash": {
+      "algorithm": "sha256",
+      "canonicalization": "canonical-json-v1",
+      "value": "9b12d5211df86a8eb5acfe3246e0079f58f67c6348f820cba3fd8228940cf372"
+    },
+    "schema_version": "1.1"
+  }
+}

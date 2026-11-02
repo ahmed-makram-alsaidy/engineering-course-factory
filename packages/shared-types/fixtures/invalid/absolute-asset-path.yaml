@@ -1,0 +1,28 @@
+# INVALID fixture: absolute machine path inside an asset reference
+schema_version: "1.1"
+course_id: C01
+lesson_id: C01-L004
+title: "Absolute asset path violation"
+language: en
+subject: "Programming"
+grade_level: "grade-10"
+duration: 60
+learning_objectives:
+  - "Trigger the asset path safety error"
+prerequisites: []
+keywords: []
+metadata:
+  synthetic_fixture: true
+scenes:
+  - scene_id: C01-L004-S001
+    type: explanation
+    title: "Bad asset reference"
+    duration: 60
+    narration:
+      text: "This fixture references an asset with an absolute Windows path."
+    visual:
+      kind: image
+      description: "A diagram referenced by an absolute path"
+    assets:
+      - asset_id: "E:\\course-factory\\assets\\diagrams\\plot.svg"
+        type: image

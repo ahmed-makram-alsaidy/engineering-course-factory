@@ -1,0 +1,35 @@
+{
+  "name": "@course-factory/browser-engine",
+  "version": "0.1.0",
+  "private": true,
+  "description": "P7 Browser Automation Engine: canonical browser protocol, reviewed operation catalog, admission, localhost bridge, and trusted browser runtime lifecycle. Playwright Core 1.50.1 driving pinned Chromium 1155.",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./protocol": "./src/protocol.ts",
+    "./policy": "./src/policy.ts",
+    "./admission": "./src/admission.ts",
+    "./runtime": "./src/runtime.ts",
+    "./process": "./src/process.ts",
+    "./context": "./src/context.ts",
+    "./job-object": "./src/job-object.ts",
+    "./profile": "./src/profile.ts",
+    "./session": "./src/session.ts",
+    "./selectors": "./src/selectors.ts",
+    "./actions": "./src/actions/index.ts"
+  },
+  "scripts": {
+    "test": "node --test --test-concurrency=1 tests/protocol.test.ts tests/policy.test.ts tests/admission.test.ts tests/fixture-server.test.ts tests/port-manager-proxy.test.ts tests/bridge-lifecycle.test.ts tests/docker-bridge.test.ts tests/job-object-windows.test.ts tests/process-lifecycle.test.ts tests/runtime-lifecycle.test.ts tests/selectors.test.ts tests/actions-executor.test.ts tests/actions-real.test.ts tests/source-safety.test.ts tests/network-shield.test.ts tests/navigation-real.test.ts tests/waits-assertions-real.test.ts tests/executor-p75.test.ts tests/frame-producer.test.ts tests/p78-matrix.test.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@course-factory/lesson-compiler": "*",
+    "@course-factory/shared-types": "*",
+    "playwright-core": "1.50.1",
+    "zod": "^4.1.5"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "typescript": "^5.8.3"
+  }
+}

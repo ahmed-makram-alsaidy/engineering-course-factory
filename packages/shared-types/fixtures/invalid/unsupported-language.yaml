@@ -1,0 +1,25 @@
+# INVALID fixture: unsupported lesson language
+schema_version: "1.1"
+course_id: C01
+lesson_id: C01-L005
+title: "Unsupported language"
+language: fr
+subject: "Programming"
+grade_level: "grade-10"
+duration: 60
+learning_objectives:
+  - "Trigger the language enum error"
+prerequisites: []
+keywords: []
+metadata:
+  synthetic_fixture: true
+scenes:
+  - scene_id: C01-L005-S001
+    type: intro
+    title: "Intro"
+    duration: 60
+    narration:
+      text: "This fixture uses a language outside the canonical set."
+    visual:
+      kind: none
+      description: "No visual content in this fixture"

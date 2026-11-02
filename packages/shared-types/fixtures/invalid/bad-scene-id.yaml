@@ -1,0 +1,25 @@
+# INVALID fixture: scene_id belongs to a different lesson than the parent
+schema_version: "1.1"
+course_id: C01
+lesson_id: C01-L003
+title: "Scene id hierarchy violation"
+language: en
+subject: "Programming"
+grade_level: "grade-10"
+duration: 60
+learning_objectives:
+  - "Trigger the scene parent mismatch error"
+prerequisites: []
+keywords: []
+metadata:
+  synthetic_fixture: true
+scenes:
+  - scene_id: C02-L001-S004
+    type: intro
+    title: "Intro"
+    duration: 60
+    narration:
+      text: "This scene id claims to belong to a different lesson."
+    visual:
+      kind: none
+      description: "No visual content in this fixture"

@@ -1,0 +1,54 @@
+# P3 compiler fixture: the SAME lesson as
+# packages/shared-types/fixtures/valid/p2a-terminal-foreground.yaml with every
+# OBJECT's keys reordered. Object key order is not semantic, so compiling this
+# must produce byte-identical output to the original (canonical serializer +
+# canonical source hash). ARRAY order (scenes, beats) is authored semantics and
+# is deliberately NOT changed.
+schema_version: "1.1"
+keywords: ["terminal", "node"]
+prerequisites: []
+learning_objectives: ["Run a terminal command and read its output"]
+grade_level: "grade-10"
+subject: "Programming"
+language: en
+title: "Checking the Node version"
+lesson_id: C01-L011
+course_id: C01
+metadata:
+  synthetic_fixture: true
+  amendment: "P2A"
+duration: 240
+scenes:
+  - visual:
+      description: "Terminal with the version command and its output"
+      kind: terminal
+    beats:
+      - narration:
+          text: "Before anything else, let me confirm which Node version this machine runs."
+        kind: narration
+        beat_id: C01-L011-S001-B001
+      - action:
+          expected_exit_code: 0
+          timeout_seconds: 30
+          mode: foreground
+          command: node --version
+          type: terminal_run
+        kind: action
+        beat_id: C01-L011-S001-B002
+      - narration:
+          text: "The output shows the version number; any code other than zero would mean a problem."
+        kind: narration
+        beat_id: C01-L011-S001-B003
+    duration: 120
+    title: "Running node --version"
+    type: code_demo
+    scene_id: C01-L011-S001
+  - visual:
+      description: "Two lanes: foreground command completes, background process keeps running"
+      kind: diagram
+    narration:
+      text: "A foreground command finishes before we continue; a long-running server needs background mode instead."
+    duration: 120
+    title: "Foreground vs background commands"
+    type: explanation
+    scene_id: C01-L011-S002

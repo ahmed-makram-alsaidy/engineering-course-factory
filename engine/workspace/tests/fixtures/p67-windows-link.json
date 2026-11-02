@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.1",
+  "course_id": "C01",
+  "lesson_id": "C01-L069",
+  "title": "Symlink file fixture (synthetic P6.7)",
+  "language": "en",
+  "subject": "Programming",
+  "grade_level": "grade-10",
+  "duration": 60,
+  "learning_objectives": ["Open through a symlink file fails closed"],
+  "prerequisites": [],
+  "keywords": ["editor", "synthetic", "p6"],
+  "metadata": { "synthetic_fixture": true, "phase": "P6.7" },
+  "scenes": [
+    {
+      "scene_id": "C01-L069-S001",
+      "type": "code_demo",
+      "title": "Open through a link",
+      "duration": 60,
+      "visual": { "kind": "code_editor", "description": "Editor attempts a confined open" },
+      "beats": [
+        {
+          "beat_id": "C01-L069-S001-B001",
+          "kind": "action",
+          "action": { "type": "file_open", "path": "link.ts" }
+        }
+      ]
+    }
+  ]
+}

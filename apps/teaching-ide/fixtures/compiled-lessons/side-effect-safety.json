@@ -1,0 +1,128 @@
+{
+  "capabilities": {
+    "browser": true,
+    "editor": false,
+    "terminal": true,
+    "voice": true
+  },
+  "compiled_ir_version": "1.0",
+  "compiler": {
+    "name": "course-factory-lesson-compiler",
+    "version": "0.1.0"
+  },
+  "lesson": {
+    "course_id": "C01",
+    "direction": "ltr",
+    "duration_seconds": 120,
+    "grade_level": "grade-10",
+    "keywords": [
+      "compiler",
+      "safety"
+    ],
+    "language": "en",
+    "learning_objectives": [
+      "Observe that compiling never executes an authored command"
+    ],
+    "lesson_id": "C01-L090",
+    "metadata": {
+      "amendment": "P3",
+      "synthetic_fixture": true
+    },
+    "prerequisites": [],
+    "subject": "Compiler Safety",
+    "title": "Commands are data, not actions"
+  },
+  "processes": [],
+  "resources": {
+    "assets": [],
+    "browser_origins": [
+      "http://localhost:59999"
+    ],
+    "paths": []
+  },
+  "scenes": [
+    {
+      "assets": [],
+      "blocks": [],
+      "duration_seconds": 120,
+      "narration_form": "beats",
+      "on_screen_text": [],
+      "ordinal": 1,
+      "scene_id": "C01-L090-S001",
+      "steps": [
+        {
+          "derived": false,
+          "kind": "narration",
+          "narration": {
+            "direction": "ltr",
+            "language": "en",
+            "text": "This command is never run by the compiler; it would create a sentinel file if it were."
+          },
+          "ordinal": 1,
+          "source_ref": {
+            "beat_id": "C01-L090-S001-B001",
+            "form": "authored_beat",
+            "scene_id": "C01-L090-S001",
+            "scene_ordinal": 1
+          },
+          "step_id": "C01-L090-S001-B001"
+        },
+        {
+          "derived": false,
+          "kind": "operation",
+          "operation": {
+            "family": "terminal",
+            "parameters": {
+              "command": "node -e \"require('node:fs').writeFileSync('p3-sentinel-ran.tmp', 'executed')\"",
+              "mode": "foreground",
+              "type": "terminal_run"
+            },
+            "type": "terminal_run"
+          },
+          "ordinal": 2,
+          "source_ref": {
+            "beat_id": "C01-L090-S001-B002",
+            "form": "authored_beat",
+            "scene_id": "C01-L090-S001",
+            "scene_ordinal": 1
+          },
+          "step_id": "C01-L090-S001-B002"
+        },
+        {
+          "derived": false,
+          "kind": "operation",
+          "operation": {
+            "family": "browser",
+            "parameters": {
+              "type": "browser_open",
+              "url": "http://localhost:59999/p3-should-never-be-fetched"
+            },
+            "type": "browser_open"
+          },
+          "ordinal": 3,
+          "source_ref": {
+            "beat_id": "C01-L090-S001-B003",
+            "form": "authored_beat",
+            "scene_id": "C01-L090-S001",
+            "scene_ordinal": 1
+          },
+          "step_id": "C01-L090-S001-B003"
+        }
+      ],
+      "title": "If this ran, it would leave a trace",
+      "type": "code_demo",
+      "visual": {
+        "description": "Terminal that is never opened: the command is compiled as data only",
+        "kind": "terminal"
+      }
+    }
+  ],
+  "source": {
+    "hash": {
+      "algorithm": "sha256",
+      "canonicalization": "canonical-json-v1",
+      "value": "a8d1c06ed5ec83460901c98273a060cabd160f8e005908554b14844c05c68e62"
+    },
+    "schema_version": "1.1"
+  }
+}

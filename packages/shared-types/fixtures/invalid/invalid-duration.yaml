@@ -1,0 +1,25 @@
+# INVALID fixture: duration given as a human string instead of integer seconds
+schema_version: "1.1"
+course_id: C01
+lesson_id: C01-L008
+title: "Invalid duration representation"
+language: en
+subject: "Programming"
+grade_level: "grade-10"
+duration: "2 minutes"
+learning_objectives:
+  - "Trigger the duration representation error"
+prerequisites: []
+keywords: []
+metadata:
+  synthetic_fixture: true
+scenes:
+  - scene_id: C01-L008-S001
+    type: intro
+    title: "Intro"
+    duration: "one minute"
+    narration:
+      text: "This fixture uses non-canonical duration representations."
+    visual:
+      kind: none
+      description: "No visual content in this fixture"

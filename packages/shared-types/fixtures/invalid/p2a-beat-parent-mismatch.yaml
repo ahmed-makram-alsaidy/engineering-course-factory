@@ -1,0 +1,23 @@
+# INVALID P2A fixture: beat_id belongs to a different scene
+schema_version: "1.1"
+course_id: C01
+lesson_id: C01-L021
+title: "Beat parent mismatch"
+language: en
+subject: "Programming"
+grade_level: "grade-10"
+duration: 60
+learning_objectives: ["Trigger beat parent mismatch"]
+prerequisites: []
+keywords: []
+metadata: { synthetic_fixture: true }
+scenes:
+  - scene_id: C01-L021-S002
+    type: example
+    title: "Beats"
+    duration: 60
+    visual: { kind: none, description: "No visual" }
+    beats:
+      - beat_id: C01-L021-S001-B001
+        kind: narration
+        narration: { text: "This id points at scene one, not scene two." }

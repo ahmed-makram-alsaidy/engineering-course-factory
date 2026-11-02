@@ -1,0 +1,30 @@
+{
+  "name": "@course-factory/runtime-orchestrator",
+  "version": "0.1.0",
+  "private": true,
+  "description": "P8 Runtime Validator & Multi-Engine Orchestrator: canonical runtime protocol, normalized execution envelopes, error taxonomy, and coordinated multi-engine execution.",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./protocol": "./src/protocol.ts",
+    "./errors": "./src/errors.ts",
+    "./validator": "./src/validator.ts",
+    "./clock": "./src/clock.ts",
+    "./state-machine": "./src/state-machine.ts",
+    "./playhead": "./src/playhead.ts",
+    "./adapters": "./src/adapters/index.ts"
+  },
+  "scripts": {
+    "test": "node --test --test-concurrency=1 tests/*.test.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@course-factory/lesson-compiler": "*",
+    "@course-factory/shared-types": "*",
+    "zod": "^4.1.5"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "typescript": "^5.8.3"
+  }
+}

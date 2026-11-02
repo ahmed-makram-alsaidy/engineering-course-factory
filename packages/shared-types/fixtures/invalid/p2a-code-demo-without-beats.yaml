@@ -1,0 +1,29 @@
+# INVALID P2A fixture: code_demo scene without an ordered beats sequence
+# (execution must be authored explicitly, never inferred from narration/code)
+schema_version: "1.1"
+course_id: C01
+lesson_id: C01-L030
+title: "Code demo without beats"
+language: en
+subject: "Programming"
+grade_level: "grade-10"
+duration: 60
+learning_objectives: ["Trigger code_demo beats requirement"]
+prerequisites: []
+keywords: []
+metadata: { synthetic_fixture: true }
+scenes:
+  - scene_id: C01-L030-S001
+    type: code_demo
+    title: "Run the project"
+    duration: 60
+    narration:
+      text: "Now we run the project."
+    on_screen_text:
+      - role: code
+        text: "npm run dev"
+    visual: { kind: terminal, description: "Terminal" }
+    blocks:
+      - kind: code
+        language: bash
+        source: npm run dev

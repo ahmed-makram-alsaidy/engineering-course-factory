@@ -1,0 +1,29 @@
+# INVALID P2A fixture: absolute machine path in a type_code action
+schema_version: "1.1"
+course_id: C01
+lesson_id: C01-L022
+title: "Absolute file path in action"
+language: en
+subject: "Programming"
+grade_level: "grade-10"
+duration: 60
+learning_objectives: ["Trigger path safety"]
+prerequisites: []
+keywords: []
+metadata: { synthetic_fixture: true }
+scenes:
+  - scene_id: C01-L022-S001
+    type: example
+    title: "Bad path"
+    duration: 60
+    visual: { kind: code_editor, description: "Editor" }
+    beats:
+      - beat_id: C01-L022-S001-B001
+        kind: narration
+        narration: { text: "Watch the editor." }
+      - beat_id: C01-L022-S001-B002
+        kind: action
+        action:
+          type: type_code
+          path: "E:\\demo\\app.js"
+          content: "console.log(1);"

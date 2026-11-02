@@ -1,0 +1,12 @@
+# Line-ending policy for deterministic test assets.
+# The compiler's golden file is compared BYTE-FOR-BYTE against generated output
+# (LF); it must never be converted to CRLF on checkout.
+
+engine/compiler/tests/golden/*.json text eol=lf
+
+# P6.15 visual-proof deterministic assets: the compiled fixture bytes bind
+# the reviewed digest, and the seed bytes bind the LF text profile — both
+# are compared byte-for-byte at runtime and must never be CRLF-converted.
+apps/teaching-ide/fixtures/compiled-lessons/smoke-p615.json text eol=lf
+apps/teaching-ide/fixtures/sources/smoke-p615.yaml text eol=lf
+apps/teaching-ide/fixtures/p615-seed/app.js text eol=lf

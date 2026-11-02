@@ -1,0 +1,36 @@
+# P5.14 visual-smoke synthetic source (never production curriculum).
+# Compiled through the canonical P3 compiler into
+# fixtures/compiled-lessons/smoke-terminal.json (see scripts/build-fixtures.mjs).
+# Single foreground terminal_run emitting P5_OK with true exit 0.
+schema_version: "1.1"
+course_id: "C01"
+lesson_id: "C01-L514"
+title: "P5.14 visual smoke lesson (synthetic)"
+language: "en"
+subject: "Programming"
+grade_level: "grade-10"
+duration: 300
+learning_objectives:
+  - "Prove real terminal output renders in the Teaching IDE"
+prerequisites: []
+keywords: ["terminal", "synthetic", "p514", "smoke"]
+metadata:
+  synthetic_fixture: true
+  phase: "P5.14"
+scenes:
+  - scene_id: "C01-L514-S001"
+    type: "code_demo"
+    title: "Visual smoke foreground"
+    duration: 120
+    visual:
+      kind: "terminal"
+      description: "synthetic smoke"
+    beats:
+      - beat_id: "C01-L514-S001-B001"
+        kind: "action"
+        action:
+          type: "terminal_run"
+          command: "node -e \"console.log('P5_OK')\""
+          mode: "foreground"
+          timeout_seconds: 60
+          expected_exit_code: 0

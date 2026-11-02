@@ -1,0 +1,44 @@
+{
+  "schema_version": "1.1",
+  "course_id": "C01",
+  "lesson_id": "C01-L067",
+  "title": "Case-variant open fixture (synthetic P6.7)",
+  "language": "en",
+  "subject": "Programming",
+  "grade_level": "grade-10",
+  "duration": 120,
+  "learning_objectives": ["Case-variant opens collapse onto one document authority"],
+  "prerequisites": [],
+  "keywords": ["editor", "synthetic", "p6"],
+  "metadata": { "synthetic_fixture": true, "phase": "P6.7" },
+  "scenes": [
+    {
+      "scene_id": "C01-L067-S001",
+      "type": "code_demo",
+      "title": "Open the seeded file",
+      "duration": 60,
+      "visual": { "kind": "code_editor", "description": "Editor opens the seeded file" },
+      "beats": [
+        {
+          "beat_id": "C01-L067-S001-B001",
+          "kind": "action",
+          "action": { "type": "file_open", "path": "src/CaseA.ts" }
+        }
+      ]
+    },
+    {
+      "scene_id": "C01-L067-S002",
+      "type": "code_demo",
+      "title": "Reopen with different case",
+      "duration": 60,
+      "visual": { "kind": "code_editor", "description": "Editor reopens with different case" },
+      "beats": [
+        {
+          "beat_id": "C01-L067-S002-B001",
+          "kind": "action",
+          "action": { "type": "file_open", "path": "src/casea.ts" }
+        }
+      ]
+    }
+  ]
+}

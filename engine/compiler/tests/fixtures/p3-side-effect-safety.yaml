@@ -1,0 +1,48 @@
+# P3 compiler fixture: side-effect safety proof.
+# The authored terminal command WOULD create a sentinel file if it were ever
+# executed, and the browser URL WOULD be fetched if a browser were ever opened.
+# Compilation must treat both as inert DATA: after compiling this fixture, the
+# sentinel file must not exist anywhere and the URL must remain untouched text.
+# Synthetic P3 sample - NOT production course content.
+schema_version: "1.1"
+course_id: C01
+lesson_id: C01-L090
+title: "Commands are data, not actions"
+language: en
+subject: "Compiler Safety"
+grade_level: "grade-10"
+duration: 120
+learning_objectives:
+  - "Observe that compiling never executes an authored command"
+prerequisites: []
+keywords:
+  - "compiler"
+  - "safety"
+metadata:
+  synthetic_fixture: true
+  amendment: "P3"
+scenes:
+  - scene_id: C01-L090-S001
+    type: code_demo
+    title: "If this ran, it would leave a trace"
+    duration: 120
+    visual:
+      kind: terminal
+      description: "Terminal that is never opened: the command is compiled as data only"
+    beats:
+      - beat_id: C01-L090-S001-B001
+        kind: narration
+        narration:
+          text: "This command is never run by the compiler; it would create a sentinel file if it were."
+      - beat_id: C01-L090-S001-B002
+        kind: action
+        action:
+          type: terminal_run
+          command: >-
+            node -e "require('node:fs').writeFileSync('p3-sentinel-ran.tmp', 'executed')"
+          mode: foreground
+      - beat_id: C01-L090-S001-B003
+        kind: action
+        action:
+          type: browser_open
+          url: http://localhost:59999/p3-should-never-be-fetched

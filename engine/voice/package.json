@@ -1,0 +1,52 @@
+{
+  "name": "@course-factory/voice",
+  "version": "0.1.0",
+  "private": true,
+  "description": "P10 Voice Subsystem: canonical voice protocol, manifest schema, audio timing contracts, narration unit, cache identity, voice profiles, failure taxonomy, and offline deterministic FakeVoiceProvider. Zero cloud provider SDKs, zero FFmpeg execution.",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./protocol": "./src/protocol.ts",
+    "./audio-clock": "./src/audio-clock.ts",
+    "./manifest": "./src/manifest.ts",
+    "./cache-identity": "./src/cache-identity.ts",
+    "./canonical": "./src/canonical.ts",
+    "./wav": "./src/wav.ts",
+    "./provider": "./src/provider-interface.ts",
+    "./fake-provider": "./src/fake-provider.ts",
+    "./provider-registry": "./src/provider-registry.ts",
+    "./glossary": "./src/technical-glossary.ts",
+    "./normalizer": "./src/text-normalizer.ts",
+    "./speaker-resolver": "./src/speaker-resolver.ts",
+    "./planner": "./src/narration-planner.ts",
+    "./timeline": "./src/timeline.ts",
+    "./host": "./host/index.ts",
+    "./storage-roots": "./host/storage-roots.ts",
+    "./normalizer-process": "./host/normalizer-process.ts",
+    "./asset-validator": "./host/asset-validator.ts",
+    "./audio-normalizer": "./host/audio-normalizer.ts",
+    "./cache": "./host/voice-cache.ts",
+    "./synthesis-service": "./host/synthesis-service.ts",
+    "./timeline-publisher": "./host/timeline-publisher.ts",
+    "./redactor": "./src/redactor.ts",
+    "./safe-error": "./src/safe-error.ts",
+    "./credential-types": "./src/credential-types.ts",
+    "./credential-store": "./host/credential-store.ts",
+    "./retry-orchestrator": "./host/retry-orchestrator.ts",
+    "./concurrency-limiter": "./host/concurrency-limiter.ts",
+    "./execution-orchestrator": "./host/execution-orchestrator.ts",
+    "./azure-provider": "./src/azure-provider.ts",
+    "./elevenlabs-provider": "./src/elevenlabs-provider.ts"
+  },
+  "scripts": {
+    "test": "node --test --test-concurrency=1 tests/*.test.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "zod": "^4.1.5"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "typescript": "^5.8.3"
+  }
+}

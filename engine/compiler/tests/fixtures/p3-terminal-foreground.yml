@@ -1,0 +1,53 @@
+# P2A valid fixture: foreground terminal command with expected exit code
+# Synthetic P2A sample - NOT production course content.
+schema_version: "1.1"
+course_id: C01
+lesson_id: C01-L011
+title: "Checking the Node version"
+language: en
+subject: "Programming"
+grade_level: "grade-10"
+duration: 240
+learning_objectives:
+  - "Run a terminal command and read its output"
+prerequisites: []
+keywords:
+  - "terminal"
+  - "node"
+metadata:
+  synthetic_fixture: true
+  amendment: "P2A"
+scenes:
+  - scene_id: C01-L011-S001
+    type: code_demo
+    title: "Running node --version"
+    duration: 120
+    visual:
+      kind: terminal
+      description: "Terminal with the version command and its output"
+    beats:
+      - beat_id: C01-L011-S001-B001
+        kind: narration
+        narration:
+          text: "Before anything else, let me confirm which Node version this machine runs."
+      - beat_id: C01-L011-S001-B002
+        kind: action
+        action:
+          type: terminal_run
+          command: node --version
+          mode: foreground
+          timeout_seconds: 30
+          expected_exit_code: 0
+      - beat_id: C01-L011-S001-B003
+        kind: narration
+        narration:
+          text: "The output shows the version number; any code other than zero would mean a problem."
+  - scene_id: C01-L011-S002
+    type: explanation
+    title: "Foreground vs background commands"
+    duration: 120
+    narration:
+      text: "A foreground command finishes before we continue; a long-running server needs background mode instead."
+    visual:
+      kind: diagram
+      description: "Two lanes: foreground command completes, background process keeps running"

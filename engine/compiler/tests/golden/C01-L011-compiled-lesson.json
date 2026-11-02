@@ -1,0 +1,159 @@
+{
+  "capabilities": {
+    "browser": false,
+    "editor": false,
+    "terminal": true,
+    "voice": true
+  },
+  "compiled_ir_version": "1.0",
+  "compiler": {
+    "name": "course-factory-lesson-compiler",
+    "version": "0.1.0"
+  },
+  "lesson": {
+    "course_id": "C01",
+    "direction": "ltr",
+    "duration_seconds": 240,
+    "grade_level": "grade-10",
+    "keywords": [
+      "terminal",
+      "node"
+    ],
+    "language": "en",
+    "learning_objectives": [
+      "Run a terminal command and read its output"
+    ],
+    "lesson_id": "C01-L011",
+    "metadata": {
+      "amendment": "P2A",
+      "synthetic_fixture": true
+    },
+    "prerequisites": [],
+    "subject": "Programming",
+    "title": "Checking the Node version"
+  },
+  "processes": [],
+  "resources": {
+    "assets": [],
+    "browser_origins": [],
+    "paths": []
+  },
+  "scenes": [
+    {
+      "assets": [],
+      "blocks": [],
+      "duration_seconds": 120,
+      "narration_form": "beats",
+      "on_screen_text": [],
+      "ordinal": 1,
+      "scene_id": "C01-L011-S001",
+      "steps": [
+        {
+          "derived": false,
+          "kind": "narration",
+          "narration": {
+            "direction": "ltr",
+            "language": "en",
+            "text": "Before anything else, let me confirm which Node version this machine runs."
+          },
+          "ordinal": 1,
+          "source_ref": {
+            "beat_id": "C01-L011-S001-B001",
+            "form": "authored_beat",
+            "scene_id": "C01-L011-S001",
+            "scene_ordinal": 1
+          },
+          "step_id": "C01-L011-S001-B001"
+        },
+        {
+          "derived": false,
+          "kind": "operation",
+          "operation": {
+            "family": "terminal",
+            "parameters": {
+              "command": "node --version",
+              "expected_exit_code": 0,
+              "mode": "foreground",
+              "timeout_seconds": 30,
+              "type": "terminal_run"
+            },
+            "type": "terminal_run"
+          },
+          "ordinal": 2,
+          "source_ref": {
+            "beat_id": "C01-L011-S001-B002",
+            "form": "authored_beat",
+            "scene_id": "C01-L011-S001",
+            "scene_ordinal": 1
+          },
+          "step_id": "C01-L011-S001-B002"
+        },
+        {
+          "derived": false,
+          "kind": "narration",
+          "narration": {
+            "direction": "ltr",
+            "language": "en",
+            "text": "The output shows the version number; any code other than zero would mean a problem."
+          },
+          "ordinal": 3,
+          "source_ref": {
+            "beat_id": "C01-L011-S001-B003",
+            "form": "authored_beat",
+            "scene_id": "C01-L011-S001",
+            "scene_ordinal": 1
+          },
+          "step_id": "C01-L011-S001-B003"
+        }
+      ],
+      "title": "Running node --version",
+      "type": "code_demo",
+      "visual": {
+        "description": "Terminal with the version command and its output",
+        "kind": "terminal"
+      }
+    },
+    {
+      "assets": [],
+      "blocks": [],
+      "duration_seconds": 120,
+      "narration_form": "single_narration",
+      "on_screen_text": [],
+      "ordinal": 2,
+      "scene_id": "C01-L011-S002",
+      "steps": [
+        {
+          "derived": true,
+          "kind": "narration",
+          "narration": {
+            "direction": "ltr",
+            "language": "en",
+            "text": "A foreground command finishes before we continue; a long-running server needs background mode instead."
+          },
+          "ordinal": 1,
+          "source_ref": {
+            "beat_id": null,
+            "form": "scene_narration",
+            "scene_id": "C01-L011-S002",
+            "scene_ordinal": 2
+          },
+          "step_id": "C01-L011-S002-STEP001"
+        }
+      ],
+      "title": "Foreground vs background commands",
+      "type": "explanation",
+      "visual": {
+        "description": "Two lanes: foreground command completes, background process keeps running",
+        "kind": "diagram"
+      }
+    }
+  ],
+  "source": {
+    "hash": {
+      "algorithm": "sha256",
+      "canonicalization": "canonical-json-v1",
+      "value": "cade8df556dc93170a4ce7ad264202fc78350e3878e7a677298219cfd1ac20ee"
+    },
+    "schema_version": "1.1"
+  }
+}

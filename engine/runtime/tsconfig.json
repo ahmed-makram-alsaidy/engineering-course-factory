@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "target": "ES2023",
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
+    "strict": true,
+    "noEmit": true,
+    "allowImportingTsExtensions": true,
+    "erasableSyntaxOnly": true,
+    "skipLibCheck": true,
+    "paths": {
+      "@course-factory/lesson-compiler/ir": ["../../engine/compiler/src/ir.ts"],
+      "@course-factory/lesson-compiler/compile": ["../../engine/compiler/src/compile.ts"],
+      "@course-factory/shared-types": ["../../packages/shared-types/src/index.ts"],
+      "@course-factory/shared-types/validate": ["../../packages/shared-types/src/validate.ts"]
+    }
+  },
+  "include": ["src/**/*.ts", "tests/**/*.ts"]
+}

@@ -1,0 +1,30 @@
+# INVALID P2A fixture: browser selector with an unknown (pixel-like) strategy
+schema_version: "1.1"
+course_id: C01
+lesson_id: C01-L027
+title: "Malformed browser selector"
+language: en
+subject: "Web Development"
+grade_level: "grade-11"
+duration: 60
+learning_objectives: ["Trigger selector validation"]
+prerequisites: []
+keywords: []
+metadata: { synthetic_fixture: true }
+scenes:
+  - scene_id: C01-L027-S001
+    type: example
+    title: "Click something"
+    duration: 60
+    visual: { kind: browser, description: "Browser" }
+    beats:
+      - beat_id: C01-L027-S001-B001
+        kind: narration
+        narration: { text: "Click the button." }
+      - beat_id: C01-L027-S001-B002
+        kind: action
+        action:
+          type: browser_click
+          selector:
+            strategy: pixels
+            value: "412,733"

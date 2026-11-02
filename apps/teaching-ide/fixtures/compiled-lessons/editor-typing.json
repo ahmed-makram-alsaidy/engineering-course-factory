@@ -1,0 +1,279 @@
+{
+  "capabilities": {
+    "browser": false,
+    "editor": true,
+    "terminal": false,
+    "voice": true
+  },
+  "compiled_ir_version": "1.0",
+  "compiler": {
+    "name": "course-factory-lesson-compiler",
+    "version": "0.1.0"
+  },
+  "lesson": {
+    "course_id": "C01",
+    "direction": "ltr",
+    "duration_seconds": 300,
+    "grade_level": "grade-10",
+    "keywords": [
+      "javascript",
+      "editor"
+    ],
+    "language": "en",
+    "learning_objectives": [
+      "Create and edit a JavaScript file in the IDE"
+    ],
+    "lesson_id": "C01-L010",
+    "metadata": {
+      "amendment": "P2A",
+      "synthetic_fixture": true
+    },
+    "prerequisites": [],
+    "subject": "Programming",
+    "title": "Editing app.js in the Teaching IDE"
+  },
+  "processes": [],
+  "resources": {
+    "assets": [],
+    "browser_origins": [],
+    "paths": [
+      "app.js"
+    ]
+  },
+  "scenes": [
+    {
+      "assets": [],
+      "blocks": [],
+      "duration_seconds": 60,
+      "narration_form": "single_narration",
+      "on_screen_text": [],
+      "ordinal": 1,
+      "scene_id": "C01-L010-S001",
+      "steps": [
+        {
+          "derived": true,
+          "kind": "narration",
+          "narration": {
+            "direction": "ltr",
+            "language": "en",
+            "text": "In this lesson we will create a tiny script together, line by line."
+          },
+          "ordinal": 1,
+          "source_ref": {
+            "beat_id": null,
+            "form": "scene_narration",
+            "scene_id": "C01-L010-S001",
+            "scene_ordinal": 1
+          },
+          "step_id": "C01-L010-S001-STEP001"
+        }
+      ],
+      "title": "What we will build",
+      "type": "intro",
+      "visual": {
+        "description": "Instructor at the desk, lesson title on the side screen",
+        "kind": "studio_wide"
+      }
+    },
+    {
+      "assets": [],
+      "blocks": [],
+      "duration_seconds": 180,
+      "narration_form": "beats",
+      "on_screen_text": [
+        {
+          "direction": "ltr",
+          "language": "en",
+          "role": "title",
+          "text": "app.js"
+        }
+      ],
+      "ordinal": 2,
+      "scene_id": "C01-L010-S002",
+      "steps": [
+        {
+          "derived": false,
+          "kind": "narration",
+          "narration": {
+            "direction": "ltr",
+            "language": "en",
+            "text": "First, we create an empty file called app dot j s."
+          },
+          "ordinal": 1,
+          "source_ref": {
+            "beat_id": "C01-L010-S002-B001",
+            "form": "authored_beat",
+            "scene_id": "C01-L010-S002",
+            "scene_ordinal": 2
+          },
+          "step_id": "C01-L010-S002-B001"
+        },
+        {
+          "derived": false,
+          "kind": "operation",
+          "operation": {
+            "family": "file",
+            "parameters": {
+              "path": "app.js",
+              "type": "file_create"
+            },
+            "type": "file_create"
+          },
+          "ordinal": 2,
+          "source_ref": {
+            "beat_id": "C01-L010-S002-B002",
+            "form": "authored_beat",
+            "scene_id": "C01-L010-S002",
+            "scene_ordinal": 2
+          },
+          "step_id": "C01-L010-S002-B002"
+        },
+        {
+          "derived": false,
+          "kind": "narration",
+          "narration": {
+            "direction": "ltr",
+            "language": "en",
+            "text": "Now watch the editor: we declare a greeting constant and print it."
+          },
+          "ordinal": 3,
+          "source_ref": {
+            "beat_id": "C01-L010-S002-B003",
+            "form": "authored_beat",
+            "scene_id": "C01-L010-S002",
+            "scene_ordinal": 2
+          },
+          "step_id": "C01-L010-S002-B003"
+        },
+        {
+          "derived": false,
+          "kind": "operation",
+          "operation": {
+            "family": "editor",
+            "parameters": {
+              "content": "const greeting = \"Hello, Course Factory\";\nconsole.log(greeting);\n",
+              "path": "app.js",
+              "type": "type_code"
+            },
+            "type": "type_code"
+          },
+          "ordinal": 4,
+          "source_ref": {
+            "beat_id": "C01-L010-S002-B004",
+            "form": "authored_beat",
+            "scene_id": "C01-L010-S002",
+            "scene_ordinal": 2
+          },
+          "step_id": "C01-L010-S002-B004"
+        },
+        {
+          "derived": false,
+          "kind": "operation",
+          "operation": {
+            "family": "editor",
+            "parameters": {
+              "path": "app.js",
+              "type": "file_save"
+            },
+            "type": "file_save"
+          },
+          "ordinal": 5,
+          "source_ref": {
+            "beat_id": "C01-L010-S002-B005",
+            "form": "authored_beat",
+            "scene_id": "C01-L010-S002",
+            "scene_ordinal": 2
+          },
+          "step_id": "C01-L010-S002-B005"
+        },
+        {
+          "derived": false,
+          "kind": "operation",
+          "operation": {
+            "family": "visual",
+            "parameters": {
+              "line": 1,
+              "line_end": 2,
+              "path": "app.js",
+              "type": "highlight"
+            },
+            "type": "highlight"
+          },
+          "ordinal": 6,
+          "source_ref": {
+            "beat_id": "C01-L010-S002-B006",
+            "form": "authored_beat",
+            "scene_id": "C01-L010-S002",
+            "scene_ordinal": 2
+          },
+          "step_id": "C01-L010-S002-B006"
+        },
+        {
+          "derived": false,
+          "kind": "narration",
+          "narration": {
+            "direction": "ltr",
+            "language": "en",
+            "text": "Line one declares the constant; line two prints it."
+          },
+          "ordinal": 7,
+          "source_ref": {
+            "beat_id": "C01-L010-S002-B007",
+            "form": "authored_beat",
+            "scene_id": "C01-L010-S002",
+            "scene_ordinal": 2
+          },
+          "step_id": "C01-L010-S002-B007"
+        }
+      ],
+      "title": "Typing the script live",
+      "type": "code_demo",
+      "visual": {
+        "description": "Teaching IDE with app.js open, new lines appearing as typed",
+        "kind": "code_editor"
+      }
+    },
+    {
+      "assets": [],
+      "blocks": [],
+      "duration_seconds": 60,
+      "narration_form": "single_narration",
+      "on_screen_text": [],
+      "ordinal": 3,
+      "scene_id": "C01-L010-S003",
+      "steps": [
+        {
+          "derived": true,
+          "kind": "narration",
+          "narration": {
+            "direction": "ltr",
+            "language": "en",
+            "text": "You created, typed, and saved your first file in the IDE."
+          },
+          "ordinal": 1,
+          "source_ref": {
+            "beat_id": null,
+            "form": "scene_narration",
+            "scene_id": "C01-L010-S003",
+            "scene_ordinal": 3
+          },
+          "step_id": "C01-L010-S003-STEP001"
+        }
+      ],
+      "title": "Wrap up",
+      "type": "summary",
+      "visual": {
+        "description": "Summary bullets on screen",
+        "kind": "fullscreen_text"
+      }
+    }
+  ],
+  "source": {
+    "hash": {
+      "algorithm": "sha256",
+      "canonicalization": "canonical-json-v1",
+      "value": "0b483a3e80df2694499d7e5ce15a05ab673295f1928bc7f671a31e0437c50715"
+    },
+    "schema_version": "1.1"
+  }
+}

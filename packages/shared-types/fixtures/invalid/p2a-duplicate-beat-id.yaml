@@ -1,0 +1,26 @@
+# INVALID P2A fixture: two beats share the same beat_id
+schema_version: "1.1"
+course_id: C01
+lesson_id: C01-L020
+title: "Duplicate beat id"
+language: en
+subject: "Programming"
+grade_level: "grade-10"
+duration: 60
+learning_objectives: ["Trigger duplicate beat id"]
+prerequisites: []
+keywords: []
+metadata: { synthetic_fixture: true }
+scenes:
+  - scene_id: C01-L020-S001
+    type: example
+    title: "Beats"
+    duration: 60
+    visual: { kind: none, description: "No visual" }
+    beats:
+      - beat_id: C01-L020-S001-B001
+        kind: narration
+        narration: { text: "First beat." }
+      - beat_id: C01-L020-S001-B001
+        kind: narration
+        narration: { text: "Second beat reusing the id." }

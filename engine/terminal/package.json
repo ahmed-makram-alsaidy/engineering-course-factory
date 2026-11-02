@@ -1,0 +1,29 @@
+{
+  "name": "@course-factory/terminal-engine",
+  "version": "0.1.0",
+  "private": true,
+  "description": "P5 Terminal Engine: runtime protocol, admission contracts, workspace/environment policy, the DockerSandboxProvider (supervisor-owned foreground + background execution, P5.7 foreground completion semantics, P5.8 background lifetime semantics and session ceiling), the trusted main-owned runtime journal and bounded replay. Renderer-facing surface is identifier-only.",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./protocol": "./src/protocol.ts",
+    "./terminal-host": "./src/providers/terminal-host.ts",
+    "./docker": "./src/providers/docker.ts",
+    "./docker-epochs": "./src/providers/docker-epochs.ts"
+  },
+  "scripts": {
+    "test": "node --test tests/image-lock.test.ts tests/protocol.test.ts tests/requests.test.ts tests/error-model.test.ts tests/provider-contract.test.ts tests/supervisor.test.ts tests/supervisor-processes.test.ts tests/source-safety.test.ts tests/admission.test.ts tests/admission-security.test.ts tests/workspace.test.ts tests/environment-policy.test.ts tests/context-resolution.test.ts tests/registry.test.ts tests/journal.test.ts tests/events.test.ts tests/background.test.ts tests/foreground.test.ts tests/foreground-guest.test.ts tests/teardown.test.ts tests/output-wait.test.ts tests/terminal-host.test.ts tests/p63-epoch-unit.test.ts tests/p613-epoch-unit.test.ts tests/p54-docker.test.ts tests/p55-docker.test.ts tests/p56-docker.test.ts tests/p57-docker.test.ts tests/p58-docker.test.ts tests/p59-docker.test.ts tests/p510-docker.test.ts tests/p511-docker.test.ts tests/p63-docker.test.ts tests/p5-bridge-docker.test.ts",
+    "build:guest": "node scripts/build-guest.mjs",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@course-factory/lesson-compiler": "*",
+    "@course-factory/shared-types": "*",
+    "zod": "^4.1.5"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "esbuild": "^0.25.5",
+    "typescript": "^5.8.3"
+  }
+}

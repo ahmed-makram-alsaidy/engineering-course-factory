@@ -1,0 +1,7 @@
+{
+  "_comment": "EXAMPLE of the P9 recording storage authority contract. Copy this file to config/recording-paths.json (git-ignored) and adjust for the actual machine. P9 recording TEMP and FINAL artifacts must live on the SAME fixed local volume so publication stays a same-volume atomic rename. recordingTempRoot/recordingRenderRoot are P9-owned (strict drive-absolute validation; never read by P5/P8 loaders — config/paths.json keeps only runtimeWorkspaceRoot for the strict P5 schema). tempRoot/renderRoot mirror the same D: values so legacy resolvers (P9.3/P9.4 proof harnesses via resolveTrustedRoots/resolveTrustedMediaRoots) share the identical D: authority. All values must be absolute Windows paths: no UNC, no relative paths, no traversal.",
+  "recordingTempRoot": "D:\\course-factory\\recording-temp",
+  "recordingRenderRoot": "D:\\course-factory\\renders",
+  "tempRoot": "D:\\course-factory\\recording-temp",
+  "renderRoot": "D:\\course-factory\\renders"
+}

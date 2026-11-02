@@ -1,0 +1,26 @@
+# INVALID P2A fixture: scene defines BOTH top-level narration and beats
+# (would create two competing narration sources)
+schema_version: "1.1"
+course_id: C01
+lesson_id: C01-L031
+title: "Narration and beats together"
+language: en
+subject: "Programming"
+grade_level: "grade-10"
+duration: 60
+learning_objectives: ["Trigger mutual exclusion rule"]
+prerequisites: []
+keywords: []
+metadata: { synthetic_fixture: true }
+scenes:
+  - scene_id: C01-L031-S001
+    type: example
+    title: "Both"
+    duration: 60
+    narration:
+      text: "I am the top-level narration."
+    visual: { kind: none, description: "No visual" }
+    beats:
+      - beat_id: C01-L031-S001-B001
+        kind: narration
+        narration: { text: "I am the beats narration." }

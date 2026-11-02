@@ -1,0 +1,16 @@
+/* Synthetic Teaching IDE fixture - sample content only. */
+:root {
+  --surface: #f4f6f8;
+  --ink: #1c2430;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: var(--surface);
+  color: var(--ink);
+}
+
+#task-list {
+  list-style: square;
+}

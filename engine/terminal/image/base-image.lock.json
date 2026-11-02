@@ -1,0 +1,35 @@
+{
+  "lock_format_version": 1,
+  "description": "Canonical runtime base-image lock for the Course Factory P5 Terminal Engine. Single source of truth for the immutable guest runtime identity: builds must reference the pinned digest and never a moving tag. Contains deterministic identity only - no machine paths, no timestamps, no usernames.",
+  "image": {
+    "registry_repository": "node",
+    "tag": "24-bookworm-slim",
+    "platform": "linux/amd64",
+    "digest": "sha256:ba849c60be29959425b8734d57b8b4b7d56f98edd9504c9af091d5281095a71e",
+    "pinned_reference": "node:24-bookworm-slim@sha256:ba849c60be29959425b8734d57b8b4b7d56f98edd9504c9af091d5281095a71e",
+    "digest_kind": "linux/amd64 manifest digest, immutable"
+  },
+  "runtime": {
+    "kind": "node",
+    "node_major": 24,
+    "guest_node_version_recorded": "v24.20.0",
+    "host_node_version_recorded": "v24.18.0",
+    "node_version_note": "Recorded separately per design: the guest patch need not equal the host version. Values are evidence records, not live probes."
+  },
+  "policy": {
+    "pull": "never",
+    "moving_tags_forbidden": true,
+    "unpinned_references_forbidden": [
+      "node:latest",
+      "node:24",
+      "node:24-bookworm-slim"
+    ],
+    "runtime_image_id": "The locally built runtime image ID is content-addressed per build; it is recorded in phase evidence, never here, to keep this lock deterministic."
+  },
+  "provenance": {
+    "resolved_by": "P5.0 Docker isolation prerequisite (docker pull --platform linux/amd64 node:24-bookworm-slim; digest verified against the local image Id)",
+    "evidence": "docs/evidence/P5/P5.0-docker-prerequisite.log",
+    "prerequisite_commit": "dfe166f1d8bdac666221b184a4fe049df22a5859",
+    "dockerfile": "engine/terminal/image/Dockerfile"
+  }
+}

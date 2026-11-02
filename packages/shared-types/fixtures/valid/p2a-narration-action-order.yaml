@@ -1,0 +1,63 @@
+# P2A valid fixture: exact narration/action/pause ordering (interleaving proof)
+# Synthetic P2A sample - NOT production course content. Arabic content.
+schema_version: "1.1"
+course_id: C01
+lesson_id: C01-L013
+title: "ترتيب الشرح والأوامر"
+language: ar
+subject: "برمجة"
+grade_level: "grade-10"
+duration: 300
+learning_objectives:
+  - "فهم أن الترتيب هنا حرفي ومحدد"
+prerequisites: []
+keywords:
+  - "ترتيب"
+metadata:
+  synthetic_fixture: true
+  amendment: "P2A"
+scenes:
+  - scene_id: C01-L013-S001
+    type: code_demo
+    title: "شرح ثم أمر ثم شرح"
+    duration: 240
+    visual:
+      kind: terminal
+      description: "طرفية ينفذ فيها أمر بين مقطعين شرح"
+    beats:
+      - beat_id: C01-L013-S001-B001
+        kind: narration
+        narration:
+          text: "أولاً نشرح ما سنفعله: سنتحقق من الملفات الموجودة في المجلد."
+      - beat_id: C01-L013-S001-B002
+        kind: action
+        action:
+          type: terminal_run
+          command: ls
+          mode: foreground
+      - beat_id: C01-L013-S001-B003
+        kind: narration
+        narration:
+          text: "لاحظ قائمة الملفات التي ظهرت الآن."
+      - beat_id: C01-L013-S001-B004
+        kind: pause
+        seconds: 3
+      - beat_id: C01-L013-S001-B005
+        kind: action
+        action:
+          type: terminal_run
+          command: ls -la
+          mode: foreground
+      - beat_id: C01-L013-S001-B006
+        kind: narration
+        narration:
+          text: "الخيار إل-إل-إيه يعرض تفاصيل أكثر."
+  - scene_id: C01-L013-S002
+    type: summary
+    title: "خلاصة"
+    duration: 60
+    narration:
+      text: "الترتيب الذي رأيته هو الترتيب الذي كُتب في مصدر الدرس حرفياً."
+    visual:
+      kind: fullscreen_text
+      description: "قائمة نقاط الخلاصة"

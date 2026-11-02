@@ -1,0 +1,242 @@
+{
+  "capabilities": {
+    "browser": true,
+    "editor": false,
+    "terminal": false,
+    "voice": false
+  },
+  "compiled_ir_version": "1.0",
+  "compiler": {
+    "name": "course-factory-lesson-compiler",
+    "version": "0.1.0"
+  },
+  "lesson": {
+    "course_id": "C01",
+    "direction": "ltr",
+    "duration_seconds": 300,
+    "grade_level": "grade-11",
+    "keywords": [
+      "browser",
+      "synthetic",
+      "p79",
+      "smoke"
+    ],
+    "language": "en",
+    "learning_objectives": [
+      "Prove trusted browser automation and visual streaming render in the Teaching IDE"
+    ],
+    "lesson_id": "C01-L709",
+    "metadata": {
+      "phase": "P7.9",
+      "synthetic_fixture": true
+    },
+    "prerequisites": [],
+    "subject": "Web Automation",
+    "title": "P7.9 visual proof lesson (synthetic)"
+  },
+  "processes": [],
+  "resources": {
+    "assets": [],
+    "browser_origins": [
+      "http://127.0.0.1:39077"
+    ],
+    "paths": []
+  },
+  "scenes": [
+    {
+      "assets": [],
+      "blocks": [],
+      "duration_seconds": 180,
+      "narration_form": "beats",
+      "on_screen_text": [],
+      "ordinal": 1,
+      "scene_id": "C01-L709-S001",
+      "steps": [
+        {
+          "derived": false,
+          "kind": "operation",
+          "operation": {
+            "family": "browser",
+            "parameters": {
+              "type": "browser_open",
+              "url": "http://127.0.0.1:39077/form"
+            },
+            "type": "browser_open"
+          },
+          "ordinal": 1,
+          "source_ref": {
+            "beat_id": "C01-L709-S001-B001",
+            "form": "authored_beat",
+            "scene_id": "C01-L709-S001",
+            "scene_ordinal": 1
+          },
+          "step_id": "C01-L709-S001-B001"
+        },
+        {
+          "derived": false,
+          "kind": "operation",
+          "operation": {
+            "family": "browser",
+            "parameters": {
+              "selector": {
+                "strategy": "test_id",
+                "value": "username-input"
+              },
+              "type": "browser_fill",
+              "value": "student_alice"
+            },
+            "type": "browser_fill"
+          },
+          "ordinal": 2,
+          "source_ref": {
+            "beat_id": "C01-L709-S001-B002",
+            "form": "authored_beat",
+            "scene_id": "C01-L709-S001",
+            "scene_ordinal": 1
+          },
+          "step_id": "C01-L709-S001-B002"
+        },
+        {
+          "derived": false,
+          "kind": "operation",
+          "operation": {
+            "family": "browser",
+            "parameters": {
+              "key": "Tab",
+              "type": "browser_press"
+            },
+            "type": "browser_press"
+          },
+          "ordinal": 3,
+          "source_ref": {
+            "beat_id": "C01-L709-S001-B003",
+            "form": "authored_beat",
+            "scene_id": "C01-L709-S001",
+            "scene_ordinal": 1
+          },
+          "step_id": "C01-L709-S001-B003"
+        },
+        {
+          "derived": false,
+          "kind": "operation",
+          "operation": {
+            "family": "browser",
+            "parameters": {
+              "selector": {
+                "strategy": "test_id",
+                "value": "counter-btn"
+              },
+              "type": "browser_click"
+            },
+            "type": "browser_click"
+          },
+          "ordinal": 4,
+          "source_ref": {
+            "beat_id": "C01-L709-S001-B004",
+            "form": "authored_beat",
+            "scene_id": "C01-L709-S001",
+            "scene_ordinal": 1
+          },
+          "step_id": "C01-L709-S001-B004"
+        },
+        {
+          "derived": false,
+          "kind": "operation",
+          "operation": {
+            "family": "browser",
+            "parameters": {
+              "selector": {
+                "strategy": "text",
+                "value": "Clicked 1"
+              },
+              "timeout_seconds": 5,
+              "type": "browser_wait"
+            },
+            "type": "browser_wait"
+          },
+          "ordinal": 5,
+          "source_ref": {
+            "beat_id": "C01-L709-S001-B005",
+            "form": "authored_beat",
+            "scene_id": "C01-L709-S001",
+            "scene_ordinal": 1
+          },
+          "step_id": "C01-L709-S001-B005"
+        },
+        {
+          "derived": false,
+          "kind": "operation",
+          "operation": {
+            "family": "browser",
+            "parameters": {
+              "text_visible": "Clicked 1",
+              "type": "browser_assert"
+            },
+            "type": "browser_assert"
+          },
+          "ordinal": 6,
+          "source_ref": {
+            "beat_id": "C01-L709-S001-B006",
+            "form": "authored_beat",
+            "scene_id": "C01-L709-S001",
+            "scene_ordinal": 1
+          },
+          "step_id": "C01-L709-S001-B006"
+        },
+        {
+          "derived": false,
+          "kind": "operation",
+          "operation": {
+            "family": "browser",
+            "parameters": {
+              "type": "browser_refresh"
+            },
+            "type": "browser_refresh"
+          },
+          "ordinal": 7,
+          "source_ref": {
+            "beat_id": "C01-L709-S001-B007",
+            "form": "authored_beat",
+            "scene_id": "C01-L709-S001",
+            "scene_ordinal": 1
+          },
+          "step_id": "C01-L709-S001-B007"
+        },
+        {
+          "derived": false,
+          "kind": "operation",
+          "operation": {
+            "family": "browser",
+            "parameters": {
+              "text_visible": "Clicked 0",
+              "type": "browser_assert"
+            },
+            "type": "browser_assert"
+          },
+          "ordinal": 8,
+          "source_ref": {
+            "beat_id": "C01-L709-S001-B008",
+            "form": "authored_beat",
+            "scene_id": "C01-L709-S001",
+            "scene_ordinal": 1
+          },
+          "step_id": "C01-L709-S001-B008"
+        }
+      ],
+      "title": "Visual proof browser automation",
+      "type": "code_demo",
+      "visual": {
+        "description": "synthetic browser smoke",
+        "kind": "browser"
+      }
+    }
+  ],
+  "source": {
+    "hash": {
+      "algorithm": "sha256",
+      "canonicalization": "canonical-json-v1",
+      "value": "74228cb4d2f31575c06241fe102279609c0fafe64ca33450567067058d467bb5"
+    },
+    "schema_version": "1.1"
+  }
+}

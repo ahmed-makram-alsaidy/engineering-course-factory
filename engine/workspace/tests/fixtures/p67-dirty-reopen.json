@@ -1,0 +1,58 @@
+{
+  "schema_version": "1.1",
+  "course_id": "C01",
+  "lesson_id": "C01-L065",
+  "title": "Dirty reopen fixture (synthetic P6.7)",
+  "language": "en",
+  "subject": "Programming",
+  "grade_level": "grade-10",
+  "duration": 180,
+  "learning_objectives": ["Reopen after an admitted edit fences dirty divergence"],
+  "prerequisites": [],
+  "keywords": ["editor", "synthetic", "p6"],
+  "metadata": { "synthetic_fixture": true, "phase": "P6.7" },
+  "scenes": [
+    {
+      "scene_id": "C01-L065-S001",
+      "type": "code_demo",
+      "title": "Open the seeded file",
+      "duration": 60,
+      "visual": { "kind": "code_editor", "description": "Editor opens the seeded file" },
+      "beats": [
+        {
+          "beat_id": "C01-L065-S001-B001",
+          "kind": "action",
+          "action": { "type": "file_open", "path": "src/alpha.ts" }
+        }
+      ]
+    },
+    {
+      "scene_id": "C01-L065-S002",
+      "type": "code_demo",
+      "title": "Admitted edit reserves dirty",
+      "duration": 60,
+      "visual": { "kind": "code_editor", "description": "Editor reserves an edit" },
+      "beats": [
+        {
+          "beat_id": "C01-L065-S002-B001",
+          "kind": "action",
+          "action": { "type": "type_code", "path": "src/alpha.ts", "content": "const extra = 3;\n" }
+        }
+      ]
+    },
+    {
+      "scene_id": "C01-L065-S003",
+      "type": "code_demo",
+      "title": "Reopen the dirty file",
+      "duration": 60,
+      "visual": { "kind": "code_editor", "description": "Editor reopens the dirty file" },
+      "beats": [
+        {
+          "beat_id": "C01-L065-S003-B001",
+          "kind": "action",
+          "action": { "type": "file_open", "path": "src/alpha.ts" }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,105 @@
+# Valid fixture: Arabic lesson (synthetic P2 sample, NOT real course content)
+schema_version: "1.1"
+course_id: C01
+lesson_id: C01-L001
+title: "مقدمة في المتغيرات في بايثون"
+language: ar
+subject: "برمجة"
+grade_level: "grade-10"
+difficulty: beginner
+duration: 720
+unit: "الوحدة الأولى: أساسيات بايثون"
+chapter: "المتغيرات والأنواع"
+learning_objectives:
+  - "تعريف المتغير واستخداماته"
+  - "إنشاء متغير وتخزين قيمة فيه"
+  - "طباعة قيمة متغير باستخدام print"
+prerequisites:
+  - "التعامل مع نظام التشغيل الأساسي"
+keywords:
+  - "بايثون"
+  - "متغيرات"
+  - "برمجة"
+metadata:
+  synthetic_fixture: true
+  authoring_note: "P2 fixture only - not production course content"
+scenes:
+  - scene_id: C01-L001-S001
+    type: intro
+    title: "ترحيب وتعريف بالدرس"
+    duration: 60
+    narration:
+      text: "أهلاً بك في أول درس من دورة بايثون. اليوم سنتعرف على المتغيرات وأهميتها."
+      speaker: "instructor"
+      delivery: "enthusiastic"
+      pause_after: 2
+    on_screen_text:
+      - role: title
+        text: "المتغيرات في بايثون"
+        emphasis: strong
+    visual:
+      kind: instructor_closeup
+      description: "لقطة قريبة للمدرب يرحب بالمشاهدين مع عنوان الدرس بجانبه"
+    transitions:
+      in: fade
+      in_duration_seconds: 1
+    alt_text: "مدرب يرحب بالمشاهدين، العنوان: المتغيرات في بايثون"
+  - scene_id: C01-L001-S002
+    type: explanation
+    title: "ما هو المتغير؟"
+    duration: 300
+    narration:
+      text: "المتغير هو مساحة في الذاكرة نخزن فيها قيمة يمكن استخدامها لاحقاً في البرنامج."
+    on_screen_text:
+      - role: caption
+        text: "المتغير = مساحة تخزين للقيمة"
+        language: ar
+    visual:
+      kind: diagram
+      description: "رسم توضيحي يربط اسم المتغير بصندوق يحتوي قيمة"
+      subject: "متغير بايثون"
+    assets:
+      - asset_id: "assets/diagrams/python-variable-box.svg"
+        type: image
+  - scene_id: C01-L001-S003
+    type: code_demo
+    title: "أول متغير في بايثون"
+    duration: 360
+    on_screen_text:
+      - role: code
+        text: "name = \"أحمد\""
+        language: ar
+    visual:
+      kind: code_editor
+      description: "محرر أكواد يكتب سطر إنشاء متغير ثم شاشة طرفية تطبع النتيجة"
+    beats:
+      - beat_id: C01-L001-S003-B001
+        kind: narration
+        narration:
+          text: "لننشئ متغيراً اسمه الاسم ونخزن فيه قيمة نصية، ثم نطبعه على الشاشة."
+      - beat_id: C01-L001-S003-B002
+        kind: action
+        action:
+          type: file_create
+          path: first_variable.py
+      - beat_id: C01-L001-S003-B003
+        kind: action
+        action:
+          type: type_code
+          path: first_variable.py
+          content: |
+            name = "أحمد"
+            print(f"مرحباً {name}")
+      - beat_id: C01-L001-S003-B004
+        kind: action
+        action:
+          type: file_save
+          path: first_variable.py
+      - beat_id: C01-L001-S003-B005
+        kind: action
+        action:
+          type: terminal_run
+          command: python first_variable.py
+          mode: foreground
+          expected_exit_code: 0
+    notes: "المصمم: إبراز أمر الطباعة عند تنفيذه"

@@ -1,0 +1,379 @@
+{
+  "capabilities": {
+    "browser": true,
+    "editor": false,
+    "terminal": true,
+    "voice": true
+  },
+  "compiled_ir_version": "1.0",
+  "compiler": {
+    "name": "course-factory-lesson-compiler",
+    "version": "0.1.0"
+  },
+  "lesson": {
+    "course_id": "C01",
+    "direction": "ltr",
+    "duration_seconds": 600,
+    "grade_level": "grade-11",
+    "keywords": [
+      "dev server",
+      "localhost",
+      "browser"
+    ],
+    "language": "en",
+    "learning_objectives": [
+      "Start a background dev server",
+      "Wait until the server port is ready",
+      "Open the site in a browser and assert its state"
+    ],
+    "lesson_id": "C01-L012",
+    "metadata": {
+      "amendment": "P2A",
+      "synthetic_fixture": true
+    },
+    "prerequisites": [],
+    "subject": "Web Development",
+    "title": "Starting a dev server and visiting it"
+  },
+  "processes": [
+    {
+      "command": "npm run dev",
+      "cwd": "demo-project",
+      "output_waits": [],
+      "process_id": "dev_server",
+      "started_in": {
+        "beat_id": "C01-L012-S001-B002",
+        "scene_id": "C01-L012-S001",
+        "scene_ordinal": 1,
+        "step_ordinal": 2
+      },
+      "stopped_in": {
+        "beat_id": "C01-L012-S001-B013",
+        "scene_id": "C01-L012-S001"
+      }
+    }
+  ],
+  "resources": {
+    "assets": [],
+    "browser_origins": [
+      "http://localhost:3000"
+    ],
+    "paths": [
+      "demo-project"
+    ]
+  },
+  "scenes": [
+    {
+      "assets": [],
+      "blocks": [],
+      "duration_seconds": 480,
+      "narration_form": "beats",
+      "on_screen_text": [],
+      "ordinal": 1,
+      "scene_id": "C01-L012-S001",
+      "steps": [
+        {
+          "derived": false,
+          "kind": "narration",
+          "narration": {
+            "direction": "ltr",
+            "language": "en",
+            "text": "We start the dev server in the background, because it never exits on its own."
+          },
+          "ordinal": 1,
+          "source_ref": {
+            "beat_id": "C01-L012-S001-B001",
+            "form": "authored_beat",
+            "scene_id": "C01-L012-S001",
+            "scene_ordinal": 1
+          },
+          "step_id": "C01-L012-S001-B001"
+        },
+        {
+          "derived": false,
+          "kind": "operation",
+          "operation": {
+            "family": "terminal",
+            "parameters": {
+              "command": "npm run dev",
+              "cwd": "demo-project",
+              "mode": "background",
+              "process_id": "dev_server",
+              "type": "terminal_run"
+            },
+            "type": "terminal_run"
+          },
+          "ordinal": 2,
+          "source_ref": {
+            "beat_id": "C01-L012-S001-B002",
+            "form": "authored_beat",
+            "scene_id": "C01-L012-S001",
+            "scene_ordinal": 1
+          },
+          "step_id": "C01-L012-S001-B002"
+        },
+        {
+          "derived": false,
+          "kind": "narration",
+          "narration": {
+            "direction": "ltr",
+            "language": "en",
+            "text": "Rather than guessing, we wait until port 3000 actually accepts connections."
+          },
+          "ordinal": 3,
+          "source_ref": {
+            "beat_id": "C01-L012-S001-B003",
+            "form": "authored_beat",
+            "scene_id": "C01-L012-S001",
+            "scene_ordinal": 1
+          },
+          "step_id": "C01-L012-S001-B003"
+        },
+        {
+          "derived": false,
+          "kind": "operation",
+          "operation": {
+            "family": "wait",
+            "parameters": {
+              "port": 3000,
+              "timeout_seconds": 60,
+              "type": "wait",
+              "until": "port"
+            },
+            "type": "wait"
+          },
+          "ordinal": 4,
+          "source_ref": {
+            "beat_id": "C01-L012-S001-B004",
+            "form": "authored_beat",
+            "scene_id": "C01-L012-S001",
+            "scene_ordinal": 1
+          },
+          "step_id": "C01-L012-S001-B004"
+        },
+        {
+          "derived": false,
+          "kind": "operation",
+          "operation": {
+            "family": "browser",
+            "parameters": {
+              "type": "browser_open",
+              "url": "http://localhost:3000"
+            },
+            "type": "browser_open"
+          },
+          "ordinal": 5,
+          "source_ref": {
+            "beat_id": "C01-L012-S001-B005",
+            "form": "authored_beat",
+            "scene_id": "C01-L012-S001",
+            "scene_ordinal": 1
+          },
+          "step_id": "C01-L012-S001-B005"
+        },
+        {
+          "derived": false,
+          "kind": "operation",
+          "operation": {
+            "family": "browser",
+            "parameters": {
+              "selector": {
+                "name": "Welcome",
+                "strategy": "role",
+                "value": "heading"
+              },
+              "type": "browser_assert"
+            },
+            "type": "browser_assert"
+          },
+          "ordinal": 6,
+          "source_ref": {
+            "beat_id": "C01-L012-S001-B006",
+            "form": "authored_beat",
+            "scene_id": "C01-L012-S001",
+            "scene_ordinal": 1
+          },
+          "step_id": "C01-L012-S001-B006"
+        },
+        {
+          "derived": false,
+          "kind": "pause",
+          "ordinal": 7,
+          "seconds": 2,
+          "source_ref": {
+            "beat_id": "C01-L012-S001-B007",
+            "form": "authored_beat",
+            "scene_id": "C01-L012-S001",
+            "scene_ordinal": 1
+          },
+          "step_id": "C01-L012-S001-B007"
+        },
+        {
+          "derived": false,
+          "kind": "operation",
+          "operation": {
+            "family": "browser",
+            "parameters": {
+              "selector": {
+                "strategy": "test_id",
+                "value": "task-input"
+              },
+              "type": "browser_fill",
+              "value": "buy milk"
+            },
+            "type": "browser_fill"
+          },
+          "ordinal": 8,
+          "source_ref": {
+            "beat_id": "C01-L012-S001-B008",
+            "form": "authored_beat",
+            "scene_id": "C01-L012-S001",
+            "scene_ordinal": 1
+          },
+          "step_id": "C01-L012-S001-B008"
+        },
+        {
+          "derived": false,
+          "kind": "operation",
+          "operation": {
+            "family": "browser",
+            "parameters": {
+              "key": "Enter",
+              "type": "browser_press"
+            },
+            "type": "browser_press"
+          },
+          "ordinal": 9,
+          "source_ref": {
+            "beat_id": "C01-L012-S001-B009",
+            "form": "authored_beat",
+            "scene_id": "C01-L012-S001",
+            "scene_ordinal": 1
+          },
+          "step_id": "C01-L012-S001-B009"
+        },
+        {
+          "derived": false,
+          "kind": "operation",
+          "operation": {
+            "family": "browser",
+            "parameters": {
+              "selector": {
+                "strategy": "text",
+                "value": "buy milk"
+              },
+              "timeout_seconds": 10,
+              "type": "browser_wait"
+            },
+            "type": "browser_wait"
+          },
+          "ordinal": 10,
+          "source_ref": {
+            "beat_id": "C01-L012-S001-B010",
+            "form": "authored_beat",
+            "scene_id": "C01-L012-S001",
+            "scene_ordinal": 1
+          },
+          "step_id": "C01-L012-S001-B010"
+        },
+        {
+          "derived": false,
+          "kind": "operation",
+          "operation": {
+            "family": "browser",
+            "parameters": {
+              "text_visible": "buy milk",
+              "type": "browser_assert"
+            },
+            "type": "browser_assert"
+          },
+          "ordinal": 11,
+          "source_ref": {
+            "beat_id": "C01-L012-S001-B011",
+            "form": "authored_beat",
+            "scene_id": "C01-L012-S001",
+            "scene_ordinal": 1
+          },
+          "step_id": "C01-L012-S001-B011"
+        },
+        {
+          "derived": false,
+          "kind": "narration",
+          "narration": {
+            "direction": "ltr",
+            "language": "en",
+            "text": "The item is on screen, which proves the full loop works."
+          },
+          "ordinal": 12,
+          "source_ref": {
+            "beat_id": "C01-L012-S001-B012",
+            "form": "authored_beat",
+            "scene_id": "C01-L012-S001",
+            "scene_ordinal": 1
+          },
+          "step_id": "C01-L012-S001-B012"
+        },
+        {
+          "derived": false,
+          "kind": "operation",
+          "operation": {
+            "family": "terminal",
+            "parameters": {
+              "process_id": "dev_server",
+              "type": "terminal_stop"
+            },
+            "references": {
+              "process": {
+                "defined_in": {
+                  "beat_id": "C01-L012-S001-B002",
+                  "scene_id": "C01-L012-S001"
+                },
+                "process_id": "dev_server"
+              }
+            },
+            "type": "terminal_stop"
+          },
+          "ordinal": 13,
+          "source_ref": {
+            "beat_id": "C01-L012-S001-B013",
+            "form": "authored_beat",
+            "scene_id": "C01-L012-S001",
+            "scene_ordinal": 1
+          },
+          "step_id": "C01-L012-S001-B013"
+        },
+        {
+          "derived": false,
+          "kind": "narration",
+          "narration": {
+            "direction": "ltr",
+            "language": "en",
+            "text": "We stopped the server explicitly, so nothing keeps running after the lesson."
+          },
+          "ordinal": 14,
+          "source_ref": {
+            "beat_id": "C01-L012-S001-B014",
+            "form": "authored_beat",
+            "scene_id": "C01-L012-S001",
+            "scene_ordinal": 1
+          },
+          "step_id": "C01-L012-S001-B014"
+        }
+      ],
+      "title": "npm run dev, done deterministically",
+      "type": "code_demo",
+      "visual": {
+        "description": "Split view: terminal starting the server, browser showing the app",
+        "kind": "browser"
+      }
+    }
+  ],
+  "source": {
+    "hash": {
+      "algorithm": "sha256",
+      "canonicalization": "canonical-json-v1",
+      "value": "3281d35b9dc59344b22613422b8e18557a92676cb354a901016491d46f7acdaa"
+    },
+    "schema_version": "1.1"
+  }
+}

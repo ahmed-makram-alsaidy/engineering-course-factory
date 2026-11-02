@@ -1,0 +1,28 @@
+# INVALID P2A fixture: action type outside the canonical discriminated union
+schema_version: "1.1"
+course_id: C01
+lesson_id: C01-L026
+title: "Unknown action type"
+language: en
+subject: "Programming"
+grade_level: "grade-10"
+duration: 60
+learning_objectives: ["Trigger unknown action type rejection"]
+prerequisites: []
+keywords: []
+metadata: { synthetic_fixture: true }
+scenes:
+  - scene_id: C01-L026-S001
+    type: example
+    title: "Hologram"
+    duration: 60
+    visual: { kind: animation, description: "Animation" }
+    beats:
+      - beat_id: C01-L026-S001-B001
+        kind: narration
+        narration: { text: "Watch this." }
+      - beat_id: C01-L026-S001-B002
+        kind: action
+        action:
+          type: render_hologram
+          target: desk
