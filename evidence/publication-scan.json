@@ -1,0 +1,18 @@
+{
+  "filesChecked": 501,
+  "knownCredentialMatches": 0,
+  "potentialSecretFiles": [
+    {
+      "path": "engine/voice/tests/verification-matrix.test.ts",
+      "rule": "api_secret_literal",
+      "disposition": "Inspected: deliberate dummy secret in the exact-secret redactor unit test, not a real credential."
+    }
+  ],
+  "machineUserPathFiles": [],
+  "exclusions": [
+    "node_modules",
+    "runtime",
+    ".git"
+  ],
+  "note": "No exact local provider credential values found. Generated logs with local paths are excluded by .gitignore. The author and public channel name appear in README intentionally."
+}

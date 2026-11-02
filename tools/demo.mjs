@@ -1,0 +1,20 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import {fileURLToPath} from 'node:url';
+import {spawnSync} from 'node:child_process';
+import {parseLessonSource} from '@course-factory/shared-types';
+import {compileLesson} from '@course-factory/lesson-compiler';
+
+const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
+const source=fs.readFileSync(path.join(root,'packages/shared-types/fixtures/valid/en-lesson.yaml'),'utf8');
+const parsed=parseLessonSource(source,'demo.yaml');
+if(!parsed.ok)throw new Error('Example lesson did not validate');
+const compiled=compileLesson(parsed.lesson);
+console.log('Validated and compiled lesson:',compiled.lesson.lesson_id);
+const tests=spawnSync(process.env.PYTHON||'python',['-B','-m','unittest','discover','-s','tests'],{cwd:path.join(root,'examples/python-functions'),encoding:'utf8',timeout:10000,windowsHide:true});
+if(tests.status!==0)throw new Error('Python example tests failed: '+tests.stderr);
+console.log('Python example tests: PASS');
+const review=spawnSync(process.execPath,['tools/review.mjs'],{cwd:root,encoding:'utf8',timeout:10000,windowsHide:true});
+if(review.status!==0)throw new Error(review.stderr);
+console.log(review.stdout);
+console.log('This default demo used an offline review fixture and made no model call. Use review:live for actual Meta inference.');

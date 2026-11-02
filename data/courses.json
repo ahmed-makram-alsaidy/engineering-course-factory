@@ -1,0 +1,142 @@
+[
+  {
+    "id": "C01",
+    "title": "Computer & Computational Foundations",
+    "packages": 18
+  },
+  {
+    "id": "C02",
+    "title": "Python Fundamentals",
+    "packages": 16
+  },
+  {
+    "id": "C03",
+    "title": "Professional Software Engineering",
+    "packages": 16
+  },
+  {
+    "id": "C04",
+    "title": "Web & Frontend",
+    "packages": 18
+  },
+  {
+    "id": "C05",
+    "title": "Mobile Engineering",
+    "packages": 18
+  },
+  {
+    "id": "C06",
+    "title": "Backend with Node.js",
+    "packages": 16
+  },
+  {
+    "id": "C07",
+    "title": "Databases & SQL",
+    "packages": 16
+  },
+  {
+    "id": "C08",
+    "title": "Linux & Operating Systems",
+    "packages": 14
+  },
+  {
+    "id": "C09",
+    "title": "Networking",
+    "packages": 14
+  },
+  {
+    "id": "C10",
+    "title": "Cybersecurity",
+    "packages": 16
+  },
+  {
+    "id": "C11",
+    "title": "Docker & Containers",
+    "packages": 12
+  },
+  {
+    "id": "C12",
+    "title": "Cloud Fundamentals",
+    "packages": 18
+  },
+  {
+    "id": "C13",
+    "title": "DevOps / IaC / Kubernetes",
+    "packages": 18
+  },
+  {
+    "id": "C14",
+    "title": "Distributed Systems",
+    "packages": 14
+  },
+  {
+    "id": "C15",
+    "title": "System Design",
+    "packages": 14
+  },
+  {
+    "id": "C16",
+    "title": "Electronics & Hardware",
+    "packages": 12
+  },
+  {
+    "id": "C17",
+    "title": "Embedded & IoT",
+    "packages": 14
+  },
+  {
+    "id": "C18",
+    "title": "Automotive / Drones / Robotics",
+    "packages": 15
+  },
+  {
+    "id": "C19",
+    "title": "Data Engineering",
+    "packages": 16
+  },
+  {
+    "id": "C20",
+    "title": "Mathematics for AI",
+    "packages": 14
+  },
+  {
+    "id": "C21",
+    "title": "Machine Learning",
+    "packages": 16
+  },
+  {
+    "id": "C22",
+    "title": "Deep Learning",
+    "packages": 14
+  },
+  {
+    "id": "C23",
+    "title": "Generative AI",
+    "packages": 16
+  },
+  {
+    "id": "C24",
+    "title": "AI Engineering",
+    "packages": 16
+  },
+  {
+    "id": "C25",
+    "title": "AI CLI & Coding Agents",
+    "packages": 12
+  },
+  {
+    "id": "C26",
+    "title": "AI Agents & MCP",
+    "packages": 16
+  },
+  {
+    "id": "C27",
+    "title": "Automation & n8n",
+    "packages": 18
+  },
+  {
+    "id": "C28",
+    "title": "Engineering Quality & Capstone",
+    "packages": 16
+  }
+]

@@ -1,0 +1,486 @@
+episode_id,course_id,ep_no,title,type
+C01.01,C01,01,الكمبيوتر بيفهم إيه أصلًا؟ من الكهرباء للـ0 والـ1,core
+C01.02,C01,02,CPU وRAM والهارد: مين بيعمل إيه؟,core
+C01.03,C01,03,يعني إيه Operating System؟,core
+C01.04,C01,04,البرنامج بيتنفذ إزاي؟ Process وThread,core
+C01.05,C01,05,الملفات والفولدرات والـPath,core
+C01.06,C01,06,الـTerminal مش للهاكرز,core
+C01.07,C01,07,الإنترنت مش هو الـWi‑Fi,core
+C01.08,C01,08,IP وPort وDNS بالبلدي,core
+C01.09,C01,09,HTTP وAPI وDatabase في 7 دقايق,core
+C01.10,C01,10,إزاي تقسّم مشكلة كبيرة؟,core
+C01.11,C01,11,Input وOutput وState,core
+C01.12,C01,12,Conditions وLoops وFunctions قبل الكود,core
+C01.13,C01,13,List وStack وQueue وHash Map,core
+C01.14,C01,14,Linear Search vs Binary Search,core
+C01.15,C01,15,Sorting: ليه الترتيب مشكلة هندسية؟,core
+C01.16,C01,16,Big O من غير رعب رياضيات,core
+C01.17,C01,17,Recursion وTrees وGraphs,core
+C01.18,C01,18,تحدي الخوارزميات: صمّم الحل قبل الكود,core
+C02.01,C02,01,Python يعني إيه وليه نبدأ بيه؟,core
+C02.02,C02,02,Variables وTypes من غير حفظ,core
+C02.03,C02,03,Strings: الكلام جوه البرنامج,core
+C02.04,C02,04,Numbers وOperators,core
+C02.05,C02,05,if/elif/else: البرنامج ياخد قرار,core
+C02.06,C02,06,Loops: متكررش نفسك,core
+C02.07,C02,07,Lists وTuples وSets,core
+C02.08,C02,08,Dictionaries,core
+C02.09,C02,09,Functions: أول خطوة للكود النضيف,core
+C02.10,C02,10,Scope وParameters وReturn,core
+C02.11,C02,11,Files وJSON,core
+C02.12,C02,12,Errors وExceptions,core
+C02.13,C02,13,Modules وPackages,core
+C02.14,C02,14,OOP من غير تعقيد,core
+C02.15,C02,15,venv وpip وDependencies,core
+C02.16,C02,16,مشروع Python كامل: Clinic CLI,core
+C03.01,C03,01,الكود اللي شغال مش شرط يكون كويس,core
+C03.02,C03,02,Naming: اسم المتغير ممكن ينقذك,core
+C03.03,C03,03,Functions صغيرة وSeparation of Concerns,core
+C03.04,C03,04,DRY وKISS: إمتى التكرار أحسن؟,core
+C03.05,C03,05,SOLID بالبلدي,core
+C03.06,C03,06,Debugging بمنهج بدل التخمين,core
+C03.07,C03,07,Logging الصح,core
+C03.08,C03,08,Unit Testing,core
+C03.09,C03,09,Integration Testing وMocking,core
+C03.10,C03,10,Git من أول commit,core
+C03.11,C03,11,Branch وMerge وConflict,core
+C03.12,C03,12,GitHub وPull Request وCode Review,core
+C03.13,C03,13,Semantic Versioning وReleases,core
+C03.14,C03,14,Config وEnvironment Variables وSecrets,core
+C03.15,C03,15,CI: الاختبار يشتغل لوحده,core
+C03.16,C03,16,Capstone: من Script إلى Software Product,core
+C04.01,C04,01,من URL لحد ما الصفحة تظهر,core
+C04.02,C04,02,HTML: هيكل الصفحة,core
+C04.03,C04,03,Forms وInputs,core
+C04.04,C04,04,CSS Box Model,core
+C04.05,C04,05,Flexbox,core
+C04.06,C04,06,CSS Grid,core
+C04.07,C04,07,Responsive Design,core
+C04.08,C04,08,Accessibility مش رفاهية,core
+C04.09,C04,09,JavaScript في المتصفح,core
+C04.10,C04,10,DOM وEvents,core
+C04.11,C04,11,Fetch وHTTP,core
+C04.12,C04,12,Cookies وStorage وCORS,core
+C04.13,C04,13,React Components وProps,core
+C04.14,C04,14,State وHooks,core
+C04.15,C04,15,Routing وForms,core
+C04.16,C04,16,State Management: إمتى تكبّر؟,core
+C04.17,C04,17,Frontend Testing وPerformance,core
+C04.18,C04,18,Capstone: Clinic Dashboard,core
+C05.01,C05,01,Android وiOS وFlutter: أختار إيه؟,core
+C05.02,C05,02,Dart للمبرمج,core
+C05.03,C05,03,أول Flutter App,core
+C05.04,C05,04,Widgets,core
+C05.05,C05,05,Layouts,core
+C05.06,C05,06,State,core
+C05.07,C05,07,Navigation,core
+C05.08,C05,08,Forms وValidation,core
+C05.09,C05,09,HTTP وJSON,core
+C05.10,C05,10,Local Storage,core
+C05.11,C05,11,Authentication,core
+C05.12,C05,12,Notifications وPermissions,core
+C05.13,C05,13,Android Native: Kotlin + Compose,core
+C05.14,C05,14,Android Architecture,core
+C05.15,C05,15,iOS Native: Swift + SwiftUI,core
+C05.16,C05,16,iOS State وPersistence,core
+C05.17,C05,17,Testing وRelease Readiness,core
+C05.18,C05,18,Capstone: Clinic Mobile,core
+C06.01,C06,01,Backend بيعمل إيه؟,core
+C06.02,C06,02,Node.js Runtime,core
+C06.03,C06,03,Event Loop وAsync,core
+C06.04,C06,04,npm وModules,core
+C06.05,C06,05,HTTP Server,core
+C06.06,C06,06,Express/Fastify Concept,core
+C06.07,C06,07,REST Design,core
+C06.08,C06,08,Validation,core
+C06.09,C06,09,Error Handling,core
+C06.10,C06,10,Authentication,core
+C06.11,C06,11,Authorization/RBAC,core
+C06.12,C06,12,Files وObject Storage concept,core
+C06.13,C06,13,WebSockets,core
+C06.14,C06,14,Logging وMetrics,core
+C06.15,C06,15,Testing API,core
+C06.16,C06,16,Capstone: Clinic REST API,core
+C07.01,C07,01,Database ليه مش Excel؟,core
+C07.02,C07,02,Tables/Rows/Keys,core
+C07.03,C07,03,SELECT,core
+C07.04,C07,04,INSERT/UPDATE/DELETE,core
+C07.05,C07,05,WHERE/ORDER/LIMIT,core
+C07.06,C07,06,JOIN,core
+C07.07,C07,07,GROUP BY/Aggregates,core
+C07.08,C07,08,Constraints,core
+C07.09,C07,09,Normalization,core
+C07.10,C07,10,Indexes,core
+C07.11,C07,11,Transactions,core
+C07.12,C07,12,Isolation/Locks,core
+C07.13,C07,13,Backup/Restore,core
+C07.14,C07,14,Redis,core
+C07.15,C07,15,Mongo/Search/Graph/Time-series,core
+C07.16,C07,16,Capstone: Production Data Layer,core
+C08.01,C08,01,Linux من غير خوف,core
+C08.02,C08,02,Filesystem,core
+C08.03,C08,03,Users/Groups,core
+C08.04,C08,04,Permissions,core
+C08.05,C08,05,Processes,core
+C08.06,C08,06,Services/systemd,core
+C08.07,C08,07,Logs,core
+C08.08,C08,08,Bash وPipes,core
+C08.09,C08,09,Environment,core
+C08.10,C08,10,SSH,core
+C08.11,C08,11,Memory/Virtual Memory,core
+C08.12,C08,12,Filesystems/Disks,core
+C08.13,C08,13,Kernel/System Calls,core
+C08.14,C08,14,Capstone: Production Linux Host,core
+C09.01,C09,01,الشبكة من أول سلك لحد Cloud,core
+C09.02,C09,02,MAC وEthernet,core
+C09.03,C09,03,IPv4 وSubnet,core
+C09.04,C09,04,Router وGateway,core
+C09.05,C09,05,NAT,core
+C09.06,C09,06,TCP vs UDP,core
+C09.07,C09,07,Ports/Sockets,core
+C09.08,C09,08,DNS,core
+C09.09,C09,09,HTTP/HTTPS,core
+C09.10,C09,10,TLS,core
+C09.11,C09,11,Proxy/Reverse Proxy,core
+C09.12,C09,12,Load Balancer/CDN,core
+C09.13,C09,13,VPN/Firewall,core
+C09.14,C09,14,Capstone: صمم شبكة Production,core
+C10.01,C10,01,Security مش Hacking,core
+C10.02,C10,02,CIA + Threat Modeling,core
+C10.03,C10,03,Auth vs Authorization,core
+C10.04,C10,04,Hashing/Passwords,core
+C10.05,C10,05,Encryption,core
+C10.06,C10,06,Keys/Certificates/TLS,core
+C10.07,C10,07,Secrets Management,core
+C10.08,C10,08,OAuth/OIDC/JWT,core
+C10.09,C10,09,SQL Injection,core
+C10.10,C10,10,XSS/CSRF,core
+C10.11,C10,11,SSRF/Command Injection,core
+C10.12,C10,12,Broken Access Control,core
+C10.13,C10,13,Linux Hardening,core
+C10.14,C10,14,Cloud IAM,core
+C10.15,C10,15,Detection/Incident Response,core
+C10.16,C10,16,Capstone: Secure the Clinic,core
+C11.01,C11,01,It Works on My Machine,core
+C11.02,C11,02,Image vs Container,core
+C11.03,C11,03,docker run,core
+C11.04,C11,04,Dockerfile,core
+C11.05,C11,05,Layers/Cache,core
+C11.06,C11,06,Volumes,core
+C11.07,C11,07,Networking,core
+C11.08,C11,08,Docker Compose,core
+C11.09,C11,09,Environment/Secrets,core
+C11.10,C11,10,Image Security,core
+C11.11,C11,11,Registry,core
+C11.12,C11,12,Capstone: Containerised Clinic,core
+C12.01,C12,01,Cloud يعني إيه فعلًا؟,core
+C12.02,C12,02,Region وZone,core
+C12.03,C12,03,IaaS/PaaS/Serverless,core
+C12.04,C12,04,VM عبر AWS/Azure/IBM,core
+C12.05,C12,05,Object/Block/File Storage,core
+C12.06,C12,06,Virtual Networks,core
+C12.07,C12,07,Load Balancer/CDN/DNS,core
+C12.08,C12,08,Managed Databases,core
+C12.09,C12,09,Serverless,core
+C12.10,C12,10,Containers/Kubernetes Cloud,core
+C12.11,C12,11,IAM,core
+C12.12,C12,12,Secrets/Keys,core
+C12.13,C12,13,Monitoring/Logs,core
+C12.14,C12,14,Billing/Quotas,core
+C12.15,C12,15,AWS Walkthrough,core
+C12.16,C12,16,Azure Walkthrough,core
+C12.17,C12,17,IBM Walkthrough,core
+C12.18,C12,18,Capstone: نفس النظام على 3 Clouds,core
+C13.01,C13,01,DevOps مش وظيفة Tools,core
+C13.02,C13,02,CI,core
+C13.03,C13,03,CD,core
+C13.04,C13,04,GitHub Actions,core
+C13.05,C13,05,Artifacts/Registries,core
+C13.06,C13,06,Environments,core
+C13.07,C13,07,Infrastructure as Code,core
+C13.08,C13,08,Terraform Basics,core
+C13.09,C13,09,State/Modules,core
+C13.10,C13,10,Ansible,core
+C13.11,C13,11,Kubernetes Mental Model,core
+C13.12,C13,12,Pods/Deployments,core
+C13.13,C13,13,Services/Ingress,core
+C13.14,C13,14,ConfigMaps/Secrets,core
+C13.15,C13,15,Volumes/Stateful Workloads,core
+C13.16,C13,16,Helm,core
+C13.17,C13,17,Observability/Tracing/SLO intro,core
+C13.18,C13,18,Capstone: Push → Production,core
+C14.01,C14,01,ليه Server واحد مش كفاية؟,core
+C14.02,C14,02,Stateless vs Stateful,core
+C14.03,C14,03,Vertical vs Horizontal Scale,core
+C14.04,C14,04,Cache,core
+C14.05,C14,05,Queue,core
+C14.06,C14,06,Pub/Sub,core
+C14.07,C14,07,Event-Driven Architecture,core
+C14.08,C14,08,Replication,core
+C14.09,C14,09,Consistency,core
+C14.10,C14,10,CAP بدون أساطير,core
+C14.11,C14,11,Idempotency,core
+C14.12,C14,12,Retry/Backoff/Circuit Breaker,core
+C14.13,C14,13,Rate Limiting,core
+C14.14,C14,14,Capstone: Order Platform تحت الضغط,core
+C15.01,C15,01,System Design Interview ≠ Architecture,core
+C15.02,C15,02,Functional/Non-functional Requirements,core
+C15.03,C15,03,Capacity Estimation,core
+C15.04,C15,04,API/Data Model,core
+C15.05,C15,05,Design URL Shortener,core
+C15.06,C15,06,Design Chat,core
+C15.07,C15,07,Design YouTube-like Platform,core
+C15.08,C15,08,Design Uber-like System,core
+C15.09,C15,09,Design Ecommerce,core
+C15.10,C15,10,Design Notification Platform,core
+C15.11,C15,11,Multi-region,core
+C15.12,C15,12,Cost-aware Architecture,core
+C15.13,C15,13,Architecture Decision Records,core
+C15.14,C15,14,Capstone: Architecture Defense,core
+C16.01,C16,01,الكهرباء للمبرمج,core
+C16.02,C16,02,Resistance وOhm's Law,core
+C16.03,C16,03,AC vs DC,core
+C16.04,C16,04,Breadboard,core
+C16.05,C16,05,Digital vs Analog,core
+C16.06,C16,06,Logic Gates,core
+C16.07,C16,07,Transistor,core
+C16.08,C16,08,Microcontroller,core
+C16.09,C16,09,Sensors,core
+C16.10,C16,10,Motors/Actuators,core
+C16.11,C16,11,Power/Safety,core
+C16.12,C16,12,Capstone: Smart Sensor Node,core
+C17.01,C17,01,Embedded ≠ Laptop صغير,core
+C17.02,C17,02,C/C++ للـMCU,core
+C17.03,C17,03,Memory,core
+C17.04,C17,04,GPIO,core
+C17.05,C17,05,Interrupts,core
+C17.06,C17,06,Timers/PWM,core
+C17.07,C17,07,UART,core
+C17.08,C17,08,I2C,core
+C17.09,C17,09,SPI,core
+C17.10,C17,10,ADC,core
+C17.11,C17,11,ESP32/Wi‑Fi,core
+C17.12,C17,12,MQTT/IoT,core
+C17.13,C17,13,RTOS,core
+C17.14,C17,14,Capstone: Cloud-connected Device,core
+C18.01,C18,01,من Microcontroller لعربية وروبوت,core
+C18.02,C18,02,ECU,core
+C18.03,C18,03,CAN Bus,core
+C18.04,C18,04,OBD-II,core
+C18.05,C18,05,Sensors/Actuators في العربية,core
+C18.06,C18,06,Automotive Ethernet,core
+C18.07,C18,07,Robotics Kinematics,core
+C18.08,C18,08,PID Control,core
+C18.09,C18,09,Encoders/IMU,core
+C18.10,C18,10,ROS Concepts,core
+C18.11,C18,11,Drone Anatomy,core
+C18.12,C18,12,ESC/Motors/Propellers,core
+C18.13,C18,13,IMU/GPS/Flight Controller,core
+C18.14,C18,14,Telemetry & Ground Station,core
+C18.15,C18,15,Capstone: Robot/Drone Telemetry Rig,core
+C19.01,C19,01,Data Engineer بيعمل إيه؟,core
+C19.02,C19,02,CSV/JSON/Parquet,core
+C19.03,C19,03,Data Quality,core
+C19.04,C19,04,ETL vs ELT,core
+C19.05,C19,05,Batch Pipelines,core
+C19.06,C19,06,Orchestration,core
+C19.07,C19,07,Data Warehouse,core
+C19.08,C19,08,Data Lake/Lakehouse,core
+C19.09,C19,09,Dimensional Modelling,core
+C19.10,C19,10,Kafka/Event Streaming,core
+C19.11,C19,11,Stream Processing,core
+C19.12,C19,12,Spark,core
+C19.13,C19,13,Data Contracts/Schema Evolution,core
+C19.14,C19,14,Lineage/Governance,core
+C19.15,C19,15,Testing/Observability,core
+C19.16,C19,16,Capstone: Batch + Streaming Lakehouse,core
+C20.01,C20,01,الرياضيات اللي AI محتاجها,core
+C20.02,C20,02,Functions/Graphs,core
+C20.03,C20,03,Vectors,core
+C20.04,C20,04,Matrices,core
+C20.05,C20,05,Dot Product,core
+C20.06,C20,06,Probability,core
+C20.07,C20,07,Conditional Probability,core
+C20.08,C20,08,Mean/Variance/Distribution,core
+C20.09,C20,09,Correlation ≠ Causation,core
+C20.10,C20,10,Derivative,core
+C20.11,C20,11,Gradient,core
+C20.12,C20,12,Gradient Descent,core
+C20.13,C20,13,Logarithms/Softmax intuition,core
+C20.14,C20,14,Capstone: Math Behind a Tiny Model,core
+C21.01,C21,01,Machine Learning يعني إيه؟,core
+C21.02,C21,02,Features/Labels,core
+C21.03,C21,03,Train/Validation/Test,core
+C21.04,C21,04,Linear Regression,core
+C21.05,C21,05,Classification,core
+C21.06,C21,06,Loss/Optimisation,core
+C21.07,C21,07,Metrics,core
+C21.08,C21,08,Trees/Random Forests,core
+C21.09,C21,09,Feature Engineering,core
+C21.10,C21,10,Preprocessing,core
+C21.11,C21,11,Cross-validation,core
+C21.12,C21,12,Overfitting/Regularisation,core
+C21.13,C21,13,Clustering,core
+C21.14,C21,14,Hyperparameters,core
+C21.15,C21,15,Model Pipeline,core
+C21.16,C21,16,Capstone: ML Product,core
+C22.01,C22,01,Neuron من غير سحر,core
+C22.02,C22,02,Neural Network,core
+C22.03,C22,03,Activation Functions,core
+C22.04,C22,04,Forward Pass,core
+C22.05,C22,05,Backpropagation,core
+C22.06,C22,06,Tensors وAutograd,core
+C22.07,C22,07,Training Loop,core
+C22.08,C22,08,Optimisers,core
+C22.09,C22,09,CNN,core
+C22.10,C22,10,Sequence Models/RNN,core
+C22.11,C22,11,Attention,core
+C22.12,C22,12,Transformer,core
+C22.13,C22,13,Regularisation/Normalisation,core
+C22.14,C22,14,Capstone: Neural Model Service,core
+C23.01,C23,01,LLM بيعمل إيه فعلًا؟,core
+C23.02,C23,02,Tokens,core
+C23.03,C23,03,Context Window,core
+C23.04,C23,04,Temperature/Sampling,core
+C23.05,C23,05,Prompting Fundamentals,core
+C23.06,C23,06,System/User/Tool messages,core
+C23.07,C23,07,Structured Outputs,core
+C23.08,C23,08,Embeddings,core
+C23.09,C23,09,Vector Databases,core
+C23.10,C23,10,RAG,core
+C23.11,C23,11,Chunking/Retrieval,core
+C23.12,C23,12,Tool Calling,core
+C23.13,C23,13,Multimodal,core
+C23.14,C23,14,Fine-tuning vs RAG vs Prompting,core
+C23.15,C23,15,Evaluation,core
+C23.16,C23,16,Capstone: Knowledge Assistant,core
+C24.01,C24,01,AI Demo vs AI Product,core
+C24.02,C24,02,Provider Abstraction,core
+C24.03,C24,03,Prompt Versioning,core
+C24.04,C24,04,RAG Architecture Production,core
+C24.05,C24,05,Chunking & Retrieval Evaluation,core
+C24.06,C24,06,Hybrid Search/Reranking,core
+C24.07,C24,07,Caching,core
+C24.08,C24,08,Async/Queues,core
+C24.09,C24,09,Guardrails,core
+C24.10,C24,10,Prompt Injection & Data Boundaries,core
+C24.11,C24,11,AI Observability,core
+C24.12,C24,12,Cost Engineering,core
+C24.13,C24,13,Latency Engineering,core
+C24.14,C24,14,Evaluation Harness,core
+C24.15,C24,15,Deployment/Canary,core
+C24.16,C24,16,Capstone: Production RAG,core
+C25.01,C25,01,Coding Agent مش Chatbot,core
+C25.02,C25,02,Agent يشوف Repo إزاي؟,core
+C25.03,C25,03,Instructions Files,core
+C25.04,C25,04,Read Before Write,core
+C25.05,C25,05,Diff-driven Workflow,core
+C25.06,C25,06,Agent + Tests,core
+C25.07,C25,07,Agent + Terminal,core
+C25.08,C25,08,Context Management,core
+C25.09,C25,09,Multiple Agents/Worktrees,core
+C25.10,C25,10,Security/Secrets,core
+C25.11,C25,11,CLI Comparison Lab,core
+C25.12,C25,12,Capstone: Agent-assisted Refactor,core
+C26.01,C26,01,Agent يعني إيه؟,core
+C26.02,C26,02,Model + Tools + State,core
+C26.03,C26,03,Tool Calling Design,core
+C26.04,C26,04,Planning vs Workflow,core
+C26.05,C26,05,Memory,core
+C26.06,C26,06,Human-in-the-loop,core
+C26.07,C26,07,Single vs Multi-agent,core
+C26.08,C26,08,Delegation,core
+C26.09,C26,09,MCP Mental Model,core
+C26.10,C26,10,MCP Tools/Resources/Prompts والموديل الجديد,core
+C26.11,C26,11,Build MCP Server,core
+C26.12,C26,12,Authentication/Authorization,core
+C26.13,C26,13,MCP Security,core
+C26.14,C26,14,Agent Evaluation,core
+C26.15,C26,15,Agent Observability/Cost,core
+C26.16,C26,16,Capstone: Multi-tool Agent Platform,core
+C27.01,C27,01,Automation ≠ Agent,core
+C27.02,C27,02,Trigger → Action,core
+C27.03,C27,03,Webhooks,core
+C27.04,C27,04,Cron/Schedules,core
+C27.05,C27,05,APIs في الأتمتة,core
+C27.06,C27,06,Data Mapping/Transformation,core
+C27.07,C27,07,أول n8n Workflow,core
+C27.08,C27,08,Nodes/Expressions,core
+C27.09,C27,09,IF/Switch/Merge,core
+C27.10,C27,10,Credentials/Secrets,core
+C27.11,C27,11,Error Handling/Retry,core
+C27.12,C27,12,Database + n8n,core
+C27.13,C27,13,Email/Slack/Notifications,core
+C27.14,C27,14,AI Nodes/LLM,core
+C27.15,C27,15,n8n + RAG/Agent,core
+C27.16,C27,16,Human Approval,core
+C27.17,C27,17,Self-hosting/Security/Observability,core
+C27.18,C27,18,Capstone: Automated Clinic Operations,core
+C28.01,C28,01,اشتغل… بس هل هو صح؟,core
+C28.02,C28,02,Correctness,core
+C28.03,C28,03,Reliability,core
+C28.04,C28,04,Performance,core
+C28.05,C28,05,Scalability,core
+C28.06,C28,06,Maintainability,core
+C28.07,C28,07,Testability,core
+C28.08,C28,08,Security,core
+C28.09,C28,09,Observability,core
+C28.10,C28,10,Accessibility/UX,core
+C28.11,C28,11,Cost,core
+C28.12,C28,12,Resilience/DR,core
+C28.13,C28,13,Documentation,core
+C28.14,C28,14,Architecture Review,core
+C28.15,C28,15,Production Readiness Review,core
+C28.16,C28,16,Final Capstone Defense,core
+DISC-W01,DISC,01,رؤية القناة: من صفر لمهندس,discovery
+DISC-W02,DISC,02,مشروع ClinicOS هيكبر إزاي؟,discovery
+DISC-W03,DISC,03,AI يعني إيه من غير Hype,discovery
+DISC-W04,DISC,04,Cloud بالبلدي,discovery
+DISC-W05,DISC,05,أول n8n Automation preview,discovery
+DISC-W06,DISC,06,Hardware vs Software,discovery
+DISC-W07,DISC,07,Algorithm Challenge,discovery
+DISC-W08,DISC,08,حل Challenge,discovery
+DISC-W09,DISC,09,كيف تختار تخصصك؟,discovery
+DISC-W10,DISC,10,Clinic CLI Preview,discovery
+DISC-W11,DISC,11,تحدي Python,discovery
+DISC-W12,DISC,12,حل التحدي,discovery
+DISC-W13,DISC,13,مشروع صغير,discovery
+DISC-W14,DISC,14,Debugging short lab,discovery
+DISC-W15,DISC,15,Build with me,discovery
+DISC-W16,DISC,16,Python misconceptions,discovery
+DISC-W17,DISC,17,Review مشروع المتابعين,discovery
+DISC-W18,DISC,18,كود شغال vs كود محترم,discovery
+DISC-W19,DISC,19,Refactor live,discovery
+DISC-W20,DISC,20,Bug hunt,discovery
+DISC-W21,DISC,21,Testing challenge,discovery
+DISC-W22,DISC,22,Git visual story,discovery
+DISC-W23,DISC,23,Code review live,discovery
+DISC-W24,DISC,24,Secret leak lesson,discovery
+DISC-W25,DISC,25,CI failure challenge,discovery
+DISC-W26,DISC,26,Build landing page,discovery
+DISC-W27,DISC,27,CSS challenge,discovery
+DISC-W28,DISC,28,UI recreation,discovery
+DISC-W29,DISC,29,Mobile-first review,discovery
+DISC-W30,DISC,30,JS mini-game,discovery
+DISC-W31,DISC,31,API demo,discovery
+DISC-W32,DISC,32,React mental model,discovery
+DISC-W33,DISC,33,Dashboard build,discovery
+DISC-W34,DISC,34,Frontend review,discovery
+DISC-W35,DISC,35,Flutter teaser,discovery
+DISC-W36,DISC,36,UI build,discovery
+DISC-W37,DISC,37,Flutter challenge,discovery
+DISC-W38,DISC,38,Mobile workflow,discovery
+DISC-W39,DISC,39,Offline demo,discovery
+DISC-W40,DISC,40,Security demo,discovery
+DISC-W41,DISC,41,Native vs Flutter,discovery
+DISC-W42,DISC,42,iOS comparison,discovery
+DISC-W43,DISC,43,App showcase,discovery
+DISC-W44,DISC,44,API from scratch,discovery
+DISC-W45,DISC,45,Async visual,discovery
+DISC-W46,DISC,46,REST challenge,discovery
+DISC-W47,DISC,47,Bad API review,discovery
+DISC-W48,DISC,48,Login demo,discovery
+DISC-W49,DISC,49,Security lab,discovery
+DISC-W50,DISC,50,Realtime demo,discovery
+DISC-W51,DISC,51,API review,discovery
+DISC-W52,DISC,52,السنة الأولى: النظام وصل لفين؟,discovery

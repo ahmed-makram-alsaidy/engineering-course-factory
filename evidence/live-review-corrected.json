@@ -1,0 +1,52 @@
+{
+  "input": {
+    "version": 1,
+    "lessonId": "C02.09-review-demo",
+    "narration": "الدالة is_valid_age في المثال بتقبل القيم الصحيحة اللي أكبر من صفر ولحد مية وعشرين، وبالتالي صفر ومية واحد وعشرين مرفوضين. فحص is_valid_name هنا بيعد أجزاء النص بعد إزالة المسافات الزائدة؛ قبول كلمتين مش إثبات لهوية الشخص. ملاحظة تنفيذية: Python بتعتبر bool نوع فرعي من int، والمثال ده مش بيستبعده.",
+    "sources": [
+      {
+        "id": "python-source",
+        "text": "# -*- coding: utf-8 -*-\n# C02.09 - Functions: الفحوصات المتكررة تصبح دوال\ndef is_valid_age(age):\n    \"\"\"0 < age <= 120\"\"\"\n    return isinstance(age, int) and 0 < age <= 120\n\n\ndef is_valid_name(name):\n    \"\"\"كلمتان على الأقل بعد التنضيف.\"\"\"\n    return isinstance(name, str) and len(name.strip().split()) >= 2\n\n\nprint(f\"FUNC_VALID_AGE_TRUE={str(is_valid_age(34)).lower()}\")\nprint(f\"FUNC_INVALID_AGE_FALSE={str(not is_valid_age(999)).lower()}\")\nprint(f\"FUNC_NAME_RULE_OK={str(is_valid_name('سعاد حسن')).lower()}\")\nprint(f\"FUNC_SINGLE_WORD_REJECTED={str(not is_valid_name('محمود')).lower()}\")\n"
+      },
+      {
+        "id": "execution",
+        "text": "FUNC_VALID_AGE_TRUE=true\r\nFUNC_INVALID_AGE_FALSE=true\r\nFUNC_NAME_RULE_OK=true\r\nFUNC_SINGLE_WORD_REJECTED=true\r\nBOUNDARY_CHECKS={\"age_120\": true, \"age_121\": false, \"age_34\": true, \"age_zero\": false, \"single_word_name\": false, \"two_arbitrary_words\": true, \"two_word_name\": true}"
+      },
+      {
+        "id": "scope",
+        "text": "This is a programming exercise about boolean predicates, not a medical recommendation or an identity verification service. The name rule checks text word count only. Python bool is a subclass of int."
+      }
+    ]
+  },
+  "result": {
+    "schemaVersion": 1,
+    "lessonId": "C02.09-review-demo",
+    "inputSha256": "6ca474cf7a13072bb2be4c4bff4800ff0b0254d0aa6dd3befd3cda1266f66da2",
+    "narrationSha256": "298a845a985e0c047cd020340d10e64e970c146d25b1093a00b8bad2fc99e226",
+    "decision": "REQUIRES_HUMAN_REVIEW",
+    "approvedForPublication": false,
+    "citationValidation": "Exact source IDs and quoted text validated; this does not establish semantic correctness.",
+    "findings": [],
+    "provenance": {
+      "mode": "LIVE_META_API",
+      "endpoint": "https://api.meta.ai/v1/responses",
+      "requestedModel": "muse-spark-1.3",
+      "returnedModel": "muse-spark-1.3",
+      "responseId": "resp_6ae90799d35021c422674cda",
+      "createdAt": "2026-11-02T21:58:48.290Z",
+      "latencyMs": 7266,
+      "usage": {
+        "input_tokens": 686,
+        "input_tokens_details": {
+          "cached_tokens": 0
+        },
+        "output_tokens": 1225,
+        "output_tokens_details": {
+          "reasoning_tokens": 1211
+        },
+        "total_tokens": 1911
+      },
+      "automaticRetries": 0
+    }
+  }
+}

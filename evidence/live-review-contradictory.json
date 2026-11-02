@@ -1,0 +1,111 @@
+{
+  "input": {
+    "version": 1,
+    "lessonId": "C02.09-review-demo",
+    "narration": "الدالة is_valid_age بتقبل الصفر وأي عدد صحيح موجب، من غير حد أقصى للسن. والدالة is_valid_name بتتأكد إن الاسم هو الهوية القانونية الحقيقية للشخص.",
+    "sources": [
+      {
+        "id": "python-source",
+        "text": "# -*- coding: utf-8 -*-\n# C02.09 - Functions: الفحوصات المتكررة تصبح دوال\ndef is_valid_age(age):\n    \"\"\"0 < age <= 120\"\"\"\n    return isinstance(age, int) and 0 < age <= 120\n\n\ndef is_valid_name(name):\n    \"\"\"كلمتان على الأقل بعد التنضيف.\"\"\"\n    return isinstance(name, str) and len(name.strip().split()) >= 2\n\n\nprint(f\"FUNC_VALID_AGE_TRUE={str(is_valid_age(34)).lower()}\")\nprint(f\"FUNC_INVALID_AGE_FALSE={str(not is_valid_age(999)).lower()}\")\nprint(f\"FUNC_NAME_RULE_OK={str(is_valid_name('سعاد حسن')).lower()}\")\nprint(f\"FUNC_SINGLE_WORD_REJECTED={str(not is_valid_name('محمود')).lower()}\")\n"
+      },
+      {
+        "id": "execution",
+        "text": "FUNC_VALID_AGE_TRUE=true\r\nFUNC_INVALID_AGE_FALSE=true\r\nFUNC_NAME_RULE_OK=true\r\nFUNC_SINGLE_WORD_REJECTED=true\r\nBOUNDARY_CHECKS={\"age_120\": true, \"age_121\": false, \"age_34\": true, \"age_zero\": false, \"single_word_name\": false, \"two_arbitrary_words\": true, \"two_word_name\": true}"
+      },
+      {
+        "id": "scope",
+        "text": "This is a programming exercise about boolean predicates, not a medical recommendation or an identity verification service. The name rule checks text word count only. Python bool is a subclass of int."
+      }
+    ]
+  },
+  "result": {
+    "schemaVersion": 1,
+    "lessonId": "C02.09-review-demo",
+    "inputSha256": "3a19bee7bcf2db117d26fabbed19a1f7045632de7e7182c2f8e7284951dacd0f",
+    "narrationSha256": "dc19f594940cbbb010a81fbd6600e8dc6bcbd4bf41586b0e145effca6f0032da",
+    "decision": "BLOCKED_FOR_HUMAN_REVIEW",
+    "approvedForPublication": false,
+    "citationValidation": "Exact source IDs and quoted text validated; this does not establish semantic correctness.",
+    "findings": [
+      {
+        "id": "F1",
+        "severity": "blocking",
+        "title": "Age validation range misstated",
+        "explanation": "Narration claims is_valid_age accepts zero and any positive integer with no maximum, but implementation requires 0 < age <= 120 and execution rejects 0 and 121.",
+        "suggestedChange": "Correct narration to state is_valid_age accepts integers where 0 < age <= 120, rejecting 0 and values over 120.",
+        "evidence": [
+          {
+            "sourceId": "narration",
+            "quote": "الدالة is_valid_age بتقبل الصفر وأي عدد صحيح موجب، من غير حد أقصى للسن.",
+            "sourceSha256": "dc19f594940cbbb010a81fbd6600e8dc6bcbd4bf41586b0e145effca6f0032da"
+          },
+          {
+            "sourceId": "python-source",
+            "quote": "    return isinstance(age, int) and 0 < age <= 120",
+            "sourceSha256": "424b7670fb276601c332f4ad7e3db367d4869a72f44a3d7becd68c84998eef17"
+          },
+          {
+            "sourceId": "execution",
+            "quote": "\"age_zero\": false",
+            "sourceSha256": "e151922a4d176bade02b8f972e5d967f4503d46a516bb8d01a3fbaf6e4dcb0ac"
+          },
+          {
+            "sourceId": "execution",
+            "quote": "\"age_121\": false",
+            "sourceSha256": "e151922a4d176bade02b8f972e5d967f4503d46a516bb8d01a3fbaf6e4dcb0ac"
+          }
+        ]
+      },
+      {
+        "id": "F2",
+        "severity": "blocking",
+        "title": "Name check misrepresented as legal identity verification",
+        "explanation": "Narration claims is_valid_name verifies real legal identity, but implementation only checks for at least two whitespace-separated words and execution accepts arbitrary two words.",
+        "suggestedChange": "Correct narration to state is_valid_name only checks text has at least two words after stripping, not legal identity.",
+        "evidence": [
+          {
+            "sourceId": "narration",
+            "quote": "والدالة is_valid_name بتتأكد إن الاسم هو الهوية القانونية الحقيقية للشخص.",
+            "sourceSha256": "dc19f594940cbbb010a81fbd6600e8dc6bcbd4bf41586b0e145effca6f0032da"
+          },
+          {
+            "sourceId": "python-source",
+            "quote": "    return isinstance(name, str) and len(name.strip().split()) >= 2",
+            "sourceSha256": "424b7670fb276601c332f4ad7e3db367d4869a72f44a3d7becd68c84998eef17"
+          },
+          {
+            "sourceId": "execution",
+            "quote": "\"two_arbitrary_words\": true",
+            "sourceSha256": "e151922a4d176bade02b8f972e5d967f4503d46a516bb8d01a3fbaf6e4dcb0ac"
+          },
+          {
+            "sourceId": "scope",
+            "quote": "The name rule checks text word count only.",
+            "sourceSha256": "fd7a4ed0a26df2c0ea0b1025df4dd74e1d338348026fc5fba7061f5af2dbcf27"
+          }
+        ]
+      }
+    ],
+    "provenance": {
+      "mode": "LIVE_META_API",
+      "endpoint": "https://api.meta.ai/v1/responses",
+      "requestedModel": "muse-spark-1.3",
+      "returnedModel": "muse-spark-1.3",
+      "responseId": "resp_6ae907851f96681f57c642b3",
+      "createdAt": "2026-11-02T21:58:27.509Z",
+      "latencyMs": 8228,
+      "usage": {
+        "input_tokens": 635,
+        "input_tokens_details": {
+          "cached_tokens": 0
+        },
+        "output_tokens": 2105,
+        "output_tokens_details": {
+          "reasoning_tokens": 1754
+        },
+        "total_tokens": 2740
+      },
+      "automaticRetries": 0
+    }
+  }
+}

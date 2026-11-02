@@ -1,0 +1,21 @@
+{
+  "date": "2026-11-03",
+  "schemaTestsPassed": 107,
+  "compilerTestsPassed": 82,
+  "newEvidenceContractTestsPassed": 10,
+  "pythonExampleTestsPassed": 2,
+  "newBoundaryAssertionsPassed": 7,
+  "cleanInstall": "PASS after updating the stale workspace lock in the staging copy",
+  "defaultDemo": "PASS, offline fixture clearly labeled",
+  "inventory": "PASS, 28 courses / 433 core / 52 discovery / 485 total prepared packages",
+  "teachingIdeBundle": "PASS with pre-existing import.meta CJS warnings and bundle-size warning; no native runtime certification",
+  "dashboardCases": [
+    "contradictory draft shows two live findings",
+    "corrected draft shows no live findings and human review remains required",
+    "fabricated quote is rejected by the same server-side validator"
+  ],
+  "liveMetaCalls": 2,
+  "liveModel": "muse-spark-1.3",
+  "knownCredentialsFoundInPublishableSource": 0,
+  "humanReviewRequired": true
+}

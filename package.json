@@ -1,0 +1,38 @@
+{
+  "name": "course-factory",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Human-supervised Arabic technical lesson production: source library, executable examples, validation, teaching IDE and production components.",
+  "workspaces": [
+    "apps/*",
+    "packages/*",
+    "engine/*"
+  ],
+  "scripts": {
+    "validate:lesson": "node packages/shared-types/src/cli.ts",
+    "compile:lesson": "node engine/compiler/src/cli.ts",
+    "dev:teaching-ide": "npm run start --workspace @course-factory/teaching-ide",
+    "build:teaching-ide": "npm run build --workspace @course-factory/teaching-ide",
+    "test:teaching-ide": "npm run test --workspace @course-factory/teaching-ide",
+    "test:terminal-engine": "npm run test --workspace @course-factory/terminal-engine",
+    "test:voice": "npm run test --workspace @course-factory/voice",
+    "test": "npm test --workspace @course-factory/shared-types && npm test --workspace @course-factory/lesson-compiler && node --test tools/lesson-review/contract.test.mjs",
+    "demo": "node tools/demo.mjs",
+    "inventory": "node tools/inventory.mjs",
+    "test:example": "node tools/demo.mjs",
+    "review": "node tools/review.mjs",
+    "review:live": "node tools/review.mjs --live",
+    "review:dashboard": "node tools/review-server.mjs"
+  },
+  "engines": {
+    "node": ">=24"
+  },
+  "allowScripts": {
+    "electron@38.8.6": true,
+    "esbuild@0.25.12": true
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ahmed-makram-alsaidy/engineering-course-factory.git"
+  }
+}
