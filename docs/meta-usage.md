@@ -16,3 +16,7 @@ The owner also used Muse through OpenCode Go, alongside other models, for earlie
 Two examples do not establish overall model accuracy, time savings, cost savings or superiority over another model. Usage counts are recorded per call; no controlled production-cost benchmark has been completed.
 
 [Meta quickstart](https://dev.meta.ai/docs/quickstart)
+
+## Expanded six-context sample
+
+Twelve additional actual calls cover paired source-derived and deliberately contradictory test drafts across HTTP, Python, SQL, idempotency, prompt injection and MCP. These newly written test drafts are not verbatim published narration. All quotations passed reference validation; the demonstration does not establish general accuracy. Existing execution receipts retain their original dates and limits. See [sample design](library-review-sample.md). `review-json.mjs` validates or reviews arbitrary input matching the evidence contract without executing supplied code. `review-library.mjs` uses a bounded checked-in manifest, preserves failed/rejected receipts and makes no requests during replay.

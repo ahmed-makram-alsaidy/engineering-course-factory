@@ -17,5 +17,11 @@
   "liveMetaCalls": 2,
   "liveModel": "muse-spark-1.3",
   "knownCredentialsFoundInPublishableSource": 0,
-  "humanReviewRequired": true
+  "humanReviewRequired": true,
+  "newCliTestsPassed": 4,
+  "totalNodeTestsPassed": 203,
+  "newLibrarySampleLiveCalls": 12,
+  "liveMetaCallsTotal": 14,
+  "librarySample": "12 inputs across 6 course contexts; all references validated; replay dispatched 0 requests",
+  "dashboardExpandedCases": "All six topic pairs opened through the browser; seeded drafts blocked, source-derived drafts require human review; fabricated quotation rejected"
 }

@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "lessonId": "C02.09-seeded-contradiction",
+  "narration": "في المثال، الدالة is_valid_age بتقبل الصفر وأي عدد صحيح موجب من غير حد أقصى.",
+  "sources": [
+    {
+      "id": "lesson-source",
+      "text": "# -*- coding: utf-8 -*-\n# C02.09 - Functions: الفحوصات المتكررة تصبح دوال\ndef is_valid_age(age):\n    \"\"\"0 < age <= 120\"\"\"\n    return isinstance(age, int) and 0 < age <= 120\n\n\ndef is_valid_name(name):\n    \"\"\"كلمتان على الأقل بعد التنضيف.\"\"\"\n    return isinstance(name, str) and len(name.strip().split()) >= 2\n\n\nprint(f\"FUNC_VALID_AGE_TRUE={str(is_valid_age(34)).lower()}\")\nprint(f\"FUNC_INVALID_AGE_FALSE={str(not is_valid_age(999)).lower()}\")\nprint(f\"FUNC_NAME_RULE_OK={str(is_valid_name('سعاد حسن')).lower()}\")\nprint(f\"FUNC_SINGLE_WORD_REJECTED={str(not is_valid_name('محمود')).lower()}\")\n"
+    },
+    {
+      "id": "scope",
+      "text": "code plus the boundary-check receipt captured in the earlier live review. Review only against the supplied material. Do not infer that this sample was executed now or that its references establish general educational accuracy."
+    },
+    {
+      "id": "recorded-execution",
+      "text": "FUNC_VALID_AGE_TRUE=true\r\nFUNC_INVALID_AGE_FALSE=true\r\nFUNC_NAME_RULE_OK=true\r\nFUNC_SINGLE_WORD_REJECTED=true\r\nBOUNDARY_CHECKS={\"age_120\": true, \"age_121\": false, \"age_34\": true, \"age_zero\": false, \"single_word_name\": false, \"two_arbitrary_words\": true, \"two_word_name\": true}"
+    }
+  ]
+}

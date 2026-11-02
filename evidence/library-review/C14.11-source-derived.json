@@ -1,0 +1,74 @@
+{
+  "input": {
+    "version": 1,
+    "lessonId": "C14.11-source-derived",
+    "narration": "في سجل التجربة المحفوظ، Protected Replay رجّع نفس pay-0001 وعدد Protected Mutations فضل 1 وDelta: 0. اختلاف payload مع نفس المفتاح رجّع 409. دي نتائج تجربة مسجلة سابقة، مش قياس لشبكة إنتاج.",
+    "sources": [
+      {
+        "id": "lesson-source",
+        "text": "C14.11 Execution Run Summary\n============================\nRun ID: c14e11-run-1789659983\nTimestamp Start: 2026-09-17T15:46:23.005197+00:00\nTimestamp End:   2026-09-17T15:46:25.295623+00:00\nService PID:     19088\nDriver PID:      13176\nPort:            8020\nStatus:          SUCCESS\n\nBaseline Duplicate Proof:\n  Request 1: base-pay-0001 (Status: 201)\n  Request 2: base-pay-0002 (Status: 201)\n  Baseline Mutations: 2\n\nProtected First Request:\n  Key:        idem-ord-01-pay-001\n  Payment ID: pay-0001 (Status: 201)\n  Protected Mutations: 1\n\nProtected Replay Request:\n  Key:        idem-ord-01-pay-001\n  Payment ID: pay-0001 (Status: 201)\n  Protected Mutations: 1 (Delta: 0)\n\nPayload Mismatch Request:\n  Key:        idem-ord-01-pay-001\n  Status:     409 (IDEMPOTENCY_KEY_PAYLOAD_MISMATCH)\n  Protected Mutations: 1 (Delta: 0)\n\nMissing Key Request:\n  Status:     400 (IDEMPOTENCY_KEY_REQUIRED)\n  Protected Mutations: 1 (Delta: 0)\n\nCleanup:\n  Service Terminated: True\n  Port Released:      True\n"
+      },
+      {
+        "id": "scope",
+        "text": "historical execution receipt timestamped September 17, 2026; not re-executed now. Review only against the supplied material. Do not infer that this sample was executed now or that its references establish general educational accuracy."
+      }
+    ]
+  },
+  "inputSha256": "67ed50cb4cd2f4f4cdb1f8c643c1cb35927f5beb6c2b49dea1d34f7bae888c8e",
+  "rawReview": {
+    "findings": []
+  },
+  "provenance": {
+    "mode": "LIVE_META_API",
+    "endpoint": "https://api.meta.ai/v1/responses",
+    "requestedModel": "muse-spark-1.3",
+    "returnedModel": "muse-spark-1.3",
+    "responseId": "resp_6ae9115ffa305ec6b5dd47db",
+    "createdAt": "2026-11-02T22:40:29.625Z",
+    "latencyMs": 5109,
+    "usage": {
+      "input_tokens": 707,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 454,
+      "output_tokens_details": {
+        "reasoning_tokens": 440
+      },
+      "total_tokens": 1161
+    },
+    "automaticRetries": 0
+  },
+  "result": {
+    "schemaVersion": 1,
+    "lessonId": "C14.11-source-derived",
+    "inputSha256": "67ed50cb4cd2f4f4cdb1f8c643c1cb35927f5beb6c2b49dea1d34f7bae888c8e",
+    "narrationSha256": "43a3699197dcf1dcc747abd32ce936c56f21931dbebb529c74394d347559b7ac",
+    "decision": "REQUIRES_HUMAN_REVIEW",
+    "approvedForPublication": false,
+    "citationValidation": "Exact source IDs and quoted text validated; this does not establish semantic correctness.",
+    "findings": [],
+    "provenance": {
+      "mode": "LIVE_META_API",
+      "endpoint": "https://api.meta.ai/v1/responses",
+      "requestedModel": "muse-spark-1.3",
+      "returnedModel": "muse-spark-1.3",
+      "responseId": "resp_6ae9115ffa305ec6b5dd47db",
+      "createdAt": "2026-11-02T22:40:29.625Z",
+      "latencyMs": 5109,
+      "usage": {
+        "input_tokens": 707,
+        "input_tokens_details": {
+          "cached_tokens": 0
+        },
+        "output_tokens": 454,
+        "output_tokens_details": {
+          "reasoning_tokens": 440
+        },
+        "total_tokens": 1161
+      },
+      "automaticRetries": 0
+    }
+  },
+  "status": "VALIDATED"
+}

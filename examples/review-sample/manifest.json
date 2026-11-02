@@ -1,0 +1,127 @@
+{
+  "version": 1,
+  "description": "Six curated lesson contexts across six courses. Each has a source-derived test draft and a deliberate contradiction. These drafts are newly written test inputs, not verbatim published narration. No private curriculum files are modified.",
+  "cases": [
+    {
+      "id": "C01.09-source-derived",
+      "lessonId": "C01.09",
+      "topic": "HTTP / API / database",
+      "kind": "source-derived",
+      "file": "C01.09-source-derived.json",
+      "sourceOrigin": "C01/C01.09-http-api-db/demo/dart_console/lib/sim.dart",
+      "sourceSha256": "199534cb48c72ba966e6c2a81ab10b05c8560b836d79b81dbe80a316b7bf802c",
+      "evidenceScope": "code-only; source identifies the simulator as a semantic reconstruction"
+    },
+    {
+      "id": "C01.09-seeded-contradiction",
+      "lessonId": "C01.09",
+      "topic": "HTTP / API / database",
+      "kind": "seeded-contradiction",
+      "file": "C01.09-seeded-contradiction.json",
+      "sourceOrigin": "C01/C01.09-http-api-db/demo/dart_console/lib/sim.dart",
+      "sourceSha256": "199534cb48c72ba966e6c2a81ab10b05c8560b836d79b81dbe80a316b7bf802c",
+      "evidenceScope": "code-only; source identifies the simulator as a semantic reconstruction"
+    },
+    {
+      "id": "C02.09-source-derived",
+      "lessonId": "C02.09",
+      "topic": "Python functions",
+      "kind": "source-derived",
+      "file": "C02.09-source-derived.json",
+      "sourceOrigin": "C02/C02.09-functions/demo/python/validators.py (copied pre-existing fixture)",
+      "sourceSha256": "424b7670fb276601c332f4ad7e3db367d4869a72f44a3d7becd68c84998eef17",
+      "evidenceScope": "code plus the boundary-check receipt captured in the earlier live review"
+    },
+    {
+      "id": "C02.09-seeded-contradiction",
+      "lessonId": "C02.09",
+      "topic": "Python functions",
+      "kind": "seeded-contradiction",
+      "file": "C02.09-seeded-contradiction.json",
+      "sourceOrigin": "C02/C02.09-functions/demo/python/validators.py (copied pre-existing fixture)",
+      "sourceSha256": "424b7670fb276601c332f4ad7e3db367d4869a72f44a3d7becd68c84998eef17",
+      "evidenceScope": "code plus the boundary-check receipt captured in the earlier live review"
+    },
+    {
+      "id": "C07.11-source-derived",
+      "lessonId": "C07.11",
+      "topic": "SQL transactions",
+      "kind": "source-derived",
+      "file": "C07.11-source-derived.json",
+      "sourceOrigin": "C07/C07.11-transactions/02-research.md",
+      "sourceSha256": "047b48df904c0f3997ff2bde5326ba250648dcd5123ca4cb558250ab226a1a48",
+      "evidenceScope": "reference notes; no SQL execution is claimed for this sample run"
+    },
+    {
+      "id": "C07.11-seeded-contradiction",
+      "lessonId": "C07.11",
+      "topic": "SQL transactions",
+      "kind": "seeded-contradiction",
+      "file": "C07.11-seeded-contradiction.json",
+      "sourceOrigin": "C07/C07.11-transactions/02-research.md",
+      "sourceSha256": "047b48df904c0f3997ff2bde5326ba250648dcd5123ca4cb558250ab226a1a48",
+      "evidenceScope": "reference notes; no SQL execution is claimed for this sample run"
+    },
+    {
+      "id": "C14.11-source-derived",
+      "lessonId": "C14.11",
+      "topic": "Distributed systems / idempotency",
+      "kind": "source-derived",
+      "file": "C14.11-source-derived.json",
+      "sourceOrigin": "C14/C14.11-idempotency/evidence/run_summary.txt",
+      "sourceSha256": "d5dfc53671c57939f133760df15fad55606180bebee15116098a0f32a3428c6c",
+      "evidenceScope": "historical execution receipt timestamped September 17, 2026; not re-executed now"
+    },
+    {
+      "id": "C14.11-seeded-contradiction",
+      "lessonId": "C14.11",
+      "topic": "Distributed systems / idempotency",
+      "kind": "seeded-contradiction",
+      "file": "C14.11-seeded-contradiction.json",
+      "sourceOrigin": "C14/C14.11-idempotency/evidence/run_summary.txt",
+      "sourceSha256": "d5dfc53671c57939f133760df15fad55606180bebee15116098a0f32a3428c6c",
+      "evidenceScope": "historical execution receipt timestamped September 17, 2026; not re-executed now"
+    },
+    {
+      "id": "C24.10-source-derived",
+      "lessonId": "C24.10",
+      "topic": "Prompt injection boundaries",
+      "kind": "source-derived",
+      "file": "C24.10-source-derived.json",
+      "sourceOrigin": "C24/C24.10-injection/05-demo.md",
+      "sourceSha256": "94b46233d90995404886415766b8d03fdeff0eb5df89d4891d45229698f897c2",
+      "evidenceScope": "documented expected fixture output; not a fresh execution observation"
+    },
+    {
+      "id": "C24.10-seeded-contradiction",
+      "lessonId": "C24.10",
+      "topic": "Prompt injection boundaries",
+      "kind": "seeded-contradiction",
+      "file": "C24.10-seeded-contradiction.json",
+      "sourceOrigin": "C24/C24.10-injection/05-demo.md",
+      "sourceSha256": "94b46233d90995404886415766b8d03fdeff0eb5df89d4891d45229698f897c2",
+      "evidenceScope": "documented expected fixture output; not a fresh execution observation"
+    },
+    {
+      "id": "C26.09-source-derived",
+      "lessonId": "C26.09",
+      "topic": "MCP mental model",
+      "kind": "source-derived",
+      "file": "C26.09-source-derived.json",
+      "sourceOrigin": "C26/C26.09-mcp-mental-model/solution/mcp-mental-model-reference.md",
+      "sourceSha256": "6433f9ca0f811a408f46b4d981c4a02b656db0e9f41bc95f354881802e4b2b6e",
+      "evidenceScope": "reference card describing a local MCP fixture; not re-executed now"
+    },
+    {
+      "id": "C26.09-seeded-contradiction",
+      "lessonId": "C26.09",
+      "topic": "MCP mental model",
+      "kind": "seeded-contradiction",
+      "file": "C26.09-seeded-contradiction.json",
+      "sourceOrigin": "C26/C26.09-mcp-mental-model/solution/mcp-mental-model-reference.md",
+      "sourceSha256": "6433f9ca0f811a408f46b4d981c4a02b656db0e9f41bc95f354881802e4b2b6e",
+      "evidenceScope": "reference card describing a local MCP fixture; not re-executed now"
+    }
+  ],
+  "selection": "Purposive convenience sample, not random or representative; one model run per input; not a benchmark."
+}

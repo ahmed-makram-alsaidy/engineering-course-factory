@@ -1,0 +1,74 @@
+{
+  "input": {
+    "version": 1,
+    "lessonId": "C07.11-source-derived",
+    "narration": "في مثال التحويل، الحالة بعد commit بتبقى [70, 130]، وبعد forced rollback بتبقى [100, 100]. المثال بيوضح single-process atomicity؛ مش إثبات للعزل بين جلستين متزامنتين.",
+    "sources": [
+      {
+        "id": "lesson-source",
+        "text": "# C07E11 - research notes\n\nThe fixture is `accounts(id, name, balance)` populated with two rows\nof 100. The transfer transaction reads the starting balances, debits\n30 from one account, credits 30 to the other, and asserts the final\nstate is `[70, 130]`. The forced-rollback case throws an error inside\nthe transaction; the engine discards the temporary write pair and the\nfinal state is `[100, 100]`.\n\nThe PGlite transaction API is a callback-based promise that commits\non resolve and rolls back on throw. The lesson uses the API, not\n`BEGIN`/`COMMIT`/`ROLLBACK` raw SQL, because the in-process PGlite\nboundary treats those as session-level operations on a single\nconnection. The atomicity observation is a\n`PGLITE_TRANSACTION_SEMANTICS` claim and a\n`RELATIONAL_SQL_SEMANTICS` claim about the visible SQL.\n\nThe lesson is explicit that this is single-process atomicity. It does\nnot establish isolation between two real concurrent sessions, lock\ncontention, deadlock detection, or recovery from server failure. Those\nare separate lessons.\n"
+      },
+      {
+        "id": "scope",
+        "text": "reference notes; no SQL execution is claimed for this sample run. Review only against the supplied material. Do not infer that this sample was executed now or that its references establish general educational accuracy."
+      }
+    ]
+  },
+  "inputSha256": "a221d58cd41419db54a563bb98ca816073e55d331c66b989257874f95ee9e4db",
+  "rawReview": {
+    "findings": []
+  },
+  "provenance": {
+    "mode": "LIVE_META_API",
+    "endpoint": "https://api.meta.ai/v1/responses",
+    "requestedModel": "muse-spark-1.3",
+    "returnedModel": "muse-spark-1.3",
+    "responseId": "resp_6ae9114b514fbf2565134a5f",
+    "createdAt": "2026-11-02T22:40:09.581Z",
+    "latencyMs": 5910,
+    "usage": {
+      "input_tokens": 593,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 613,
+      "output_tokens_details": {
+        "reasoning_tokens": 599
+      },
+      "total_tokens": 1206
+    },
+    "automaticRetries": 0
+  },
+  "result": {
+    "schemaVersion": 1,
+    "lessonId": "C07.11-source-derived",
+    "inputSha256": "a221d58cd41419db54a563bb98ca816073e55d331c66b989257874f95ee9e4db",
+    "narrationSha256": "a12c304537770858459d6dacbcc76582c60e907e24295cc069d59e1f3da1209d",
+    "decision": "REQUIRES_HUMAN_REVIEW",
+    "approvedForPublication": false,
+    "citationValidation": "Exact source IDs and quoted text validated; this does not establish semantic correctness.",
+    "findings": [],
+    "provenance": {
+      "mode": "LIVE_META_API",
+      "endpoint": "https://api.meta.ai/v1/responses",
+      "requestedModel": "muse-spark-1.3",
+      "returnedModel": "muse-spark-1.3",
+      "responseId": "resp_6ae9114b514fbf2565134a5f",
+      "createdAt": "2026-11-02T22:40:09.581Z",
+      "latencyMs": 5910,
+      "usage": {
+        "input_tokens": 593,
+        "input_tokens_details": {
+          "cached_tokens": 0
+        },
+        "output_tokens": 613,
+        "output_tokens_details": {
+          "reasoning_tokens": 599
+        },
+        "total_tokens": 1206
+      },
+      "automaticRetries": 0
+    }
+  },
+  "status": "VALIDATED"
+}

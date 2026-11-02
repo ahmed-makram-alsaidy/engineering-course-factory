@@ -1,0 +1,78 @@
+{
+  "input": {
+    "version": 1,
+    "lessonId": "C02.09-source-derived",
+    "narration": "في المثال، شرط السن هو 0 < age <= 120 مع isinstance(age, int). قبول اسم من كلمتين هو فحص لعدد الكلمات، مش إثبات هوية. Python بتعتبر bool نوع فرعي من int والمثال مش بيستبعده.",
+    "sources": [
+      {
+        "id": "lesson-source",
+        "text": "# -*- coding: utf-8 -*-\n# C02.09 - Functions: الفحوصات المتكررة تصبح دوال\ndef is_valid_age(age):\n    \"\"\"0 < age <= 120\"\"\"\n    return isinstance(age, int) and 0 < age <= 120\n\n\ndef is_valid_name(name):\n    \"\"\"كلمتان على الأقل بعد التنضيف.\"\"\"\n    return isinstance(name, str) and len(name.strip().split()) >= 2\n\n\nprint(f\"FUNC_VALID_AGE_TRUE={str(is_valid_age(34)).lower()}\")\nprint(f\"FUNC_INVALID_AGE_FALSE={str(not is_valid_age(999)).lower()}\")\nprint(f\"FUNC_NAME_RULE_OK={str(is_valid_name('سعاد حسن')).lower()}\")\nprint(f\"FUNC_SINGLE_WORD_REJECTED={str(not is_valid_name('محمود')).lower()}\")\n"
+      },
+      {
+        "id": "scope",
+        "text": "code plus the boundary-check receipt captured in the earlier live review. Review only against the supplied material. Do not infer that this sample was executed now or that its references establish general educational accuracy."
+      },
+      {
+        "id": "recorded-execution",
+        "text": "FUNC_VALID_AGE_TRUE=true\r\nFUNC_INVALID_AGE_FALSE=true\r\nFUNC_NAME_RULE_OK=true\r\nFUNC_SINGLE_WORD_REJECTED=true\r\nBOUNDARY_CHECKS={\"age_120\": true, \"age_121\": false, \"age_34\": true, \"age_zero\": false, \"single_word_name\": false, \"two_arbitrary_words\": true, \"two_word_name\": true}"
+      }
+    ]
+  },
+  "inputSha256": "c177387e07dfa148d920b5655c199a92085518f8d974757b0fbf0295dbfdb898",
+  "rawReview": {
+    "findings": []
+  },
+  "provenance": {
+    "mode": "LIVE_META_API",
+    "endpoint": "https://api.meta.ai/v1/responses",
+    "requestedModel": "muse-spark-1.3",
+    "returnedModel": "muse-spark-1.3",
+    "responseId": "resp_6ae91134640caba425154499",
+    "createdAt": "2026-11-02T22:39:46.518Z",
+    "latencyMs": 14075,
+    "usage": {
+      "input_tokens": 649,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 1389,
+      "output_tokens_details": {
+        "reasoning_tokens": 1375
+      },
+      "total_tokens": 2038
+    },
+    "automaticRetries": 0
+  },
+  "result": {
+    "schemaVersion": 1,
+    "lessonId": "C02.09-source-derived",
+    "inputSha256": "c177387e07dfa148d920b5655c199a92085518f8d974757b0fbf0295dbfdb898",
+    "narrationSha256": "1023c8403caa0dad97754b506f3f4f2ba2774ef82d0d3bd0b422b5e58eaba411",
+    "decision": "REQUIRES_HUMAN_REVIEW",
+    "approvedForPublication": false,
+    "citationValidation": "Exact source IDs and quoted text validated; this does not establish semantic correctness.",
+    "findings": [],
+    "provenance": {
+      "mode": "LIVE_META_API",
+      "endpoint": "https://api.meta.ai/v1/responses",
+      "requestedModel": "muse-spark-1.3",
+      "returnedModel": "muse-spark-1.3",
+      "responseId": "resp_6ae91134640caba425154499",
+      "createdAt": "2026-11-02T22:39:46.518Z",
+      "latencyMs": 14075,
+      "usage": {
+        "input_tokens": 649,
+        "input_tokens_details": {
+          "cached_tokens": 0
+        },
+        "output_tokens": 1389,
+        "output_tokens_details": {
+          "reasoning_tokens": 1375
+        },
+        "total_tokens": 2038
+      },
+      "automaticRetries": 0
+    }
+  },
+  "status": "VALIDATED"
+}

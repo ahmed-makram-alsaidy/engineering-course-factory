@@ -1,0 +1,276 @@
+{
+  "schemaVersion": 1,
+  "sampleLessons": 6,
+  "caseCount": 12,
+  "validated": 12,
+  "rejected": 0,
+  "failed": 0,
+  "selection": "Purposive convenience sample, not random or representative; one model run per input; not a benchmark.",
+  "limitations": "New source-derived test drafts and deliberately seeded contradictions. Not verbatim published narration, not a random sample, not a human-labeled accuracy benchmark. Source references may themselves contain errors. Matching quotations establish reference integrity, not truth. Historical evidence is labeled and not claimed as freshly executed. No case is approved for publication.",
+  "rows": [
+    {
+      "caseId": "C01.09-source-derived",
+      "lessonId": "C01.09",
+      "topic": "HTTP / API / database",
+      "kind": "source-derived",
+      "status": "VALIDATED",
+      "findings": 0,
+      "decision": "REQUIRES_HUMAN_REVIEW",
+      "latencyMs": 5271,
+      "usage": {
+        "input_tokens": 594,
+        "input_tokens_details": {
+          "cached_tokens": 0
+        },
+        "output_tokens": 395,
+        "output_tokens_details": {
+          "reasoning_tokens": 381
+        },
+        "total_tokens": 989
+      },
+      "receipt": "evidence/library-review/C01.09-source-derived.json"
+    },
+    {
+      "caseId": "C01.09-seeded-contradiction",
+      "lessonId": "C01.09",
+      "topic": "HTTP / API / database",
+      "kind": "seeded-contradiction",
+      "status": "VALIDATED",
+      "findings": 1,
+      "decision": "BLOCKED_FOR_HUMAN_REVIEW",
+      "latencyMs": 10235,
+      "usage": {
+        "input_tokens": 580,
+        "input_tokens_details": {
+          "cached_tokens": 0
+        },
+        "output_tokens": 1068,
+        "output_tokens_details": {
+          "reasoning_tokens": 910
+        },
+        "total_tokens": 1648
+      },
+      "receipt": "evidence/library-review/C01.09-seeded-contradiction.json"
+    },
+    {
+      "caseId": "C02.09-source-derived",
+      "lessonId": "C02.09",
+      "topic": "Python functions",
+      "kind": "source-derived",
+      "status": "VALIDATED",
+      "findings": 0,
+      "decision": "REQUIRES_HUMAN_REVIEW",
+      "latencyMs": 14075,
+      "usage": {
+        "input_tokens": 649,
+        "input_tokens_details": {
+          "cached_tokens": 0
+        },
+        "output_tokens": 1389,
+        "output_tokens_details": {
+          "reasoning_tokens": 1375
+        },
+        "total_tokens": 2038
+      },
+      "receipt": "evidence/library-review/C02.09-source-derived.json"
+    },
+    {
+      "caseId": "C02.09-seeded-contradiction",
+      "lessonId": "C02.09",
+      "topic": "Python functions",
+      "kind": "seeded-contradiction",
+      "status": "VALIDATED",
+      "findings": 1,
+      "decision": "BLOCKED_FOR_HUMAN_REVIEW",
+      "latencyMs": 17137,
+      "usage": {
+        "input_tokens": 620,
+        "input_tokens_details": {
+          "cached_tokens": 0
+        },
+        "output_tokens": 1763,
+        "output_tokens_details": {
+          "reasoning_tokens": 1461
+        },
+        "total_tokens": 2383
+      },
+      "receipt": "evidence/library-review/C02.09-seeded-contradiction.json"
+    },
+    {
+      "caseId": "C07.11-source-derived",
+      "lessonId": "C07.11",
+      "topic": "SQL transactions",
+      "kind": "source-derived",
+      "status": "VALIDATED",
+      "findings": 0,
+      "decision": "REQUIRES_HUMAN_REVIEW",
+      "latencyMs": 5910,
+      "usage": {
+        "input_tokens": 593,
+        "input_tokens_details": {
+          "cached_tokens": 0
+        },
+        "output_tokens": 613,
+        "output_tokens_details": {
+          "reasoning_tokens": 599
+        },
+        "total_tokens": 1206
+      },
+      "receipt": "evidence/library-review/C07.11-source-derived.json"
+    },
+    {
+      "caseId": "C07.11-seeded-contradiction",
+      "lessonId": "C07.11",
+      "topic": "SQL transactions",
+      "kind": "seeded-contradiction",
+      "status": "VALIDATED",
+      "findings": 2,
+      "decision": "BLOCKED_FOR_HUMAN_REVIEW",
+      "latencyMs": 14928,
+      "usage": {
+        "input_tokens": 585,
+        "input_tokens_details": {
+          "cached_tokens": 0
+        },
+        "output_tokens": 1633,
+        "output_tokens_details": {
+          "reasoning_tokens": 1216
+        },
+        "total_tokens": 2218
+      },
+      "receipt": "evidence/library-review/C07.11-seeded-contradiction.json"
+    },
+    {
+      "caseId": "C14.11-source-derived",
+      "lessonId": "C14.11",
+      "topic": "Distributed systems / idempotency",
+      "kind": "source-derived",
+      "status": "VALIDATED",
+      "findings": 0,
+      "decision": "REQUIRES_HUMAN_REVIEW",
+      "latencyMs": 5109,
+      "usage": {
+        "input_tokens": 707,
+        "input_tokens_details": {
+          "cached_tokens": 0
+        },
+        "output_tokens": 454,
+        "output_tokens_details": {
+          "reasoning_tokens": 440
+        },
+        "total_tokens": 1161
+      },
+      "receipt": "evidence/library-review/C14.11-source-derived.json"
+    },
+    {
+      "caseId": "C14.11-seeded-contradiction",
+      "lessonId": "C14.11",
+      "topic": "Distributed systems / idempotency",
+      "kind": "seeded-contradiction",
+      "status": "VALIDATED",
+      "findings": 2,
+      "decision": "BLOCKED_FOR_HUMAN_REVIEW",
+      "latencyMs": 17222,
+      "usage": {
+        "input_tokens": 685,
+        "input_tokens_details": {
+          "cached_tokens": 0
+        },
+        "output_tokens": 1868,
+        "output_tokens_details": {
+          "reasoning_tokens": 1511
+        },
+        "total_tokens": 2553
+      },
+      "receipt": "evidence/library-review/C14.11-seeded-contradiction.json"
+    },
+    {
+      "caseId": "C24.10-source-derived",
+      "lessonId": "C24.10",
+      "topic": "Prompt injection boundaries",
+      "kind": "source-derived",
+      "status": "VALIDATED",
+      "findings": 0,
+      "decision": "REQUIRES_HUMAN_REVIEW",
+      "latencyMs": 7918,
+      "usage": {
+        "input_tokens": 471,
+        "input_tokens_details": {
+          "cached_tokens": 0
+        },
+        "output_tokens": 786,
+        "output_tokens_details": {
+          "reasoning_tokens": 772
+        },
+        "total_tokens": 1257
+      },
+      "receipt": "evidence/library-review/C24.10-source-derived.json"
+    },
+    {
+      "caseId": "C24.10-seeded-contradiction",
+      "lessonId": "C24.10",
+      "topic": "Prompt injection boundaries",
+      "kind": "seeded-contradiction",
+      "status": "VALIDATED",
+      "findings": 2,
+      "decision": "BLOCKED_FOR_HUMAN_REVIEW",
+      "latencyMs": 10054,
+      "usage": {
+        "input_tokens": 456,
+        "input_tokens_details": {
+          "cached_tokens": 113
+        },
+        "output_tokens": 1145,
+        "output_tokens_details": {
+          "reasoning_tokens": 952
+        },
+        "total_tokens": 1601
+      },
+      "receipt": "evidence/library-review/C24.10-seeded-contradiction.json"
+    },
+    {
+      "caseId": "C26.09-source-derived",
+      "lessonId": "C26.09",
+      "topic": "MCP mental model",
+      "kind": "source-derived",
+      "status": "VALIDATED",
+      "findings": 0,
+      "decision": "REQUIRES_HUMAN_REVIEW",
+      "latencyMs": 8142,
+      "usage": {
+        "input_tokens": 1209,
+        "input_tokens_details": {
+          "cached_tokens": 113
+        },
+        "output_tokens": 757,
+        "output_tokens_details": {
+          "reasoning_tokens": 743
+        },
+        "total_tokens": 1966
+      },
+      "receipt": "evidence/library-review/C26.09-source-derived.json"
+    },
+    {
+      "caseId": "C26.09-seeded-contradiction",
+      "lessonId": "C26.09",
+      "topic": "MCP mental model",
+      "kind": "seeded-contradiction",
+      "status": "VALIDATED",
+      "findings": 3,
+      "decision": "BLOCKED_FOR_HUMAN_REVIEW",
+      "latencyMs": 14508,
+      "usage": {
+        "input_tokens": 1196,
+        "input_tokens_details": {
+          "cached_tokens": 113
+        },
+        "output_tokens": 1720,
+        "output_tokens_details": {
+          "reasoning_tokens": 1241
+        },
+        "total_tokens": 2916
+      },
+      "receipt": "evidence/library-review/C26.09-seeded-contradiction.json"
+    }
+  ]
+}

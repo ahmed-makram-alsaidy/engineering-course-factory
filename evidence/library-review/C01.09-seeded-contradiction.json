@@ -1,0 +1,111 @@
+{
+  "input": {
+    "version": 1,
+    "lessonId": "C01.09-seeded-contradiction",
+    "narration": "في المحاكي المحلي، المسار /api/nope بيرجع RESPONSE 200 OK بدل 404.",
+    "sources": [
+      {
+        "id": "lesson-source",
+        "text": "/// C01.09 — instructor-side simulator core.\n/// SEMANTIC_RECONSTRUCTION: original bytes lost; behavior rebuilt to make\n/// the historically claimed claim measurable. Bounded difference documented\n/// in 00-recovery-provenance.md.\nlibrary;\n\n\nconst dbTable = {\n  '1': 'سعاد حسن',\n  '2': 'محمود فتحي',\n};\n\nList<String> httpRequest(String method, String path) {\n  final lines = <String>[\n    'REQUEST $method $path HTTP/1.1',\n  ];\n  if (method == 'GET' && path == '/api/patients/2') {\n    lines.add('API routes to db lookup key=2');\n    lines.add('DB_ROW=${dbTable[\"2\"]}');\n    lines.add('RESPONSE 200 OK json={\"id\":2,\"name\":\"${dbTable['2']}}\"}');\n  } else if (path == '/api/nope') {\n    lines.add('RESPONSE 404 NOT FOUND');\n  } else {\n    lines.add('RESPONSE 400 BAD REQUEST');\n  }\n  return lines;\n}\n"
+      },
+      {
+        "id": "scope",
+        "text": "code-only; source identifies the simulator as a semantic reconstruction. Review only against the supplied material. Do not infer that this sample was executed now or that its references establish general educational accuracy."
+      }
+    ]
+  },
+  "inputSha256": "30603cd34f14c0ca54aaf73bfc2285c7e435d6755c3c04100ae771c348b58050",
+  "rawReview": {
+    "findings": [
+      {
+        "severity": "blocking",
+        "title": "Wrong status code claimed for /api/nope",
+        "explanation": "Narration claims /api/nope returns 200 OK instead of 404, but the supplied simulator code returns 404 NOT FOUND for that path.",
+        "suggestedChange": "Correct narration to state that /api/nope returns RESPONSE 404 NOT FOUND per httpRequest.",
+        "evidence": [
+          {
+            "sourceId": "narration",
+            "quote": "في المحاكي المحلي، المسار /api/nope بيرجع RESPONSE 200 OK بدل 404."
+          },
+          {
+            "sourceId": "lesson-source",
+            "quote": "lines.add('RESPONSE 404 NOT FOUND');"
+          }
+        ]
+      }
+    ]
+  },
+  "provenance": {
+    "mode": "LIVE_META_API",
+    "endpoint": "https://api.meta.ai/v1/responses",
+    "requestedModel": "muse-spark-1.3",
+    "returnedModel": "muse-spark-1.3",
+    "responseId": "resp_6ae9112671209fb40eeb4aec",
+    "createdAt": "2026-11-02T22:39:32.439Z",
+    "latencyMs": 10235,
+    "usage": {
+      "input_tokens": 580,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 1068,
+      "output_tokens_details": {
+        "reasoning_tokens": 910
+      },
+      "total_tokens": 1648
+    },
+    "automaticRetries": 0
+  },
+  "result": {
+    "schemaVersion": 1,
+    "lessonId": "C01.09-seeded-contradiction",
+    "inputSha256": "30603cd34f14c0ca54aaf73bfc2285c7e435d6755c3c04100ae771c348b58050",
+    "narrationSha256": "d44276f331ed2f227b51f2e67d3e1d9e5cdb3d26876e5fe0fce7bef5a2e540eb",
+    "decision": "BLOCKED_FOR_HUMAN_REVIEW",
+    "approvedForPublication": false,
+    "citationValidation": "Exact source IDs and quoted text validated; this does not establish semantic correctness.",
+    "findings": [
+      {
+        "id": "F1",
+        "severity": "blocking",
+        "title": "Wrong status code claimed for /api/nope",
+        "explanation": "Narration claims /api/nope returns 200 OK instead of 404, but the supplied simulator code returns 404 NOT FOUND for that path.",
+        "suggestedChange": "Correct narration to state that /api/nope returns RESPONSE 404 NOT FOUND per httpRequest.",
+        "evidence": [
+          {
+            "sourceId": "narration",
+            "quote": "في المحاكي المحلي، المسار /api/nope بيرجع RESPONSE 200 OK بدل 404.",
+            "sourceSha256": "d44276f331ed2f227b51f2e67d3e1d9e5cdb3d26876e5fe0fce7bef5a2e540eb"
+          },
+          {
+            "sourceId": "lesson-source",
+            "quote": "lines.add('RESPONSE 404 NOT FOUND');",
+            "sourceSha256": "199534cb48c72ba966e6c2a81ab10b05c8560b836d79b81dbe80a316b7bf802c"
+          }
+        ]
+      }
+    ],
+    "provenance": {
+      "mode": "LIVE_META_API",
+      "endpoint": "https://api.meta.ai/v1/responses",
+      "requestedModel": "muse-spark-1.3",
+      "returnedModel": "muse-spark-1.3",
+      "responseId": "resp_6ae9112671209fb40eeb4aec",
+      "createdAt": "2026-11-02T22:39:32.439Z",
+      "latencyMs": 10235,
+      "usage": {
+        "input_tokens": 580,
+        "input_tokens_details": {
+          "cached_tokens": 0
+        },
+        "output_tokens": 1068,
+        "output_tokens_details": {
+          "reasoning_tokens": 910
+        },
+        "total_tokens": 1648
+      },
+      "automaticRetries": 0
+    }
+  },
+  "status": "VALIDATED"
+}

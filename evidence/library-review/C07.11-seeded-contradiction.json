@@ -1,0 +1,155 @@
+{
+  "input": {
+    "version": 1,
+    "lessonId": "C07.11-seeded-contradiction",
+    "narration": "في مثال التحويل، الحسابين بعد forced rollback بيفضلوا [70, 130]، والتجربة بتثبت العزل بين جلستين حقيقيتين متزامنتين.",
+    "sources": [
+      {
+        "id": "lesson-source",
+        "text": "# C07E11 - research notes\n\nThe fixture is `accounts(id, name, balance)` populated with two rows\nof 100. The transfer transaction reads the starting balances, debits\n30 from one account, credits 30 to the other, and asserts the final\nstate is `[70, 130]`. The forced-rollback case throws an error inside\nthe transaction; the engine discards the temporary write pair and the\nfinal state is `[100, 100]`.\n\nThe PGlite transaction API is a callback-based promise that commits\non resolve and rolls back on throw. The lesson uses the API, not\n`BEGIN`/`COMMIT`/`ROLLBACK` raw SQL, because the in-process PGlite\nboundary treats those as session-level operations on a single\nconnection. The atomicity observation is a\n`PGLITE_TRANSACTION_SEMANTICS` claim and a\n`RELATIONAL_SQL_SEMANTICS` claim about the visible SQL.\n\nThe lesson is explicit that this is single-process atomicity. It does\nnot establish isolation between two real concurrent sessions, lock\ncontention, deadlock detection, or recovery from server failure. Those\nare separate lessons.\n"
+      },
+      {
+        "id": "scope",
+        "text": "reference notes; no SQL execution is claimed for this sample run. Review only against the supplied material. Do not infer that this sample was executed now or that its references establish general educational accuracy."
+      }
+    ]
+  },
+  "inputSha256": "80e09af3fb1e41e5695177ef3ca1a8edd5311e688f5441b59892ae00d58c9691",
+  "rawReview": {
+    "findings": [
+      {
+        "severity": "blocking",
+        "title": "Forced rollback final state misstated",
+        "explanation": "Narration claims balances remain [70, 130] after forced rollback, while lesson-source states the forced-rollback final state is [100, 100] and reserves [70, 130] for the committed transfer.",
+        "suggestedChange": "Correct narration to state committed transfer ends at [70, 130] and forced rollback restores [100, 100].",
+        "evidence": [
+          {
+            "sourceId": "narration",
+            "quote": "في مثال التحويل، الحسابين بعد forced rollback بيفضلوا [70, 130]، والتجربة بتثبت العزل بين جلستين حقيقيتين متزامنتين."
+          },
+          {
+            "sourceId": "lesson-source",
+            "quote": "final state is `[100, 100]`."
+          }
+        ]
+      },
+      {
+        "severity": "blocking",
+        "title": "Isolation between concurrent sessions overstated",
+        "explanation": "Narration claims the experiment proves isolation between two real concurrent synchronized sessions, while lesson-source explicitly says it does not establish isolation between two real concurrent sessions and is single-process atomicity only.",
+        "suggestedChange": "Remove concurrent-session isolation claim and state the lesson shows single-process atomicity only, not isolation, lock contention, deadlock, or recovery.",
+        "evidence": [
+          {
+            "sourceId": "narration",
+            "quote": "في مثال التحويل، الحسابين بعد forced rollback بيفضلوا [70, 130]، والتجربة بتثبت العزل بين جلستين حقيقيتين متزامنتين."
+          },
+          {
+            "sourceId": "lesson-source",
+            "quote": "The lesson is explicit that this is single-process atomicity."
+          },
+          {
+            "sourceId": "lesson-source",
+            "quote": "It does\nnot establish isolation between two real concurrent sessions, lock\ncontention, deadlock detection, or recovery from server failure."
+          }
+        ]
+      }
+    ]
+  },
+  "provenance": {
+    "mode": "LIVE_META_API",
+    "endpoint": "https://api.meta.ai/v1/responses",
+    "requestedModel": "muse-spark-1.3",
+    "returnedModel": "muse-spark-1.3",
+    "responseId": "resp_6ae9115a07c09a7a4e46423b",
+    "createdAt": "2026-11-02T22:40:24.512Z",
+    "latencyMs": 14928,
+    "usage": {
+      "input_tokens": 585,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 1633,
+      "output_tokens_details": {
+        "reasoning_tokens": 1216
+      },
+      "total_tokens": 2218
+    },
+    "automaticRetries": 0
+  },
+  "result": {
+    "schemaVersion": 1,
+    "lessonId": "C07.11-seeded-contradiction",
+    "inputSha256": "80e09af3fb1e41e5695177ef3ca1a8edd5311e688f5441b59892ae00d58c9691",
+    "narrationSha256": "6f2624d3bcdfce513b6fa71ae5672251b5d756ae2fae13fedfae19bdfe04b22f",
+    "decision": "BLOCKED_FOR_HUMAN_REVIEW",
+    "approvedForPublication": false,
+    "citationValidation": "Exact source IDs and quoted text validated; this does not establish semantic correctness.",
+    "findings": [
+      {
+        "id": "F1",
+        "severity": "blocking",
+        "title": "Forced rollback final state misstated",
+        "explanation": "Narration claims balances remain [70, 130] after forced rollback, while lesson-source states the forced-rollback final state is [100, 100] and reserves [70, 130] for the committed transfer.",
+        "suggestedChange": "Correct narration to state committed transfer ends at [70, 130] and forced rollback restores [100, 100].",
+        "evidence": [
+          {
+            "sourceId": "narration",
+            "quote": "في مثال التحويل، الحسابين بعد forced rollback بيفضلوا [70, 130]، والتجربة بتثبت العزل بين جلستين حقيقيتين متزامنتين.",
+            "sourceSha256": "6f2624d3bcdfce513b6fa71ae5672251b5d756ae2fae13fedfae19bdfe04b22f"
+          },
+          {
+            "sourceId": "lesson-source",
+            "quote": "final state is `[100, 100]`.",
+            "sourceSha256": "047b48df904c0f3997ff2bde5326ba250648dcd5123ca4cb558250ab226a1a48"
+          }
+        ]
+      },
+      {
+        "id": "F2",
+        "severity": "blocking",
+        "title": "Isolation between concurrent sessions overstated",
+        "explanation": "Narration claims the experiment proves isolation between two real concurrent synchronized sessions, while lesson-source explicitly says it does not establish isolation between two real concurrent sessions and is single-process atomicity only.",
+        "suggestedChange": "Remove concurrent-session isolation claim and state the lesson shows single-process atomicity only, not isolation, lock contention, deadlock, or recovery.",
+        "evidence": [
+          {
+            "sourceId": "narration",
+            "quote": "في مثال التحويل، الحسابين بعد forced rollback بيفضلوا [70, 130]، والتجربة بتثبت العزل بين جلستين حقيقيتين متزامنتين.",
+            "sourceSha256": "6f2624d3bcdfce513b6fa71ae5672251b5d756ae2fae13fedfae19bdfe04b22f"
+          },
+          {
+            "sourceId": "lesson-source",
+            "quote": "The lesson is explicit that this is single-process atomicity.",
+            "sourceSha256": "047b48df904c0f3997ff2bde5326ba250648dcd5123ca4cb558250ab226a1a48"
+          },
+          {
+            "sourceId": "lesson-source",
+            "quote": "It does\nnot establish isolation between two real concurrent sessions, lock\ncontention, deadlock detection, or recovery from server failure.",
+            "sourceSha256": "047b48df904c0f3997ff2bde5326ba250648dcd5123ca4cb558250ab226a1a48"
+          }
+        ]
+      }
+    ],
+    "provenance": {
+      "mode": "LIVE_META_API",
+      "endpoint": "https://api.meta.ai/v1/responses",
+      "requestedModel": "muse-spark-1.3",
+      "returnedModel": "muse-spark-1.3",
+      "responseId": "resp_6ae9115a07c09a7a4e46423b",
+      "createdAt": "2026-11-02T22:40:24.512Z",
+      "latencyMs": 14928,
+      "usage": {
+        "input_tokens": 585,
+        "input_tokens_details": {
+          "cached_tokens": 0
+        },
+        "output_tokens": 1633,
+        "output_tokens_details": {
+          "reasoning_tokens": 1216
+        },
+        "total_tokens": 2218
+      },
+      "automaticRetries": 0
+    }
+  },
+  "status": "VALIDATED"
+}

@@ -18,6 +18,16 @@ const server=http.createServer((req,res)=>{
   if(req.method==='GET'&&req.url==='/api/reviews'){
    res.setHeader('Content-Type','application/json; charset=utf-8');res.end(JSON.stringify({contradictory:read('live-review-contradictory.json'),corrected:read('live-review-corrected.json')}));return;
   }
+  if(req.method==='GET'&&req.url==='/api/library'){
+   const sample=path.join(root,'examples/review-sample');
+   const manifest=JSON.parse(fs.readFileSync(path.join(sample,'manifest.json'),'utf8'));
+   const cases=manifest.cases.map(item=>{
+    const file=path.join(root,'evidence/library-review',item.id+'.json');
+    return {...item,input:JSON.parse(fs.readFileSync(path.join(sample,item.file),'utf8')),record:fs.existsSync(file)?JSON.parse(fs.readFileSync(file,'utf8')):null};
+   });
+   const summaryFile=path.join(root,'evidence/library-review/summary.json');
+   res.setHeader('Content-Type','application/json; charset=utf-8');res.end(JSON.stringify({courses:JSON.parse(fs.readFileSync(path.join(root,'data/courses.json'),'utf8')),selection:manifest.selection,summary:fs.existsSync(summaryFile)?JSON.parse(fs.readFileSync(summaryFile,'utf8')):null,cases}));return;
+  }
   if(req.method==='POST'&&req.url==='/api/check-tampered'){
    const data=read('live-review-contradictory.json');const altered=structuredClone(data.result);altered.findings[0].evidence[0].quote='A fabricated quote that does not exist in any supplied source.';
    let rejected=false;try{bindReview(data.input,altered);}catch{rejected=true;}

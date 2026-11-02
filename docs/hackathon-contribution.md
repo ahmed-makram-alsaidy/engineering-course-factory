@@ -26,3 +26,7 @@ The participant guide requires demonstrations to identify functionality built du
 [Participant guide](https://cerebralvalley.ai/e/meta-ai-developer-hackathon/details)
 
 Pre-existing component snapshot commit: `1306626beaddd6b7e973d0aa060c4980df9e1274`. The following feature commit contains the new reviewer and submission packaging.
+
+## Expanded contribution on November 3 (Cairo time)
+
+The JSON review runner, fixed-manifest sample runner, four CLI boundary tests, six-context/twelve-input sample, twelve additional actual Muse responses and production-context dashboard extend the new reviewer. The library and production engine remain prior work. The sample inputs are newly authored test drafts and deliberate contradictions derived from the source library, not modified published narration. See [sample design and limits](library-review-sample.md).

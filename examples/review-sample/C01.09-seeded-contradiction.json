@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "lessonId": "C01.09-seeded-contradiction",
+  "narration": "في المحاكي المحلي، المسار /api/nope بيرجع RESPONSE 200 OK بدل 404.",
+  "sources": [
+    {
+      "id": "lesson-source",
+      "text": "/// C01.09 — instructor-side simulator core.\n/// SEMANTIC_RECONSTRUCTION: original bytes lost; behavior rebuilt to make\n/// the historically claimed claim measurable. Bounded difference documented\n/// in 00-recovery-provenance.md.\nlibrary;\n\n\nconst dbTable = {\n  '1': 'سعاد حسن',\n  '2': 'محمود فتحي',\n};\n\nList<String> httpRequest(String method, String path) {\n  final lines = <String>[\n    'REQUEST $method $path HTTP/1.1',\n  ];\n  if (method == 'GET' && path == '/api/patients/2') {\n    lines.add('API routes to db lookup key=2');\n    lines.add('DB_ROW=${dbTable[\"2\"]}');\n    lines.add('RESPONSE 200 OK json={\"id\":2,\"name\":\"${dbTable['2']}}\"}');\n  } else if (path == '/api/nope') {\n    lines.add('RESPONSE 404 NOT FOUND');\n  } else {\n    lines.add('RESPONSE 400 BAD REQUEST');\n  }\n  return lines;\n}\n"
+    },
+    {
+      "id": "scope",
+      "text": "code-only; source identifies the simulator as a semantic reconstruction. Review only against the supplied material. Do not infer that this sample was executed now or that its references establish general educational accuracy."
+    }
+  ]
+}

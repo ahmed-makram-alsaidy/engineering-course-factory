@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "lessonId": "C24.10-seeded-contradiction",
+  "narration": "مثال Prompt Injection بيحدد المخرجات المتوقعة injection markers detected: 0 markers وprobe untrusted obeys system: YES.",
+  "sources": [
+    {
+      "id": "lesson-source",
+      "text": "# Demo — C24.10 Prompt Injection & Data Boundaries\n\nHostile-document boundary test with marker detection and a secret scan.\n\n## Steps\n1. Run `py demo/injection_demo.py` from the package root.\n2. Confirm each printed number matches the reference card derivation.\n3. Confirm the structured JSON validates (field count printed by the demo).\n4. Confirm the closing marker: `RESULT: ALL CHECKS PASSED (C24.10 Boundary Demo)`.\n\n## Expected key outputs\n- Primary: `injection markers detected: 4 markers`.\n- Probe: `probe untrusted obeys system: NO`.\n"
+    },
+    {
+      "id": "scope",
+      "text": "documented expected fixture output; not a fresh execution observation. Review only against the supplied material. Do not infer that this sample was executed now or that its references establish general educational accuracy."
+    }
+  ]
+}

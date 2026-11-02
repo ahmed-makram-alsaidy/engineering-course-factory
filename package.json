@@ -16,13 +16,16 @@
     "test:teaching-ide": "npm run test --workspace @course-factory/teaching-ide",
     "test:terminal-engine": "npm run test --workspace @course-factory/terminal-engine",
     "test:voice": "npm run test --workspace @course-factory/voice",
-    "test": "npm test --workspace @course-factory/shared-types && npm test --workspace @course-factory/lesson-compiler && node --test tools/lesson-review/contract.test.mjs",
+    "test": "npm test --workspace @course-factory/shared-types && npm test --workspace @course-factory/lesson-compiler && node --test tools/lesson-review/contract.test.mjs tools/lesson-review/cli.test.mjs",
     "demo": "node tools/demo.mjs",
     "inventory": "node tools/inventory.mjs",
     "test:example": "node tools/demo.mjs",
     "review": "node tools/review.mjs",
     "review:live": "node tools/review.mjs --live",
-    "review:dashboard": "node tools/review-server.mjs"
+    "review:dashboard": "node tools/review-server.mjs",
+    "review:json": "node tools/review-json.mjs",
+    "review:sample": "node tools/review-library.mjs",
+    "review:sample:live": "node tools/review-library.mjs --live"
   },
   "engines": {
     "node": ">=24"

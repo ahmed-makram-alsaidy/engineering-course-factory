@@ -1,68 +1,64 @@
-# Course Factory · Evidence-bound Arabic lesson review
+# Course Factory
 
-**A new review step for a real Arabic technical-course production workflow.** Muse compares an Arabic teaching draft with its Python source and observed execution. The application verifies each cited quotation against its source, binds it to a SHA-256 hash, and keeps publication under human review.
+**A human-supervised workflow for producing Arabic technical lessons, with a new evidence-bound review step.**
 
-The **new hackathon contribution** is the reviewer, its Meta Model API adapter, evidence validation, comparison dashboard and documented live runs, built November 2–3, 2026. The curriculum and earlier production engine predate the event. See [the contribution boundary](docs/hackathon-contribution.md).
+The existing source library spans **28 courses and 485 prepared lesson packages** across computing, software, systems, data and AI. The first course has **18 publicly available videos**, totaling nearly six hours. Prepared packages are not completed-video counts. [Published lessons](docs/published-lessons.md).
 
-**[Watch the hackathon demo (1 minute 50 seconds)](https://youtu.be/z9t4e2HAlHY)** · English narration and captions. The opening identifies the earlier curriculum; the main demonstration covers the new reviewer.
+Behind a finished lesson are source material, coding examples, exercises, narration, visuals, captions and review. The repository includes the earlier lesson schema/compiler, workspace and execution components, recording/voice components and Teaching IDE. Some stages still use separate scripts and operator work. This is a real production workflow, not a claim of one-click automation.
 
-![Lesson review](media/review-contradictory.png)
+The revised 2 minute 35 second project demonstration is prepared locally; its video link will be added after upload.
 
-## Try it
+![Production and review workspace](media/production-review-overview.png)
 
-Requirements: Node.js 24+, Python 3, npm. No API key or paid service is needed for the default demo.
+## New hackathon contribution
+
+Reviewing explanations before narration and rendering is a practical production problem. The new reviewer compares a teaching draft with supplied source material using Muse Spark 1.3 through Meta Model API. The application validates the source IDs and exact quotations, records hashes, and always requires human review before publication.
+
+The new work was built November 2–3, 2026: direct Meta adapter, evidence contract, JSON review runner, bounded sample runner, production-context dashboard, tests and live receipts. The curriculum and earlier production engine predate the event. Muse was previously used through OpenCode Go for course-material production/review alongside other models; that is distinct from this new direct API integration. [Contribution boundary](docs/hackathon-contribution.md).
+
+## What the broader demonstration shows
+
+Twelve real Muse calls cover newly written test drafts from six existing lesson contexts: HTTP, Python functions, SQL transactions, idempotency, prompt injection and MCP. All six source-derived drafts returned no findings. All six deliberately contradictory drafts returned findings. Every returned quotation passed local reference validation; no draft was approved for publication.
+
+This is a small constructed sample, **not an independent accuracy benchmark or an assessment of the whole library**. Source material can itself contain errors; matching quotations establish reference integrity, not truth. Historical execution evidence keeps its original dates and scope. [Inputs, results and limitations](docs/library-review-sample.md).
+
+## Try the source and review workflow
+
+Requirements: Node.js 24+, Python 3, npm.
 
 ```sh
 npm ci --ignore-scripts
 npm test
 npm run demo
 npm run inventory
+npm run review:sample
 npm run review:dashboard
 ```
 
-Open **http://127.0.0.1:8317**. Compare the contradictory and corrected drafts, then check a fabricated quotation. The dashboard displays saved responses from actual Meta calls; changing tabs does not call a model. The default CLI demo clearly labels its offline fixture.
+Open **http://127.0.0.1:8317**. Explore the course library and six-context review sample, inspect the cited evidence, switch to the source-derived draft and test a fabricated quotation. The dashboard replays saved responses from actual Meta calls. Default commands need no API key and make no model request.
 
-### Run a real Meta review
+The core demo validates/compiles a synthetic lesson fixture, runs a trusted Python example and labels its offline review fixture explicitly. It does not run the entire curriculum or certify every native production component.
 
-Set `MODEL_API_KEY` in your environment, then:
+### Review your own supplied draft
 
 ```sh
-npm run review:live
-npm run review:live -- --corrected
+npm run review:json -- --input your-draft.json --output new-receipt.json
 ```
 
-These commands make one request each to `https://api.meta.ai/v1/responses` using `muse-spark-1.3`. They may consume your Meta account credits. No automatic retries are sent. The example executes only the checked-in trusted Python fixture, not commands supplied by the model. [Usage and limitations](docs/meta-usage.md).
+This validates an input shaped like the files in `examples/review-sample/`. Set `MODEL_API_KEY` in the environment and add `--live` to make one real Meta request. The JSON runner **never executes supplied code or commands**, and refuses to overwrite an existing receipt. An API call may consume your account credits; no automatic retry is sent. [Meta usage](docs/meta-usage.md).
 
-## Demonstrated behavior
+`npm run review:sample` revalidates the twelve saved receipts without inference. `review:sample:live` calls Meta only for missing sample receipts. Failed or rejected results are preserved, not silently repaired.
 
-| Case | Observed result |
-|---|---|
-| Arabic draft claims zero and unbounded positive ages are accepted | Muse flags the contradiction with `0 < age <= 120` and the captured boundary checks |
-| Draft claims a two-word name check proves legal identity | Muse flags the unsupported identity claim and cites the accepted arbitrary two-word input |
-| Revised draft describes the actual predicates and their limitations | The second live run returns no findings; human review remains required |
-| A quotation is deliberately replaced with invented text | The actual local validator rejects it |
+## Engineering and validation
 
-The two [saved live responses](evidence/) include timestamps, returned model identifiers, token usage, source hashes and exact quotations. This is a small demonstration, not a measured general accuracy benchmark. The validator checks reference integrity; a valid quotation alone does not prove a model's interpretation is correct.
+The current snapshot passes **203 Node tests**: 107 schema tests, 82 compiler tests, 10 evidence-contract tests and 4 JSON CLI boundary tests. The trusted Python example has two tests and seven boundary assertions. The six dashboard pairs were exercised through the browser. The Teaching IDE bundle built with documented pre-existing warnings; Docker, Electron, recording and provider-dependent paths have their own setup requirements and are not all certified by the quickstart.
 
-## Production context
+- `packages/shared-types/`, `engine/`, `apps/teaching-ide/`: earlier production components.
+- `tools/lesson-review/`, `tools/review*.mjs`, `apps/review-dashboard/`: new review contribution.
+- `examples/review-sample/`, `evidence/library-review/`: frozen inputs and actual live receipts.
+- `data/`: complete package inventory metadata and public-video links.
+- `docs/`: architecture, contribution boundary, evidence scope and reproduction.
 
-The source library contains **28 courses, 433 core lesson packages and 52 discovery packages**. Those are prepared content packages, not 485 completed videos. The first course's **18 lessons are publicly available** on [Ahmed Makram Tech](https://www.youtube.com/@AhmedMakramTech/videos). [Direct lesson links](docs/published-lessons.md).
+## Publication boundary
 
-![Curriculum overview](media/curriculum-overview.png)
-
-The repository also contains a snapshot of the pre-existing lesson schema/compiler, workspace, terminal and browser components, runtime orchestrator, recording and voice components, and Teaching IDE. Their included source and tests show the broader engineering work. Native recording, Docker, Electron and provider-dependent paths have separate setup requirements; the quickstart does not claim to exercise all of them.
-
-## Repository map
-
-- `tools/lesson-review/`, `tools/review.mjs`, `tools/review-server.mjs`, `apps/review-dashboard/`: new reviewer and dashboard.
-- `evidence/live-review-*.json`: actual Meta responses and supplied inputs.
-- `data/`: complete lesson inventory metadata, course map and public-video links.
-- `examples/python-functions/`: small runnable source example, tests and new boundary-check harness.
-- `packages/shared-types/`, `engine/`, `apps/teaching-ide/`: pre-existing production components.
-- `docs/`: contribution dates, architecture, model usage, reproduction and published outputs.
-
-## Validation
-
-The clean staged snapshot passed 107 schema tests, 82 compiler tests and 10 new evidence-contract tests. The Python example's two tests and seven boundary assertions also passed. The dashboard's three cases were exercised through the browser. Broader infrastructure-dependent suites are included but are not claimed as rerun in this release.
-
-Code is published for inspection and judging. No redistribution license is asserted for third-party fonts, a personal cloned voice, course media or provider assets; those private assets are excluded from this source repository.
+This public repository is an inspectable component snapshot and selected demonstration material. It excludes credentials, private voice assets, proprietary fonts, the full private curriculum and large rendered files. Public visibility does not grant redistribution rights to those excluded assets. No broad open-source license is asserted. [Architecture](docs/architecture.md), [verification](evidence/verification.json).

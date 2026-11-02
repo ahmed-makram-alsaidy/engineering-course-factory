@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "lessonId": "C07.11-source-derived",
+  "narration": "في مثال التحويل، الحالة بعد commit بتبقى [70, 130]، وبعد forced rollback بتبقى [100, 100]. المثال بيوضح single-process atomicity؛ مش إثبات للعزل بين جلستين متزامنتين.",
+  "sources": [
+    {
+      "id": "lesson-source",
+      "text": "# C07E11 - research notes\n\nThe fixture is `accounts(id, name, balance)` populated with two rows\nof 100. The transfer transaction reads the starting balances, debits\n30 from one account, credits 30 to the other, and asserts the final\nstate is `[70, 130]`. The forced-rollback case throws an error inside\nthe transaction; the engine discards the temporary write pair and the\nfinal state is `[100, 100]`.\n\nThe PGlite transaction API is a callback-based promise that commits\non resolve and rolls back on throw. The lesson uses the API, not\n`BEGIN`/`COMMIT`/`ROLLBACK` raw SQL, because the in-process PGlite\nboundary treats those as session-level operations on a single\nconnection. The atomicity observation is a\n`PGLITE_TRANSACTION_SEMANTICS` claim and a\n`RELATIONAL_SQL_SEMANTICS` claim about the visible SQL.\n\nThe lesson is explicit that this is single-process atomicity. It does\nnot establish isolation between two real concurrent sessions, lock\ncontention, deadlock detection, or recovery from server failure. Those\nare separate lessons.\n"
+    },
+    {
+      "id": "scope",
+      "text": "reference notes; no SQL execution is claimed for this sample run. Review only against the supplied material. Do not infer that this sample was executed now or that its references establish general educational accuracy."
+    }
+  ]
+}
