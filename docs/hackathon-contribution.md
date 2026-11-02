@@ -30,3 +30,7 @@ Pre-existing component snapshot commit: `1306626beaddd6b7e973d0aa060c4980df9e127
 ## Expanded contribution on November 3 (Cairo time)
 
 The JSON review runner, fixed-manifest sample runner, four CLI boundary tests, six-context/twelve-input sample, twelve additional actual Muse responses and production-context dashboard extend the new reviewer. The library and production engine remain prior work. The sample inputs are newly authored test drafts and deliberate contradictions derived from the source library, not modified published narration. See [sample design and limits](library-review-sample.md).
+
+## Unchanged-text follow-up and adapter hardening
+
+The follow-up on six unchanged teaching artifacts retained an initial malformed-response failure and separated a diagnostic higher-output-budget call. The new work includes response-failure evidence preservation, CLI failure receipts/nonzero exit, five additional boundary tests, a compact public evaluation summary, and owner feedback on three displayed proposals. Original curriculum files remain unchanged. This does not constitute an independent whole-library accuracy or time-savings benchmark.

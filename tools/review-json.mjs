@@ -10,8 +10,12 @@ const input=validateInput(JSON.parse(raw)),file=path.resolve(args[o+1]);
 if(fs.existsSync(file))throw Error('Output already exists; preserve evidence and choose a new name');
 // Validation mode does not call a model. Neither mode executes any supplied code or commands.
 if(!args.includes('--live')){console.log(JSON.stringify({valid:true,lessonId:input.lessonId,sources:input.sources.length,modelCalled:false,codeExecuted:false}));process.exit(0);}
-const returned=await callMeta(input);
-const record={input,rawReview:returned.review,provenance:returned.provenance};
-try{record.result=bindReview(input,returned.review,returned.provenance);record.status='VALIDATED';}catch(error){record.status='REJECTED_BY_CONTRACT';record.validationError=error.message;}
+let record;
+try{
+ const returned=await callMeta(input);
+ record={input,rawReview:returned.review,provenance:returned.provenance};
+ try{record.result=bindReview(input,returned.review,returned.provenance);record.status='VALIDATED';}catch(error){record.status='REJECTED_BY_CONTRACT';record.validationError=error.message;}
+}catch(error){record={input,status:'REQUEST_FAILED',error:error.message,...(error.responseEvidence?{responseEvidence:error.responseEvidence}:{})};}
 fs.mkdirSync(path.dirname(file),{recursive:true});fs.writeFileSync(file,JSON.stringify(record,null,2)+'\n','utf8');
 console.log(JSON.stringify({output:file,status:record.status,findings:record.result?.findings.length??null,approvedForPublication:false,codeExecuted:false}));
+if(record.status!=='VALIDATED')process.exitCode=1;

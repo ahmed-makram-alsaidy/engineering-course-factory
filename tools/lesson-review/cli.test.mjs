@@ -4,7 +4,7 @@ import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
 import {spawnSync} from 'node:child_process';
-import {fileURLToPath} from 'node:url';
+import {fileURLToPath,pathToFileURL} from 'node:url';
 const cli=fileURLToPath(new URL('../review-json.mjs',import.meta.url));
 function fixture(t){const dir=fs.mkdtempSync(path.join(os.tmpdir(),'course-review-cli-'));t.after(()=>{for(const name of fs.readdirSync(dir))fs.unlinkSync(path.join(dir,name));fs.rmdirSync(dir);});return {dir,input:path.join(dir,'input.json'),output:path.join(dir,'output.json')};}
 const input={version:1,lessonId:'cli-example',narration:'A teaching draft.',sources:[{id:'source',text:'A supplied source.'}]};
@@ -13,3 +13,10 @@ test('validation mode calls no model and creates no review receipt',t=>{const f=
 test('invalid evidence identities are rejected before an optional live request',t=>{const f=fixture(t);fs.writeFileSync(f.input,JSON.stringify({...input,sources:[{id:'narration',text:'Collision.'}]}));const result=run(f,['--live']);assert.notEqual(result.status,0);assert.match(result.stderr,/unique/);assert.equal(fs.existsSync(f.output),false);});
 test('oversized input is rejected before parsing or a live request',t=>{const f=fixture(t);fs.writeFileSync(f.input,'x'.repeat(80001));const result=run(f,['--live']);assert.notEqual(result.status,0);assert.match(result.stderr,/80000/);});
 test('an existing receipt cannot be overwritten by a live request',t=>{const f=fixture(t);fs.writeFileSync(f.input,JSON.stringify(input));fs.writeFileSync(f.output,'preserve this evidence');const result=run(f,['--live']);assert.notEqual(result.status,0);assert.match(result.stderr,/already exists/);assert.equal(fs.readFileSync(f.output,'utf8'),'preserve this evidence');});
+test('a failed live response is saved as failure with partial evidence and a failing exit code',t=>{
+ const f=fixture(t);fs.writeFileSync(f.input,JSON.stringify(input));
+ const preload=path.join(f.dir,'mock-fetch.mjs');
+ fs.writeFileSync(preload,'globalThis.fetch=async()=>({ok:true,json:async()=>({id:"incomplete-fixture",status:"incomplete",incomplete_details:{reason:"max_output_tokens"},usage:{output_tokens:2200},output:[{content:[{type:"output_text",text:"partial JSON"}]}]})});');
+ const result=spawnSync(process.execPath,['--import',pathToFileURL(preload).href,cli,'--input',f.input,'--output',f.output,'--live'],{encoding:'utf8',timeout:5000,windowsHide:true,env:{...process.env,MODEL_API_KEY:'dummy-test-value'}});
+ assert.equal(result.status,1,result.stderr);assert.ok(fs.existsSync(f.output),result.stderr);const record=JSON.parse(fs.readFileSync(f.output,'utf8'));assert.equal(record.status,'REQUEST_FAILED');assert.equal(record.responseEvidence.responseStatus,'incomplete');assert.equal(record.responseEvidence.outputText,'partial JSON');assert.equal(record.result,undefined);
+});

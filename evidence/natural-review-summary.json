@@ -1,0 +1,278 @@
+{
+  "schemaVersion": 1,
+  "dateCairo": "2026-11-03",
+  "purpose": "Review existing teaching text without deliberately injected errors.",
+  "selection": "Purposive six-context follow-up to the constructed sample. Topics were already familiar from the earlier sample. No random selection, no claim of independence or representation of the whole library.",
+  "sourceTextsPublished": false,
+  "reproducibility": "Complete inputs and receipts are held locally by the owner; private production text is not republished. Public structured sample remains independently runnable.",
+  "cases": [
+    {
+      "caseId": "C01.09-published-captions",
+      "lessonId": "C01.09",
+      "artifactKind": "published caption text",
+      "characters": 17301,
+      "status": "VALIDATED",
+      "findings": 0,
+      "clientElapsedMs": 10916,
+      "responseId": "resp_6ae91ab7053f3448fade473c",
+      "providerUsage": {
+        "input_tokens": 7392,
+        "input_tokens_details": {
+          "cached_tokens": 0
+        },
+        "output_tokens": 957,
+        "output_tokens_details": {
+          "reasoning_tokens": 943
+        },
+        "total_tokens": 8349
+      }
+    },
+    {
+      "caseId": "C02.09-production-narration",
+      "lessonId": "C02.09",
+      "artifactKind": "production narration",
+      "characters": 7946,
+      "status": "VALIDATED",
+      "findings": 0,
+      "clientElapsedMs": 15754,
+      "responseId": "resp_6ae91ac72f086d35a9c54809",
+      "providerUsage": {
+        "input_tokens": 6699,
+        "input_tokens_details": {
+          "cached_tokens": 0
+        },
+        "output_tokens": 899,
+        "output_tokens_details": {
+          "reasoning_tokens": 885
+        },
+        "total_tokens": 7598
+      }
+    },
+    {
+      "caseId": "C07.11-library-script",
+      "lessonId": "C07.11",
+      "artifactKind": "library spoken-beat outline",
+      "characters": 567,
+      "status": "VALIDATED",
+      "findings": 0,
+      "clientElapsedMs": 9307,
+      "responseId": "resp_6ae91ad010d05a10a4dd4ad2",
+      "providerUsage": {
+        "input_tokens": 1764,
+        "input_tokens_details": {
+          "cached_tokens": 0
+        },
+        "output_tokens": 752,
+        "output_tokens_details": {
+          "reasoning_tokens": 738
+        },
+        "total_tokens": 2516
+      }
+    },
+    {
+      "caseId": "C14.11-library-script",
+      "lessonId": "C14.11",
+      "artifactKind": "library full teaching script",
+      "characters": 5324,
+      "status": "REQUEST_FAILED",
+      "findings": null,
+      "clientElapsedMs": 23338,
+      "responseId": null,
+      "providerUsage": null
+    },
+    {
+      "caseId": "C24.10-library-script",
+      "lessonId": "C24.10",
+      "artifactKind": "library English teaching outline",
+      "characters": 1006,
+      "status": "VALIDATED",
+      "findings": 0,
+      "clientElapsedMs": 14199,
+      "responseId": "resp_6ae91af6905412e768624f50",
+      "providerUsage": {
+        "input_tokens": 1610,
+        "input_tokens_details": {
+          "cached_tokens": 0
+        },
+        "output_tokens": 1283,
+        "output_tokens_details": {
+          "reasoning_tokens": 1269
+        },
+        "total_tokens": 2893
+      }
+    },
+    {
+      "caseId": "C26.09-library-script",
+      "lessonId": "C26.09",
+      "artifactKind": "library English teaching outline",
+      "characters": 386,
+      "status": "VALIDATED",
+      "findings": 0,
+      "clientElapsedMs": 19820,
+      "responseId": "resp_6ae91b0a4527362f744744f3",
+      "providerUsage": {
+        "input_tokens": 2031,
+        "input_tokens_details": {
+          "cached_tokens": 0
+        },
+        "output_tokens": 1792,
+        "output_tokens_details": {
+          "reasoning_tokens": 1778
+        },
+        "total_tokens": 3823
+      }
+    }
+  ],
+  "inputIntegrity": [
+    {
+      "caseId": "C01.09-published-captions",
+      "originalRawFileSha256": "901396c93184712e69a96f284b38275701df3248281e1fa6f2a2072b85c67c7a",
+      "narrationTextSha256": "335ca1f0d12138939fa2e94759e506cc56196467cd28a0e4aeedcbf59f72ea2f",
+      "inputFileSha256": "126c31132a643e83fae498df20bc744ed9f3095290a825109501720a9b68b39d"
+    },
+    {
+      "caseId": "C02.09-production-narration",
+      "originalRawFileSha256": "0d2445747816040c4cdf41e295c4ca759e659668f54d950dc6b64c45cca3f89d",
+      "narrationTextSha256": "0d2445747816040c4cdf41e295c4ca759e659668f54d950dc6b64c45cca3f89d",
+      "inputFileSha256": "5e099c3539ea0b9594a873f78f77f876ad6f701fe4f8d23eb5d5a62daee068ed"
+    },
+    {
+      "caseId": "C07.11-library-script",
+      "originalRawFileSha256": "f959d067d8ee150fc02ea26d64c29be66728b3b73cf3493eff14f15f100e7478",
+      "narrationTextSha256": "f959d067d8ee150fc02ea26d64c29be66728b3b73cf3493eff14f15f100e7478",
+      "inputFileSha256": "b5b43aa36bd22a696e3600cb287beaf78c212f380612bc0fb0b5b9a56c2270cb"
+    },
+    {
+      "caseId": "C14.11-library-script",
+      "originalRawFileSha256": "32ef4abc97119eb8b4346578b18adf40359b798d620dda036619c4ee8a7a971e",
+      "narrationTextSha256": "32ef4abc97119eb8b4346578b18adf40359b798d620dda036619c4ee8a7a971e",
+      "inputFileSha256": "53c72a8703b209f0a164281fe62c2523c9d955ca8c4eb858613dca0e61a4b651"
+    },
+    {
+      "caseId": "C24.10-library-script",
+      "originalRawFileSha256": "4e39c7bce7684d9288b4c152bd19a0324c8861a5eea6e2b3902ae9a484e39270",
+      "narrationTextSha256": "4e39c7bce7684d9288b4c152bd19a0324c8861a5eea6e2b3902ae9a484e39270",
+      "inputFileSha256": "0b99ee2002e76496b77ca9e8e16aabd46a77076719c9dc4c06786089ae2b73b2"
+    },
+    {
+      "caseId": "C26.09-library-script",
+      "originalRawFileSha256": "3be002998fb331420d69ab40d8c7b8deaafaff2c5e7e469e7ecac2ed72f95237",
+      "narrationTextSha256": "3be002998fb331420d69ab40d8c7b8deaafaff2c5e7e469e7ecac2ed72f95237",
+      "inputFileSha256": "4b08ed0f4ef2349bc3928918676c3df16beb2f38437e55dabe0ffc897e18fe7a"
+    }
+  ],
+  "primaryBatch": {
+    "requests": 6,
+    "validatedResponses": 5,
+    "requestFailures": 1,
+    "findingsInValidatedResponses": 0,
+    "clientRequestMs": 93334,
+    "originalInputModified": false
+  },
+  "separateDiagnostic": {
+    "caseId": "C14.11-library-script",
+    "maxOutputTokens": 6000,
+    "initialMaxOutputTokens": 2200,
+    "sameInputModelAndPrompt": true,
+    "status": "VALIDATED",
+    "findings": 4,
+    "clientElapsedMs": 27204,
+    "responseId": "resp_6ae91b6eefc6d44ef3114f51",
+    "returnedModel": "muse-spark-1.3",
+    "usage": {
+      "input_tokens": 4870,
+      "input_tokens_details": {
+        "cached_tokens": 4849
+      },
+      "output_tokens": 2804,
+      "output_tokens_details": {
+        "reasoning_tokens": 2200
+      },
+      "total_tokens": 7674
+    },
+    "causeOfInitialFailure": "Unknown; the earlier adapter did not preserve the invalid response body. Higher-budget success does not establish causality."
+  },
+  "assistantAssessment": {
+    "reviewer": "Codex root assistant, not independent human ground truth",
+    "items": [
+      {
+        "findingId": "F1",
+        "disposition": "SUPPORTED_TECHNICAL_CORRECTION",
+        "assistantSeverity": "warning",
+        "reason": "As a universal statement, the network does not guarantee at-least-once delivery. Delivery/retry semantics require a system contract. The script needs this qualification; the model blocking label overstates urgency for a teaching draft.",
+        "sources": [
+          "https://www.rfc-editor.org/rfc/rfc9110.html#section-9.2.2"
+        ],
+        "preRunChecklist": "N2"
+      },
+      {
+        "findingId": "F2",
+        "disposition": "USEFUL_QUALIFICATION_NOT_CONFIRMED_CONTRADICTION",
+        "assistantSeverity": "info",
+        "reason": "HTTP caching is not restricted to GET, but the quoted narration does not explicitly say only GET. The model title adds an exclusivity reading. Improve wording without counting a confirmed factual contradiction or accepting blocking severity.",
+        "sources": [
+          "https://www.rfc-editor.org/rfc/rfc9110.html#section-9.2.3",
+          "https://www.rfc-editor.org/rfc/rfc9110.html#section-9.3.3"
+        ],
+        "preRunChecklist": "N5"
+      },
+      {
+        "findingId": "F3",
+        "disposition": "SUPPORTED_SCOPE_CLARIFICATION",
+        "assistantSeverity": "warning",
+        "reason": "The unqualified statement that server state never changes is broader than idempotency. The intended resource effect should be distinguished from logging/counters. This can be read as beginner shorthand, so classify as a clarification rather than a separate strong failure.",
+        "sources": [
+          "https://www.rfc-editor.org/rfc/rfc9110.html#section-9.2.1",
+          "https://www.rfc-editor.org/rfc/rfc9110.html#section-9.2.2"
+        ],
+        "preRunChecklist": "N1"
+      },
+      {
+        "findingId": "F4",
+        "disposition": "UNRESOLVED_EVIDENCE_GAP_NOT_A_CONFIRMED_LESSON_ERROR",
+        "assistantSeverity": "info",
+        "reason": "The archived receipt does document a historical HTTP service. The supplied standalone illustrative script is different, and the outline can be a future recording plan. Missing linkage to a current recording does not prove narration is false. Check intended recording artifact with the owner; the cited scope warning alone is not independent proof of an error.",
+        "sources": [
+          "local archived run summary",
+          "local standalone demo source"
+        ],
+        "preRunChecklist": "N3"
+      }
+    ],
+    "unflaggedQuestions": [
+      {
+        "preRunChecklist": "N4",
+        "status": "OWNER_CHECK_REQUIRED",
+        "reason": "The script discusses 5000/7000 EGP while the supplied fixture uses amount_cents 5000/7000 and a 50.00 EGP label. Clarify whether the example amounts are intentionally illustrative or must match the recorded request. Do not infer a measured miss rate from this single possible issue."
+      }
+    ]
+  },
+  "ownerAssessment": {
+    "exactAnswerArabic": "الثلاثة صحيحة ومفيدة",
+    "acceptedProposalCount": 3,
+    "assessment": "correct and useful",
+    "scope": "Owner judged the three displayed proposed changes; this is not an independent blind review of all six lessons or every model finding.",
+    "reviewTimeSeconds": null,
+    "manualBaselineSeconds": null,
+    "canonicalEditsApplied": false
+  },
+  "freshVerification": {
+    "pythonVariantsMatchingRecordedOutput": 12,
+    "pythonOriginalFileHashesMatching": 12,
+    "sqlCommittedBalances": [
+      70,
+      130
+    ],
+    "sqlRolledBackBalances": [
+      100,
+      100
+    ],
+    "originalSourcesEdited": false,
+    "note": "Verification occurred after model inputs were frozen; these fresh results were not supplied to the model calls."
+  },
+  "totalMeasuredRequestMs": 120538,
+  "independentBenchmark": false,
+  "humanReviewTimeMeasured": false,
+  "timeSavedMeasured": false,
+  "monetaryCostMeasured": false
+}

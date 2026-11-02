@@ -22,6 +22,10 @@ Twelve real Muse calls cover newly written test drafts from six existing lesson 
 
 This is a small constructed sample, **not an independent accuracy benchmark or an assessment of the whole library**. Source material can itself contain errors; matching quotations establish reference integrity, not truth. Historical execution evidence keeps its original dates and scope. [Inputs, results and limitations](docs/library-review-sample.md).
 
+## Unchanged-text follow-up
+
+We also reviewed six existing production/library artifacts without injecting errors. The primary batch produced five valid zero-finding responses and one invalid-response failure. A preserved, separate diagnostic run returned four findings; checking their scope yielded three proposed changes that the owner judged correct and useful. One evidence gap remains unresolved. This is not an independent benchmark, and review time savings were not measured. [Method, failures, owner feedback and limits](docs/natural-review.md).
+
 ## Try the source and review workflow
 
 Requirements: Node.js 24+, Python 3, npm.
@@ -51,7 +55,7 @@ This validates an input shaped like the files in `examples/review-sample/`. Set 
 
 ## Engineering and validation
 
-The current snapshot passes **203 Node tests**: 107 schema tests, 82 compiler tests, 10 evidence-contract tests and 4 JSON CLI boundary tests. The trusted Python example has two tests and seven boundary assertions. The six dashboard pairs were exercised through the browser. The Teaching IDE bundle built with documented pre-existing warnings; Docker, Electron, recording and provider-dependent paths have their own setup requirements and are not all certified by the quickstart.
+The current snapshot passes **208 Node tests**: 107 schema tests, 82 compiler tests, 10 evidence-contract tests and 5 JSON CLI boundary tests and 4 provider-response tests. The trusted Python example has two tests and seven boundary assertions. The six dashboard pairs were exercised through the browser. The Teaching IDE bundle built with documented pre-existing warnings; Docker, Electron, recording and provider-dependent paths have their own setup requirements and are not all certified by the quickstart.
 
 - `packages/shared-types/`, `engine/`, `apps/teaching-ide/`: earlier production components.
 - `tools/lesson-review/`, `tools/review*.mjs`, `apps/review-dashboard/`: new review contribution.

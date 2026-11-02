@@ -30,7 +30,7 @@ for(const item of manifest.cases){
    record={input,inputSha256:digest(JSON.stringify(input)),rawReview:returned.review,provenance:returned.provenance};
    try{record.result=bindReview(input,returned.review,returned.provenance);record.status='VALIDATED';}
    catch(error){record.status='REJECTED_BY_CONTRACT';record.validationError=error.message;}
-  }catch(error){record={input,inputSha256:digest(JSON.stringify(input)),status:'REQUEST_FAILED',startedAt:start,error:error.message};}
+  }catch(error){record={input,inputSha256:digest(JSON.stringify(input)),status:'REQUEST_FAILED',startedAt:start,error:error.message,...(error.responseEvidence?{responseEvidence:error.responseEvidence}:{})};}
   // Failed and rejected results are preserved. No automatic retry, silent repair or replacement.
   fs.writeFileSync(file,JSON.stringify(record,null,2)+'\n','utf8');
  }
