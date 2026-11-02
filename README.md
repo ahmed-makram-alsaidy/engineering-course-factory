@@ -4,6 +4,8 @@
 
 The **new hackathon contribution** is the reviewer, its Meta Model API adapter, evidence validation, comparison dashboard and documented live runs, built November 2–3, 2026. The curriculum and earlier production engine predate the event. See [the contribution boundary](docs/hackathon-contribution.md).
 
+**[Watch the hackathon demo (1 minute 50 seconds)](https://youtu.be/z9t4e2HAlHY)** · English narration and captions. The opening identifies the earlier curriculum; the main demonstration covers the new reviewer.
+
 ![Lesson review](media/review-contradictory.png)
 
 ## Try it
