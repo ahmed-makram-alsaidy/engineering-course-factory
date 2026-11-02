@@ -6,7 +6,7 @@ The existing source library spans **28 courses and 485 prepared lesson packages*
 
 Behind a finished lesson are source material, coding examples, exercises, narration, visuals, captions and review. The repository includes the earlier lesson schema/compiler, workspace and execution components, recording/voice components and Teaching IDE. Some stages still use separate scripts and operator work. This is a real production workflow, not a claim of one-click automation.
 
-The revised 2 minute 35 second project demonstration is prepared locally; its video link will be added after upload.
+**[Watch the revised Course Factory demo (2 minutes 35 seconds)](https://youtu.be/yYDbz-zuqvY)** — project context, published lesson excerpt and the new review contribution.
 
 ![Production and review workspace](media/production-review-overview.png)
 
